@@ -1,4 +1,4 @@
-<section class="relative px-9 py-16">
+<section class="relative px-4 py-8 md:px-6 md:py-10 lg:px-9 lg:py-16">
 
     {{-- Formas decorativas exteriores (alrededor de la caja oscura) --}}
     <x-landing.shapes type="blob-sky"
@@ -12,7 +12,7 @@
 
     <div class="max-w-7xl mx-auto relative">
 
-        <div class="relative bg-brand-dark rounded-[32px] p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center overflow-hidden">
+        <div class="relative bg-brand-dark rounded-2xl lg:rounded-[32px] p-6 sm:p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center overflow-hidden">
 
             {{-- Logo gigante decorativo al fondo --}}
             <img src="/images/logo.svg"
@@ -31,7 +31,7 @@
             <div class="relative z-10">
                 <p class="text-[11px] text-brand-sage font-medium tracking-[2px] mb-3">— PARA TERAPEUTAS —</p>
 
-                <h2 class="font-serif font-normal text-4xl lg:text-[36px] text-brand-cream leading-[1.1] tracking-tight mb-4">
+                <h2 class="font-serif font-normal text-2xl sm:text-3xl lg:text-[36px] text-brand-cream leading-[1.1] tracking-tight mb-4">
                     Comparte tu don con <span class="italic text-brand-lime-soft">quien lo necesita.</span>
                 </h2>
 
@@ -39,7 +39,7 @@
                     Publica gratis, gana visibilidad y construye una comunidad alrededor de tu práctica. Sin comisiones, sin complicaciones.
                 </p>
 
-                <div class="flex flex-wrap gap-3">
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3">
                     <a href="{{ route('register') }}"
                        class="bg-brand-cream text-brand-dark px-6 py-3.5 rounded-full text-[13px] font-medium hover:opacity-90 transition">
                         Publicar anuncio
@@ -52,7 +52,7 @@
             </div>
 
             {{-- Columna derecha: imagen en forma orgánica --}}
-            <div class="relative z-10 h-80">
+            <div class="hidden lg:block lg:relative lg:z-10 lg:h-80">
                 <div class="absolute inset-0 bg-cover bg-center"
                      style="clip-path: path('M 240 10 C 360 0, 440 80, 430 200 C 420 310, 320 360, 210 350 C 90 340, 20 240, 40 130 C 60 30, 150 20, 240 10 Z'); background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80');">
                 </div>

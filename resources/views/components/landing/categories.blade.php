@@ -1,4 +1,4 @@
-<section class="relative px-9 py-14">
+<section class="relative px-4 py-8 md:px-6 md:py-10 lg:px-9 lg:py-14">
 
     {{-- Formas flotantes decorativas (todas dentro de los bordes) --}}
     <x-landing.shapes type="circles-sage"
@@ -9,9 +9,9 @@
         class="pointer-events-none hidden lg:block absolute bottom-4 right-19 w-28 h-28 z-0 animate-[float_9s_ease-in-out_infinite]" />
     <div class="max-w-7xl mx-auto">
         {{-- Encabezado --}}
-        <div class="relative z-10 text-center mb-10">
+        <div class="relative z-10 text-center mb-6 lg:mb-10">
             <p class="text-[11px] text-brand-sage font-medium tracking-[2px] mb-2.5">— EXPLORA —</p>
-            <h2 class="font-serif font-normal text-[32px] tracking-tight">
+            <h2 class="font-serif font-normal text-2xl sm:text-[28px] lg:text-[32px] tracking-tight">
                 Cuatro caminos hacia <span class="italic">tu calma</span>
             </h2>
         </div>

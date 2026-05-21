@@ -1,11 +1,11 @@
-<section class="relative px-9 pt-6 pb-16">
+<section class="relative px-4 pt-4 pb-10 md:px-6 md:pt-5 md:pb-12 lg:px-9 lg:pt-6 lg:pb-16">
 
     {{-- Formas flotantes decorativas (cortes en esquinas → naturales) --}}
     <x-landing.shapes type="blob-sage"
         class="pointer-events-none absolute -top-12 -left-20 w-80 h-80 z-0 animate-[float_8s_ease-in-out_infinite]" />
 
     <x-landing.shapes type="blob-sand"
-        class="pointer-events-none absolute -bottom-16 -right-16 w-64 h-64 z-0 opacity-60 animate-[float-slow_10s_ease-in-out_infinite]" />
+        class="pointer-events-none hidden lg:block absolute -bottom-16 -right-16 w-64 h-64 z-0 opacity-60 animate-[float-slow_10s_ease-in-out_infinite]" />
 
     <x-landing.shapes type="circles-sage"
         class="pointer-events-none hidden md:block absolute top-28 left-[48%] w-24 h-24 z-0 animate-[float-drift_11s_ease-in-out_infinite]" />
@@ -14,10 +14,10 @@
         class="pointer-events-none hidden lg:block absolute top-8 right-32 w-20 h-20 z-0 animate-[float-tilt_9s_ease-in-out_infinite]" />
 
     {{-- Contenido en 2 columnas --}}
-    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 items-center max-w-7xl mx-auto">
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-10 items-center max-w-7xl mx-auto">
 
         {{-- Columna izquierda: texto --}}
-        <div>
+        <div class="text-center lg:text-left">
             {{-- Badge --}}
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-brand-sage/15 rounded-full text-xs text-brand-sage-dark font-medium mb-6">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span>
@@ -25,19 +25,19 @@
             </div>
 
             {{-- Titular --}}
-            <h1 class="font-serif font-normal text-5xl lg:text-[52px] leading-[1.05] tracking-tight mb-4">
+            <h1 class="font-serif font-normal text-3xl sm:text-4xl md:text-[46px] lg:text-[52px] leading-[1.05] tracking-tight mb-4">
                 Tu pausa,<br>
                 <span class="italic text-brand-sage">tu equilibrio,</span><br>
                 tu lugar.
             </h1>
 
             {{-- Subtítulo --}}
-            <p class="text-[15px] text-brand-text leading-relaxed max-w-sm mb-8">
+            <p class="text-[15px] text-brand-text leading-relaxed max-w-sm mb-8 mx-auto lg:mx-0">
                 Descubre terapeutas, cursos y productos para cuidar de ti. Naturalmente.
             </p>
 
             {{-- Buscador --}}
-            <div class="bg-white p-2.5 rounded-full flex items-center gap-1.5 shadow-[0_8px_32px_rgba(42,61,54,0.08)] max-w-md">
+            <div class="bg-white p-2.5 rounded-full flex items-center gap-1.5 shadow-[0_8px_32px_rgba(42,61,54,0.08)] w-full max-w-md mx-auto lg:mx-0">
                 <div class="flex items-center gap-2 flex-1 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
@@ -53,7 +53,7 @@
             </div>
 
             {{-- Stats --}}
-            <div class="flex gap-7 mt-9">
+            <div class="flex justify-center lg:justify-start gap-5 sm:gap-7 mt-6 sm:mt-9">
                 <div>
                     <p class="font-serif text-2xl font-medium">2.4k+</p>
                     <p class="text-[11px] text-brand-muted tracking-wide mt-0.5">Terapeutas</p>
@@ -70,7 +70,7 @@
         </div>
 
         {{-- Columna derecha: imagen --}}
-        <div class="relative h-[440px]">
+        <div class="hidden lg:block lg:relative lg:h-[440px]">
 
             {{-- Patrón de puntos decorativo --}}
             <svg class="absolute top-8 -right-3 z-0" width="80" height="80" aria-hidden="true">

@@ -1,4 +1,4 @@
-<footer class="relative bg-brand-dark px-9 pt-10 pb-8 overflow-hidden">
+<footer class="relative bg-brand-dark px-4 pt-7 pb-6 md:px-6 md:pt-8 md:pb-7 lg:px-9 lg:pt-10 lg:pb-8 overflow-hidden">
 
     {{-- Formas decorativas sutiles (corner-aligned → corte natural en esquina) --}}
     <x-landing.shapes type="blob-sage"
