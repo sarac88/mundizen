@@ -15,9 +15,9 @@
 
             {{-- Logo --}}
             <a href="/" class="flex items-center gap-2">
-				<img src="/images/logo.svg" alt="Mundzen" class="h-7 w-auto">
+				<img src="/images/logo.svg" alt="Mundizen" class="h-7 w-auto">
 				<span class="font-display text-[20px] font-semibold tracking-tight">
-					<span class="text-brand-cream">mund</span><span class="text-brand-sage">zen</span>
+					<span class="text-brand-cream">mundi</span><span class="text-brand-sage">zen</span>
 				</span>
 			</a>
 

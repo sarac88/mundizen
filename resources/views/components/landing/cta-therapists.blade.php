@@ -5,8 +5,6 @@
         class="pointer-events-none hidden lg:block absolute -top-15 -left-12 w-56 h-56 z-0 animate-[float-drift_5s_ease-in-out_infinite]" />
     <x-landing.shapes type="wave-sage"
         class="pointer-events-none hidden md:block absolute top-20 right-24 w-36 h-20 z-0" />
-    <x-landing.shapes type="dots-sand"
-        class="pointer-events-none hidden md:block absolute bottom-25 left-20 w-25 h-25 z-0 animate-float" />
     <x-landing.shapes type="drop-coral"
         class="pointer-events-none hidden lg:block absolute bottom-40 right-10 w-30 h-30 z-0 animate-[float-tilt_9s_ease-in-out_infinite]" />
 

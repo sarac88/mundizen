@@ -3,8 +3,6 @@
     {{-- Formas flotantes decorativas (todas dentro de los bordes) --}}
     <x-landing.shapes type="circles-sage"
         class="pointer-events-none hidden lg:block absolute top-20 left-40 w-28 h-28 z-0 animate-[float-slow_11s_ease-in-out_infinite]" />
-    <x-landing.shapes type="dots-sand"
-        class="pointer-events-none hidden md:block absolute top-4 right-60 w-20 h-20 z-0" />
     <x-landing.shapes type="leaf-sage"
         class="pointer-events-none hidden lg:block absolute bottom-4 right-19 w-28 h-28 z-0 animate-[float_9s_ease-in-out_infinite]" />
     <div class="max-w-7xl mx-auto">

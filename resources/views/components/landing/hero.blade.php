@@ -72,17 +72,6 @@
         {{-- Columna derecha: imagen --}}
         <div class="hidden lg:block lg:relative lg:h-[440px]">
 
-            {{-- Patrón de puntos decorativo --}}
-            <svg class="absolute top-8 -right-3 z-0" width="80" height="80" aria-hidden="true">
-                <g fill="#D4C4A8">
-                    @foreach ([6,26,46,66] as $y)
-                        @foreach ([6,26,46,66] as $x)
-                            <circle cx="{{ $x }}" cy="{{ $y }}" r="2"/>
-                        @endforeach
-                    @endforeach
-                </g>
-            </svg>
-
             {{-- Imagen recortada en forma orgánica --}}
             <div class="absolute inset-0 bg-cover bg-center"
                  style="clip-path: path('M 200 0 C 320 20, 380 120, 360 240 C 340 360, 250 420, 140 400 C 30 380, -20 280, 20 160 C 60 40, 130 -20, 200 0 Z'); background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80');">
