@@ -52,7 +52,7 @@
             {{-- Columna derecha: imagen en forma orgánica --}}
             <div class="hidden lg:block lg:relative lg:z-10 lg:h-80">
                 <div class="absolute inset-0 bg-cover bg-center"
-                     style="clip-path: path('M 240 10 C 360 0, 440 80, 430 200 C 420 310, 320 360, 210 350 C 90 340, 20 240, 40 130 C 60 30, 150 20, 240 10 Z'); background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80');">
+                     style="border-radius: 65% 35% 55% 45% / 50% 45% 55% 50%; background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80');">
                 </div>
             </div>
 

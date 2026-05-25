@@ -53,18 +53,39 @@
             </div>
 
             {{-- Stats --}}
-            <div class="flex justify-center lg:justify-start gap-5 sm:gap-7 mt-6 sm:mt-9">
-                <div>
-                    <p class="font-serif text-2xl font-medium">2.4k+</p>
-                    <p class="text-[11px] text-brand-muted tracking-wide mt-0.5">Terapeutas</p>
+            <div class="flex flex-wrap justify-center lg:justify-start items-center gap-x-5 gap-y-3 sm:gap-x-6 mt-7 sm:mt-10">
+                <div class="flex items-center gap-2.5">
+                    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-sage-soft ring-1 ring-brand-sage/15">
+                        <flux:icon.users class="w-[18px] h-[18px] text-brand-sage-dark" />
+                    </span>
+                    <div class="text-left">
+                        <p class="font-serif text-xl font-medium leading-none">2.4k+</p>
+                        <p class="text-[10px] text-brand-muted tracking-[1.5px] uppercase mt-1">Terapeutas</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="font-serif text-2xl font-medium">180</p>
-                    <p class="text-[11px] text-brand-muted tracking-wide mt-0.5">Ciudades</p>
+
+                <span class="hidden sm:block w-px h-9 bg-gradient-to-b from-transparent via-brand-muted/25 to-transparent" aria-hidden="true"></span>
+
+                <div class="flex items-center gap-2.5">
+                    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-sky ring-1 ring-brand-sky-dark/15">
+                        <flux:icon.map-pin class="w-[18px] h-[18px] text-brand-sky-dark" />
+                    </span>
+                    <div class="text-left">
+                        <p class="font-serif text-xl font-medium leading-none">180</p>
+                        <p class="text-[10px] text-brand-muted tracking-[1.5px] uppercase mt-1">Ciudades</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="font-serif text-2xl font-medium">4.9 ★</p>
-                    <p class="text-[11px] text-brand-muted tracking-wide mt-0.5">Valoración</p>
+
+                <span class="hidden sm:block w-px h-9 bg-gradient-to-b from-transparent via-brand-muted/25 to-transparent" aria-hidden="true"></span>
+
+                <div class="flex items-center gap-2.5">
+                    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-sand ring-1 ring-brand-sand-dark/15">
+                        <flux:icon.star class="w-[18px] h-[18px] text-brand-sand-dark" />
+                    </span>
+                    <div class="text-left">
+                        <p class="font-serif text-xl font-medium leading-none">4.9<span class="text-brand-sand-dark">/5</span></p>
+                        <p class="text-[10px] text-brand-muted tracking-[1.5px] uppercase mt-1">Valoración</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,7 +95,7 @@
 
             {{-- Imagen recortada en forma orgánica --}}
             <div class="absolute inset-0 bg-cover bg-center"
-                 style="clip-path: path('M 200 0 C 320 20, 380 120, 360 240 C 340 360, 250 420, 140 400 C 30 380, -20 280, 20 160 C 60 40, 130 -20, 200 0 Z'); background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80');">
+                 style="border-radius: 58% 42% 62% 38% / 50% 65% 35% 50%; background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80');">
             </div>
 
             {{-- Tarjeta flotante: 100% natural --}}
