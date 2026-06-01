@@ -155,8 +155,12 @@
                             <span class="w-5 h-5 rounded-full bg-brand-sage text-brand-dark text-[11px] font-semibold flex items-center justify-center">3</span>
                         </a>
                         {{-- Editar perfil --}}
-                        <a href="#" class="flex items-center px-3 py-2.5 rounded-xl text-brand-text hover:bg-brand-sage-soft/50 transition">
-                            <span class="flex items-center gap-2.5 text-[14px]">
+                        <a href="{{ route('edit-profile') }}" @class([
+                            'flex items-center px-3 py-2.5 rounded-xl transition',
+                            'bg-brand-dark text-brand-cream' => $active === 'perfil',
+                            'text-brand-text hover:bg-brand-sage-soft/50' => $active !== 'perfil',
+                        ])>
+                            <span class="flex items-center gap-2.5 text-[14px] {{ $active === 'perfil' ? 'font-medium' : '' }}">
                                 <svg class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                                 </svg>
