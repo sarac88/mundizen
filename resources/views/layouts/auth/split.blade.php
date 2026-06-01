@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-white antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
-        <div class="relative grid h-dvh flex-col items-center justify-center px-8 sm:px-0 lg:max-w-none lg:grid-cols-2 lg:px-0">
-            <div class="bg-muted relative hidden h-full flex-col p-10 text-white lg:flex dark:border-e dark:border-neutral-800">
-                <div class="absolute inset-0 bg-neutral-900"></div>
-                <a href="{{ route('home') }}" class="relative z-20 flex items-center text-lg font-medium" wire:navigate>
-                    <span class="flex h-10 w-10 items-center justify-center rounded-md">
-                        <x-app-logo-icon class="me-2 h-7 fill-current text-white" />
-                    </span>
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+    <body class="min-h-screen bg-brand-cream text-brand-dark font-sans antialiased overflow-x-hidden">
+        <div class="relative grid min-h-svh flex-col items-center justify-center px-6 sm:px-0 lg:max-w-none lg:grid-cols-2 lg:px-0">
 
-                @php
-                    [$message, $author] = str(Illuminate\Foundation\Inspiring::quotes()->random())->explode('-');
-                @endphp
+            {{-- Panel izquierdo: imagen + marca (solo desktop) --}}
+            <div class="relative hidden h-full flex-col p-10 text-brand-cream lg:flex overflow-hidden">
+                {{-- Imagen de fondo --}}
+                <div class="absolute inset-0 bg-cover bg-center"
+                     style="background-image: url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80');"></div>
+                {{-- Overlay de marca: degradado para dejar respirar el color --}}
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/40 to-brand-dark/20"></div>
 
-                <div class="relative z-20 mt-auto">
-                    <blockquote class="space-y-2">
-                        <flux:heading size="lg">&ldquo;{{ trim($message) }}&rdquo;</flux:heading>
-                        <footer><flux:heading>{{ trim($author) }}</flux:heading></footer>
-                    </blockquote>
+                {{-- Tagline (arriba) --}}
+                <div class="relative z-20">
+                    <p class="text-[11px] text-brand-sage font-medium tracking-[2px] mb-3">— RESPIRA, EQUILIBRA, SANA —</p>
+                    <h2 class="font-serif font-normal text-4xl leading-[1.1] tracking-tight">
+                        El cuidado que buscabas,<br>
+                        <span class="italic text-brand-sage">cerca de donde estás.</span><br>
+                    </h2>
                 </div>
             </div>
-            <div class="w-full lg:p-8">
-                <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-                    <a href="{{ route('home') }}" class="z-20 flex flex-col items-center gap-2 font-medium lg:hidden" wire:navigate>
-                        <span class="flex h-9 w-9 items-center justify-center rounded-md">
-                            <x-app-logo-icon class="size-9 fill-current text-black dark:text-white" />
-                        </span>
 
-                        <span class="sr-only">{{ config('app.name', 'Laravel') }}</span>
+            {{-- Panel derecho: formulario --}}
+            <div class="w-full lg:p-8">
+                <div class="mx-auto flex w-full flex-col justify-center gap-6 sm:w-[360px]">
+                    {{-- Logo encima del formulario --}}
+                    <a href="{{ route('home') }}" class="z-20 flex items-center gap-2.5" wire:navigate>
+                        <img src="/images/logo.svg" alt="Mundizen" class="h-12 w-auto">
+                        <span class="font-display text-[28px] font-semibold tracking-tight leading-none">
+                            <span class="text-brand-dark">mundi</span><span class="text-brand-sage">zen</span>
+                        </span>
                     </a>
+
                     {{ $slot }}
                 </div>
             </div>
