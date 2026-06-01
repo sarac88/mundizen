@@ -44,20 +44,20 @@
             {{-- Menú central --}}
             <div class="hidden lg:flex items-center gap-8 text-[14px] text-brand-text">
                 <a href="#" class="hover:text-brand-dark transition">Buscar terapias</a>
-                <a href="{{ route('dashboard') }}" class="{{ $navLink('anuncios') }}">
+                <a href="{{ route('my-ads') }}" class="{{ $navLink('anuncios') }}">
                     Tus anuncios
                     @if ($active === 'anuncios')
                         <span class="absolute -bottom-[22px] left-0 right-0 h-0.5 bg-brand-sage rounded-full"></span>
                     @endif
                 </a>
                 <a href="#" class="hover:text-brand-dark transition">Pon tu anuncio</a>
-                <a href="{{ route('favoritos') }}" class="{{ $navLink('favoritos') }}">
+                <a href="{{ route('favorites') }}" class="{{ $navLink('favoritos') }}">
                     Favoritos
                     @if ($active === 'favoritos')
                         <span class="absolute -bottom-[22px] left-0 right-0 h-0.5 bg-brand-sage rounded-full"></span>
                     @endif
                 </a>
-                <a href="#" class="{{ $navLink('mensajes') }}">
+                <a href="{{ route('messages') }}" class="{{ $navLink('mensajes') }}">
                     Mensajes
                     @if ($active === 'mensajes')
                         <span class="absolute -bottom-[22px] left-0 right-0 h-0.5 bg-brand-sage rounded-full"></span>
@@ -105,7 +105,7 @@
 
                     <nav class="flex flex-col gap-1 pt-4">
                         {{-- Mis anuncios --}}
-                        <a href="{{ route('dashboard') }}" @class([
+                        <a href="{{ route('my-ads') }}" @class([
                             'flex items-center justify-between px-3 py-2.5 rounded-xl transition',
                             'bg-brand-dark text-brand-cream' => $active === 'anuncios',
                             'text-brand-text hover:bg-brand-sage-soft/50' => $active !== 'anuncios',
@@ -123,7 +123,7 @@
                             ])>4</span>
                         </a>
                         {{-- Favoritos --}}
-                        <a href="{{ route('favoritos') }}" @class([
+                        <a href="{{ route('favorites') }}" @class([
                             'flex items-center justify-between px-3 py-2.5 rounded-xl transition',
                             'bg-brand-dark text-brand-cream' => $active === 'favoritos',
                             'text-brand-text hover:bg-brand-sage-soft/50' => $active !== 'favoritos',
@@ -141,7 +141,7 @@
                             ])>4</span>
                         </a>
                         {{-- Mensajes --}}
-                        <a href="#" @class([
+                        <a href="{{ route('messages') }}" @class([
                             'flex items-center justify-between px-3 py-2.5 rounded-xl transition',
                             'bg-brand-dark text-brand-cream' => $active === 'mensajes',
                             'text-brand-text hover:bg-brand-sage-soft/50' => $active !== 'mensajes',

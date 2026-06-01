@@ -14,7 +14,7 @@
         <a href="#" class="hidden md:inline hover:text-brand-dark transition">Favoritos</a>
 
         @auth
-            <a href="{{ route('dashboard') }}"
+            <a href="{{ route('my-ads') }}"
                class="px-[18px] py-[9px] bg-brand-dark text-brand-cream rounded-full font-medium hover:opacity-90 transition">
                 Dashboard
             </a>
