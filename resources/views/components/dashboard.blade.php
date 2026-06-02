@@ -23,7 +23,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Domine:wght@400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
         @fonts
 
@@ -43,7 +43,7 @@
 
             {{-- Menú central --}}
             <div class="hidden lg:flex items-center gap-8 text-[14px] text-brand-text">
-                <a href="#" class="hover:text-brand-dark transition">Buscar terapias</a>
+                <a href="{{ route('search') }}" class="hover:text-brand-dark transition">Buscar terapias</a>
                 <a href="{{ route('my-ads') }}" class="{{ $navLink('anuncios') }}">
                     Tus anuncios
                     @if ($active === 'anuncios')

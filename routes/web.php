@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
+Route::view('search', 'search')->name('search');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('my-ads', 'my-ads')->name('my-ads');
