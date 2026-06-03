@@ -11,6 +11,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('favorites', 'favorites')->name('favorites');
     Route::view('messages', 'messages')->name('messages');
     Route::view('edit-profile', 'edit-profile')->name('edit-profile');
+    Route::view('post-ad', 'post-ad')->name('post-ad');
 });
 
 require __DIR__.'/settings.php';

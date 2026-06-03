@@ -1,6 +1,7 @@
 @props([
     'title' => null,
     'active' => '',
+    'sidebar' => true,
 ])
 
 @php
@@ -50,7 +51,12 @@
                         <span class="absolute -bottom-[22px] left-0 right-0 h-0.5 bg-brand-sage rounded-full"></span>
                     @endif
                 </a>
-                <a href="#" class="hover:text-brand-dark transition">Pon tu anuncio</a>
+                <a href="{{ route('post-ad') }}" class="{{ $navLink('publicar') }}">
+                    Pon tu anuncio
+                    @if ($active === 'publicar')
+                        <span class="absolute -bottom-[22px] left-0 right-0 h-0.5 bg-brand-sage rounded-full"></span>
+                    @endif
+                </a>
                 <a href="{{ route('favorites') }}" class="{{ $navLink('favoritos') }}">
                     Favoritos
                     @if ($active === 'favoritos')
@@ -82,6 +88,11 @@
         </nav>
 
         {{-- ===== Contenido ===== --}}
+        @unless ($sidebar)
+            <main class="flex-1 w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-9 py-8">
+                {{ $slot }}
+            </main>
+        @else
         <div class="flex-1 w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-9 py-8 grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6 items-start">
 
             {{-- ===== Sidebar ===== --}}
@@ -187,6 +198,7 @@
                 {{ $slot }}
             </main>
         </div>
+        @endunless
 
         {{-- ===== Footer ===== --}}
         <footer class="border-t border-brand-dark/5">
