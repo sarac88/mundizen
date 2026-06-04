@@ -2,7 +2,7 @@
     $favoritos = [
         [
             'category' => 'Energéticas',
-            'emoji'    => '✨',
+            'icon'     => 'sparkles',
             'tag'      => 'reiki',
             'location' => 'Online · Online',
             'title'    => 'Reiki Usui — limpieza energética online',
@@ -14,7 +14,7 @@
         ],
         [
             'category' => 'Cursos',
-            'emoji'    => '🎓',
+            'icon'     => 'graduation-cap',
             'tag'      => 'mindfulness',
             'location' => 'Barcelona · Presencial',
             'title'    => 'Curso intensivo de mindfulness — 8 semanas',
@@ -26,7 +26,7 @@
         ],
         [
             'category' => 'Manuales',
-            'emoji'    => '✋',
+            'icon'     => 'hand',
             'tag'      => 'reflexología podal',
             'location' => 'Madrid · A domicilio',
             'title'    => 'Reflexología podal a domicilio',
@@ -38,7 +38,7 @@
         ],
         [
             'category' => 'Cursos',
-            'emoji'    => '🎓',
+            'icon'     => 'graduation-cap',
             'tag'      => 'iniciación al reiki',
             'location' => 'Online · Online',
             'title'    => 'Iniciación al Reiki — nivel I',
@@ -79,7 +79,7 @@
                 {{-- Foto --}}
                 <div class="relative h-44 bg-brand-cream flex items-center justify-center" style="{{ $stripes }}">
                     <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full {{ $catColor[$fav['category']] }} text-[12px] font-medium">
-                        <span>{{ $fav['emoji'] }}</span>{{ $fav['category'] }}
+                        <x-lucide :name="$fav['icon']" class="w-3.5 h-3.5" />{{ $fav['category'] }}
                     </span>
                     <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-brand-dark text-brand-cream flex items-center justify-center hover:opacity-90 transition" aria-label="Quitar de favoritos">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

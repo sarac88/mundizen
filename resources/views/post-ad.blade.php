@@ -8,10 +8,10 @@
     ];
 
     $cats = [
-        ['emoji' => '✋', 'name' => 'Manuales',    'desc' => 'masaje sueco · quiromasaje · reflexología podal'],
-        ['emoji' => '✨', 'name' => 'Energéticas', 'desc' => 'reiki · biomagnetismo · sanación cuántica'],
-        ['emoji' => '🎓', 'name' => 'Cursos',      'desc' => 'mindfulness · yoga · aromaterapia'],
-        ['emoji' => '💧', 'name' => 'Productos',   'desc' => 'aceites esenciales · cosmética natural · cristales'],
+        ['icon' => 'hand',           'name' => 'Manuales',    'desc' => 'masaje sueco · quiromasaje · reflexología podal'],
+        ['icon' => 'sparkles',       'name' => 'Energéticas', 'desc' => 'reiki · biomagnetismo · sanación cuántica'],
+        ['icon' => 'graduation-cap', 'name' => 'Cursos',      'desc' => 'mindfulness · yoga · aromaterapia'],
+        ['icon' => 'droplet',        'name' => 'Productos',   'desc' => 'aceites esenciales · cosmética natural · cristales'],
     ];
 
     $certs = ['Quiromasaje (CGS)', 'Reiki nivel II', 'Aromaterapia clínica', 'Mindfulness MBSR'];
@@ -63,7 +63,7 @@
                 @foreach ($cats as $cat)
                     <button type="button" data-cat data-state="off" class="group text-left rounded-2xl border border-brand-dark/10 p-6 flex items-center justify-between gap-4 transition hover:border-brand-dark/25 data-[state=on]:ring-2 data-[state=on]:ring-brand-dark data-[state=on]:border-brand-dark">
                         <div class="flex items-start gap-4">
-                            <span class="text-2xl leading-none">{{ $cat['emoji'] }}</span>
+                            <x-lucide :name="$cat['icon']" class="w-6 h-6 shrink-0 text-brand-sage-dark" />
                             <div>
                                 <p class="font-serif text-[20px] tracking-tight">{{ $cat['name'] }}</p>
                                 <p class="text-[13px] text-brand-muted mt-1 leading-snug">{{ $cat['desc'] }}</p>
@@ -194,7 +194,7 @@
             </div>
 
             <div class="flex items-center gap-3 mt-6 px-5 py-4 rounded-xl bg-brand-sand/60">
-                <span class="text-[18px]">✺</span>
+                <x-lucide name="sparkles" class="w-5 h-5 shrink-0 text-brand-sage-dark" />
                 <p class="text-[14px] text-brand-text"><span class="font-medium text-brand-dark">Sin comisiones.</span> Mundizen no se queda nada. Tú gestionas el cobro directamente con tu cliente.</p>
             </div>
         </div>

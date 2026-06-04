@@ -32,7 +32,8 @@
             'name'     => 'Noa T.',
             'time'     => '27 may',
             'subject'  => 'Sesión online de respiración',
-            'preview'  => 'Te confirmo en cuanto pueda 🙏',
+            'preview'  => 'Te confirmo en cuanto pueda',
+            'icon'     => 'heart',
             'unread'   => null,
             'active'   => false,
         ],
@@ -79,7 +80,7 @@
                         <div class="flex-1 min-w-0">
                             <p class="text-[14px] font-medium leading-tight truncate">{{ $conv['name'] }}</p>
                             <p class="text-[12px] text-brand-sage truncate mt-0.5">{{ $conv['subject'] }}</p>
-                            <p class="text-[13px] text-brand-muted truncate mt-1">{{ $conv['preview'] }}</p>
+                            <p class="text-[13px] text-brand-muted truncate mt-1">{{ $conv['preview'] }}@if (! empty($conv['icon'])) <x-lucide :name="$conv['icon']" class="inline w-3.5 h-3.5 align-text-bottom" />@endif</p>
                         </div>
                         <div class="shrink-0 flex flex-col items-end gap-2">
                             <span class="text-[11px] text-brand-muted">{{ $conv['time'] }}</span>

@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-public title="Masaje sueco de 60 min">
 
-        <title>Masaje sueco de 60 min · {{ config('app.name', 'Mundizen') }}</title>
-
-        <link rel="icon" href="/favicon.ico" sizes="any">
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-
-        @fonts
-
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="bg-brand-cream text-brand-dark min-h-screen font-sans antialiased">
-
-        @php
+    @php
             $stripes = 'background-image: repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(42,61,54,0.05) 9px, rgba(42,61,54,0.05) 10px);';
 
             $tags = ['Aceite de almendra', 'Cabina privada', 'Camilla térmica'];
@@ -41,11 +21,9 @@
                 ['photo' => 'reflexología podal', 'location' => 'Madrid · A domicilio', 'title' => 'Reflexología podal a domicilio', 'price' => '55 €', 'unit' => '/ sesión', 'rating' => '4.7', 'bg' => 'bg-brand-sage-soft'],
                 ['photo' => 'masaje deportivo',   'location' => 'Valencia · Presencial', 'title' => 'Quiromasaje deportivo — recuperación post-entreno', 'price' => '50 €', 'unit' => '/ sesión', 'rating' => '4.9', 'bg' => 'bg-brand-sand'],
             ];
-        @endphp
+    @endphp
 
-        <x-landing.nav />
-
-        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-9 py-6">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-9 py-6">
 
             {{-- Breadcrumb + navegación --}}
             <div class="flex items-center justify-between mb-6">
@@ -76,7 +54,7 @@
                     {{-- Galería --}}
                     <div class="relative rounded-2xl overflow-hidden min-h-[420px] bg-brand-cream border border-brand-dark/5 flex items-center justify-center" style="{{ $stripes }}">
                         <div class="absolute top-4 left-4 flex items-center gap-2">
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[12px] font-medium">✋ Manuales</span>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[12px] font-medium"><x-lucide name="hand" class="w-3.5 h-3.5" /> Manuales</span>
                             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-dark text-brand-cream text-[12px] font-medium">
                                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Verificado
@@ -361,5 +339,4 @@
                 </aside>
             </div>
         </div>
-    </body>
-</html>
+</x-public>

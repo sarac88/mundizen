@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-public title="Buscar terapias">
 
-        <title>Buscar terapias · {{ config('app.name', 'Mundizen') }}</title>
-
-        <link rel="icon" href="/favicon.ico" sizes="any">
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-
-        @fonts
-
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="bg-brand-cream text-brand-dark min-h-screen font-sans antialiased">
-
-        @php
+    @php
             $categories = [
-                ['name' => 'Todas',       'emoji' => null, 'active' => true],
-                ['name' => 'Manuales',    'emoji' => '✋',  'active' => false],
-                ['name' => 'Energéticas', 'emoji' => '✨',  'active' => false],
-                ['name' => 'Cursos',      'emoji' => '🎓',  'active' => false],
-                ['name' => 'Productos',   'emoji' => '💧',  'active' => false],
+                ['name' => 'Todas',       'icon' => null,            'active' => true],
+                ['name' => 'Manuales',    'icon' => 'hand',          'active' => false],
+                ['name' => 'Energéticas', 'icon' => 'sparkles',       'active' => false],
+                ['name' => 'Cursos',      'icon' => 'graduation-cap', 'active' => false],
+                ['name' => 'Productos',   'icon' => 'droplet',        'active' => false],
             ];
 
             $catColor = [
@@ -35,7 +15,7 @@
                 'Cursos'      => 'bg-brand-sky text-brand-sky-dark',
                 'Productos'   => 'bg-brand-coral text-brand-coral-dark',
             ];
-            $catEmoji = ['Manuales' => '✋', 'Energéticas' => '✨', 'Cursos' => '🎓', 'Productos' => '💧'];
+            $catIcon = ['Manuales' => 'hand', 'Energéticas' => 'sparkles', 'Cursos' => 'graduation-cap', 'Productos' => 'droplet'];
 
             $availability = ['Cualquier momento', 'Hoy', 'Esta semana', 'Este fin de semana'];
 
@@ -97,12 +77,9 @@
                     'price' => '38 €', 'unit' => '/ kit', 'photo' => 'aceites esenciales',
                 ],
             ];
-        @endphp
+    @endphp
 
-        {{-- ===== Barra superior (reutiliza el nav de la landing) ===== --}}
-        <x-landing.nav />
-
-        {{-- ===== Cabecera + buscador ===== --}}
+    {{-- ===== Cabecera + buscador ===== --}}
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-9 pt-8 pb-6">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
                 <div>
@@ -152,7 +129,7 @@
                                 @if ($cat['active'])
                                     <span class="w-2 h-2 rounded-full bg-brand-sage"></span>
                                 @else
-                                    <span class="text-[15px] leading-none">{{ $cat['emoji'] }}</span>
+                                    <x-lucide :name="$cat['icon']" class="w-[18px] h-[18px]" />
                                 @endif
                                 {{ $cat['name'] }}
                             </a>
@@ -257,7 +234,7 @@
                             <div class="relative min-h-[300px] lg:min-h-[360px] bg-brand-cream flex items-center justify-center" style="{{ $stripes }}">
                                 <div class="absolute top-4 left-4 flex items-center gap-2">
                                     <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full {{ $catColor[$r['category']] }} text-[12px] font-medium">
-                                        <span>{{ $catEmoji[$r['category']] }}</span>{{ $r['category'] }}
+                                        <x-lucide :name="$catIcon[$r['category']]" class="w-3.5 h-3.5" />{{ $r['category'] }}
                                     </span>
                                     @if ($r['verified'])
                                         <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-dark text-brand-cream text-[12px] font-medium">
@@ -314,5 +291,4 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+</x-public>
