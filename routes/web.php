@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 Route::get('search', [AdController::class, 'search'])->name('search');
-Route::view('listing', 'listing')->name('listing');
+Route::get('listing/{ad}', [AdController::class, 'show'])->name('listing');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('my-ads', [AdController::class, 'index'])->name('my-ads');

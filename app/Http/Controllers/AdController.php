@@ -81,6 +81,24 @@ class AdController extends Controller
         ]);
     }
 
+    public function show(Ad $ad): View
+    {
+        abort_unless($ad->isPublished(), 404);
+
+        $ad->load(['user', 'photos']);
+
+        $related = Ad::query()
+            ->where('status', Ad::STATUS_PUBLISHED)
+            ->where('category', $ad->category)
+            ->whereKeyNot($ad->id)
+            ->with('mainPhoto')
+            ->latest()
+            ->take(3)
+            ->get();
+
+        return view('listing', compact('ad', 'related'));
+    }
+
     public function index(): View
     {
         $ads = auth()->user()
