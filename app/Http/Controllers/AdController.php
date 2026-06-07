@@ -5,11 +5,82 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAdRequest;
 use App\Models\Ad;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class AdController extends Controller
 {
+    /**
+     * @var array<string, string>
+     */
+    public const CATEGORY_MAP = [
+        'manuales' => 'Manuales',
+        'energeticas' => 'Energéticas',
+        'cursos' => 'Cursos',
+        'productos' => 'Productos',
+    ];
+
+    /**
+     * @var array<string, string>
+     */
+    public const MODE_MAP = [
+        'presencial' => 'Presencial',
+        'online' => 'Online',
+        'domicilio' => 'A domicilio',
+    ];
+
+    public function search(Request $request): View
+    {
+        $query = Ad::query()
+            ->where('status', Ad::STATUS_PUBLISHED)
+            ->with(['user', 'mainPhoto']);
+
+        if ($search = trim((string) $request->input('q', ''))) {
+            $query->where(function ($builder) use ($search): void {
+                $builder->where('title', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%");
+            });
+        }
+
+        if ($category = $request->input('category')) {
+            if (array_key_exists($category, self::CATEGORY_MAP)) {
+                $query->where('category', $category);
+            }
+        }
+
+        if ($city = $request->input('city')) {
+            $query->where('city', $city);
+        }
+
+        if ($mode = $request->input('mode')) {
+            if (array_key_exists($mode, self::MODE_MAP)) {
+                $query->where('mode', $mode);
+            }
+        }
+
+        if ($request->filled('max_price')) {
+            $query->where('price', '<=', (float) $request->input('max_price'));
+        }
+
+        match ($request->input('sort')) {
+            'price_asc' => $query->orderBy('price'),
+            'price_desc' => $query->orderByDesc('price'),
+            default => $query->latest(),
+        };
+
+        $ads = $query->paginate(8)->withQueryString();
+
+        $cities = ['Valencia', 'Barcelona', 'Madrid', 'Sevilla'];
+
+        return view('search', [
+            'ads' => $ads,
+            'cities' => $cities,
+            'categoryMap' => self::CATEGORY_MAP,
+            'modeMap' => self::MODE_MAP,
+        ]);
+    }
+
     public function index(): View
     {
         $ads = auth()->user()

@@ -95,4 +95,49 @@ class Ad extends Model
 
         return number_format((float) $this->price, 0, ',', '.').' €';
     }
+
+    public function categoryLabel(): string
+    {
+        return match ($this->category) {
+            'manuales' => 'Manuales',
+            'energeticas' => 'Energéticas',
+            'cursos' => 'Cursos',
+            'productos' => 'Productos',
+            default => $this->category ?? '',
+        };
+    }
+
+    public function priceUnitLabel(): string
+    {
+        return match ($this->price_unit) {
+            'por_sesion' => '/ sesión',
+            'por_hora' => '/ hora',
+            'por_paquete' => '/ paquete',
+            'por_curso' => '/ curso completo',
+            default => '',
+        };
+    }
+
+    public function locationLabel(): string
+    {
+        $parts = array_filter([
+            $this->city,
+            $this->modeLabel(),
+        ]);
+
+        return implode(' · ', $parts);
+    }
+
+    public function isVerified(): bool
+    {
+        return ! empty($this->certifications);
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    public function displayTags(int $limit = 3): array
+    {
+        return array_slice($this->certifications ?? [], 0, $limit);
+    }
 }

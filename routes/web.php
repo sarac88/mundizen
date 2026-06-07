@@ -4,7 +4,7 @@ use App\Http\Controllers\AdController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
-Route::view('search', 'search')->name('search');
+Route::get('search', [AdController::class, 'search'])->name('search');
 Route::view('listing', 'listing')->name('listing');
 
 Route::middleware(['auth', 'verified'])->group(function () {
