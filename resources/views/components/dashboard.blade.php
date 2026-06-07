@@ -142,7 +142,7 @@
                                 'w-5 h-5 rounded-full text-[11px] font-semibold flex items-center justify-center',
                                 'bg-brand-sage text-brand-dark' => $active === 'anuncios',
                                 'bg-brand-dark/5 text-brand-text' => $active !== 'anuncios',
-                            ])>4</span>
+                            ])>{{ auth()->user()->ads()->count() }}</span>
                         </a>
                         {{-- Favoritos --}}
                         <a href="{{ route('favorites') }}" @class([
