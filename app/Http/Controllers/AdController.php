@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAdRequest;
 use App\Models\Ad;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class AdController extends Controller
@@ -139,16 +141,7 @@ class AdController extends Controller
                 'terms_accepted' => $request->boolean('terms'),
             ]);
 
-            if ($request->hasFile('photos')) {
-                foreach ($request->file('photos') as $index => $photo) {
-                    $path = $photo->store("ads/{$ad->id}", 'public');
-
-                    $ad->photos()->create([
-                        'path' => $path,
-                        'sort_order' => $index,
-                    ]);
-                }
-            }
+            $this->attachPhotos($ad, $request);
 
             return $ad;
         });
@@ -160,5 +153,100 @@ class AdController extends Controller
         return redirect()
             ->route('my-ads')
             ->with('status', $message);
+    }
+
+    public function edit(Ad $ad): View
+    {
+        $this->authorizeOwner($ad);
+
+        $ad->load('photos');
+
+        return view('post-ad', compact('ad'));
+    }
+
+    public function update(StoreAdRequest $request, Ad $ad): RedirectResponse
+    {
+        $this->authorizeOwner($ad);
+
+        $validated = $request->validated();
+        $status = $request->isPublish() ? Ad::STATUS_PUBLISHED : Ad::STATUS_DRAFT;
+
+        DB::transaction(function () use ($request, $validated, $status, $ad): void {
+            $ad->update([
+                'category' => $validated['category'] ?? null,
+                'title' => $validated['title'],
+                'description' => $validated['description'] ?? null,
+                'certifications' => $validated['certifications'] ?? null,
+                'mode' => $validated['mode'] ?? null,
+                'city' => $validated['city'] ?? null,
+                'address' => $validated['address'] ?? null,
+                'availability' => $validated['availability'] ?? null,
+                'price_unit' => $validated['price_unit'] ?? null,
+                'price' => $validated['price'] ?? null,
+                'duration' => $validated['duration'] ?? null,
+                'status' => $status,
+                'terms_accepted' => $request->boolean('terms') || $ad->terms_accepted,
+            ]);
+
+            $this->attachPhotos($ad, $request);
+        });
+
+        $message = $status === Ad::STATUS_PUBLISHED
+            ? '¡Anuncio actualizado y publicado!'
+            : 'Borrador actualizado. Puedes continuar editándolo cuando quieras.';
+
+        return redirect()
+            ->route('my-ads')
+            ->with('status', $message);
+    }
+
+    public function destroy(Request $request, Ad $ad): JsonResponse|RedirectResponse
+    {
+        $this->authorizeOwner($ad);
+
+        $ad->load('photos');
+
+        DB::transaction(function () use ($ad): void {
+            foreach ($ad->photos as $photo) {
+                Storage::disk('public')->delete($photo->path);
+            }
+
+            Storage::disk('public')->deleteDirectory("ads/{$ad->id}");
+            $ad->delete();
+        });
+
+        if ($request->expectsJson() || $request->ajax()) {
+            return response()->json(['ok' => true]);
+        }
+
+        return redirect()
+            ->route('my-ads')
+            ->with('status', 'Anuncio eliminado.');
+    }
+
+    private function authorizeOwner(Ad $ad): void
+    {
+        abort_unless($ad->user_id === auth()->id(), 403);
+    }
+
+    private function attachPhotos(Ad $ad, StoreAdRequest $request): void
+    {
+        if (! $request->hasFile('photos')) {
+            return;
+        }
+
+        $nextOrder = (int) ($ad->photos()->max('sort_order') ?? -1) + 1;
+
+        foreach (array_filter($request->file('photos', []) ?? []) as $photo) {
+
+            $path = $photo->store("ads/{$ad->id}", 'public');
+
+            $ad->photos()->create([
+                'path' => $path,
+                'sort_order' => $nextOrder,
+            ]);
+
+            $nextOrder++;
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 
 class StoreAdRequest extends FormRequest
 {
@@ -13,7 +14,13 @@ class StoreAdRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        $ad = $this->route('ad');
+
+        if ($ad !== null) {
+            return $ad->user_id === $this->user()?->id;
+        }
+
+        return $this->user() !== null;
     }
 
     /**
@@ -51,11 +58,43 @@ class StoreAdRequest extends FormRequest
             $rules['price_unit'] = ['required', Rule::in(['por_sesion', 'por_hora', 'por_paquete', 'por_curso'])];
             $rules['price'] = ['required', 'numeric', 'min:0', 'max:99999.99'];
             $rules['duration'] = ['required', 'integer', 'min:1', 'max:1440'];
-            $rules['terms'] = ['accepted'];
-            $rules['photos'] = ['required', 'array', 'min:1', 'max:5'];
+            $existingAd = $this->route('ad');
+
+            $rules['terms'] = ($existingAd?->terms_accepted)
+                ? ['nullable']
+                : ['accepted'];
+
+            $hasExistingPhotos = $existingAd?->photos()->exists() ?? false;
+
+            if (! $hasExistingPhotos) {
+                $rules['photos'] = ['required', 'array', 'min:1', 'max:5'];
+            } else {
+                $rules['photos'] = ['nullable', 'array', 'max:5'];
+            }
         }
 
         return $rules;
+    }
+
+    public function withValidator(Validator $validator): void
+    {
+        $validator->after(function (Validator $validator): void {
+            $existingAd = $this->route('ad');
+
+            if ($existingAd === null) {
+                return;
+            }
+
+            $existingCount = $existingAd->photos()->count();
+            $newCount = count(array_filter($this->file('photos', []) ?? []));
+
+            if ($existingCount + $newCount > 5) {
+                $validator->errors()->add(
+                    'photos',
+                    'Puedes tener un máximo de 5 fotos en total.'
+                );
+            }
+        });
     }
 
     /**

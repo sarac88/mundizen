@@ -10,6 +10,9 @@ Route::get('listing/{ad}', [AdController::class, 'show'])->name('listing');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('my-ads', [AdController::class, 'index'])->name('my-ads');
+    Route::get('my-ads/{ad}/edit', [AdController::class, 'edit'])->name('ads.edit');
+    Route::put('my-ads/{ad}', [AdController::class, 'update'])->name('ads.update');
+    Route::delete('my-ads/{ad}', [AdController::class, 'destroy'])->name('ads.destroy');
     Route::get('favorites', [FavoriteController::class, 'index'])->name('favorites');
     Route::post('favorites/{ad}/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
     Route::view('messages', 'messages')->name('messages');

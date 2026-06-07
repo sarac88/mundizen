@@ -1,4 +1,9 @@
 @php
+    $ad = $ad ?? null;
+    $isEditing = $ad !== null;
+    $existingPhotos = $isEditing ? $ad->photos : collect();
+    $remainingPhotoSlots = max(0, 5 - $existingPhotos->count());
+
     $steps = [
         ['n' => '01', 'label' => 'Categoría'],
         ['n' => '02', 'label' => 'Información'],
@@ -29,30 +34,41 @@
     $cities = ['Valencia', 'Barcelona', 'Madrid', 'Sevilla'];
     $weekdays = [['L', true], ['M', true], ['X', true], ['J', true], ['V', true], ['S', false], ['D', false]];
 
-    $oldCategory = old('category');
-    $oldMode = old('mode', 'presencial');
-    $oldPriceUnit = old('price_unit', 'por_sesion');
-    $oldCerts = old('certifications', []);
-    $oldAvailability = old('availability', ['L', 'M', 'X', 'J', 'V']);
+    $oldCategory = old('category', $ad?->category);
+    $oldMode = old('mode', $ad?->mode ?? 'presencial');
+    $oldPriceUnit = old('price_unit', $ad?->price_unit ?? 'por_sesion');
+    $oldCerts = old('certifications', $ad?->certifications ?? []);
+    $oldAvailability = old('availability', $ad?->availability ?? ['L', 'M', 'X', 'J', 'V']);
 
     $field = 'w-full px-4 py-3 rounded-xl border border-brand-dark/10 bg-white text-[14px] text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-dark/25';
     $flabel = 'block text-[14px] font-medium mb-2';
 @endphp
 
-<x-dashboard title="Pon tu anuncio" active="publicar" :sidebar="false">
+<x-dashboard :title="$isEditing ? 'Editar anuncio' : 'Pon tu anuncio'" active="publicar" :sidebar="false">
 
     {{-- Encabezado --}}
     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-7">
         <div>
-            <p class="text-[11px] text-brand-sage font-medium tracking-[2px] mb-2">PON TU ANUNCIO —</p>
+            <p class="text-[11px] text-brand-sage font-medium tracking-[2px] mb-2">{{ $isEditing ? 'EDITAR ANUNCIO —' : 'PON TU ANUNCIO —' }}</p>
             <h1 class="font-serif font-normal text-4xl lg:text-[40px] tracking-tight">
-                Comparte tu <span class="italic text-brand-sage">práctica.</span>
+                @if ($isEditing)
+                    Actualiza tu <span class="italic text-brand-sage">anuncio.</span>
+                @else
+                    Comparte tu <span class="italic text-brand-sage">práctica.</span>
+                @endif
             </h1>
         </div>
-        <button type="submit" form="post-ad-form" name="action" value="draft" class="shrink-0 inline-flex items-center gap-2 text-[13px] text-brand-text hover:text-brand-dark transition mt-2">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Salir y guardar borrador
-        </button>
+        @if ($isEditing)
+            <a href="{{ route('my-ads') }}" class="shrink-0 inline-flex items-center gap-2 text-[13px] text-brand-text hover:text-brand-dark transition mt-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                Volver a mis anuncios
+            </a>
+        @else
+            <button type="submit" form="post-ad-form" name="action" value="draft" class="shrink-0 inline-flex items-center gap-2 text-[13px] text-brand-text hover:text-brand-dark transition mt-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                Salir y guardar borrador
+            </button>
+        @endif
     </div>
 
     @if ($errors->any())
@@ -66,8 +82,11 @@
         </div>
     @endif
 
-    <form id="post-ad-form" method="POST" action="{{ route('ads.store') }}" enctype="multipart/form-data">
+    <form id="post-ad-form" method="POST" action="{{ $isEditing ? route('ads.update', $ad) : route('ads.store') }}" enctype="multipart/form-data">
         @csrf
+        @if ($isEditing)
+            @method('PUT')
+        @endif
 
         <input type="hidden" name="category" id="category-input" value="{{ $oldCategory }}">
         <input type="hidden" name="mode" id="mode-input" value="{{ $oldMode }}">
@@ -122,8 +141,8 @@
 
                 <div class="mb-5">
                     <label class="{{ $flabel }}" for="title">Título del anuncio</label>
-                    <input type="text" id="title" name="title" maxlength="80" value="{{ old('title') }}" placeholder="Ej. Masaje sueco de 60 min en estudio céntrico" class="{{ $field }} @error('title') border-red-300 @enderror" data-title-input>
-                    <p class="text-[12px] text-brand-muted mt-2">Sé concreto: tipo, duración, ubicación o modo. <span data-title-count>{{ strlen(old('title', '')) }}/80</span></p>
+                    <input type="text" id="title" name="title" maxlength="80" value="{{ old('title', $ad?->title) }}" placeholder="Ej. Masaje sueco de 60 min en estudio céntrico" class="{{ $field }} @error('title') border-red-300 @enderror" data-title-input>
+                    <p class="text-[12px] text-brand-muted mt-2">Sé concreto: tipo, duración, ubicación o modo. <span data-title-count>{{ strlen(old('title', $ad?->title ?? '')) }}/80</span></p>
                     @error('title')
                         <p class="text-[13px] text-red-600 mt-2">{{ $message }}</p>
                     @enderror
@@ -131,7 +150,7 @@
 
                 <div class="mb-5">
                     <label class="{{ $flabel }}" for="description">Descripción</label>
-                    <textarea id="description" name="description" rows="5" placeholder="Cuenta qué incluye la sesión, en qué casos ayuda, qué aceites o materiales utilizas..." class="{{ $field }} resize-none @error('description') border-red-300 @enderror">{{ old('description') }}</textarea>
+                    <textarea id="description" name="description" rows="5" placeholder="Cuenta qué incluye la sesión, en qué casos ayuda, qué aceites o materiales utilizas..." class="{{ $field }} resize-none @error('description') border-red-300 @enderror">{{ old('description', $ad?->description) }}</textarea>
                     <p class="text-[12px] text-brand-muted mt-2">Tip: menciona si traes material, si la sala es privada, si trabajas con grupos…</p>
                 </div>
 
@@ -185,7 +204,7 @@
                             <select id="city" name="city" class="{{ $field }} appearance-none pr-10 @error('city') border-red-300 @enderror">
                                 <option value="">Selecciona...</option>
                                 @foreach ($cities as $city)
-                                    <option value="{{ $city }}" @selected(old('city') === $city)>{{ $city }}</option>
+                                    <option value="{{ $city }}" @selected(old('city', $ad?->city) === $city)>{{ $city }}</option>
                                 @endforeach
                             </select>
                             <svg class="w-4 h-4 text-brand-muted absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
@@ -193,7 +212,7 @@
                     </div>
                     <div>
                         <label class="{{ $flabel }}" for="address">Dirección o zona</label>
-                        <input type="text" id="address" name="address" value="{{ old('address') }}" placeholder="Ej. C/ Cuba 22, Ruzafa" class="{{ $field }} @error('address') border-red-300 @enderror">
+                        <input type="text" id="address" name="address" value="{{ old('address', $ad?->address) }}" placeholder="Ej. C/ Cuba 22, Ruzafa" class="{{ $field }} @error('address') border-red-300 @enderror">
                     </div>
                 </div>
 
@@ -232,7 +251,7 @@
                     <div>
                         <label class="{{ $flabel }}" for="price">Precio</label>
                         <div class="flex items-center gap-2">
-                            <input type="number" id="price" name="price" min="0" step="0.01" value="{{ old('price', '45') }}" class="{{ $field }} @error('price') border-red-300 @enderror">
+                            <input type="number" id="price" name="price" min="0" step="0.01" value="{{ old('price', $ad?->price ?? '45') }}" class="{{ $field }} @error('price') border-red-300 @enderror">
                             <span class="text-[16px] text-brand-text">€</span>
                         </div>
                         <p class="text-[12px] text-brand-muted mt-2">Promedio en tu ciudad: 40-55 € la sesión.</p>
@@ -242,7 +261,7 @@
                     </div>
                     <div>
                         <label class="{{ $flabel }}" for="duration">Duración (min)</label>
-                        <input type="number" id="duration" name="duration" min="1" value="{{ old('duration', '60') }}" class="{{ $field }} @error('duration') border-red-300 @enderror">
+                        <input type="number" id="duration" name="duration" min="1" value="{{ old('duration', $ad?->duration ?? '60') }}" class="{{ $field }} @error('duration') border-red-300 @enderror">
                         <p class="text-[12px] text-brand-muted mt-2">Lo más habitual: 30, 60 o 90 minutos.</p>
                         @error('duration')
                             <p class="text-[13px] text-red-600 mt-2">{{ $message }}</p>
@@ -259,20 +278,41 @@
             {{-- ===== Paso 5: Fotos y publicar ===== --}}
             <div data-step="5" class="hidden">
                 <h2 class="font-serif text-[26px] tracking-tight">Fotos para tu anuncio</h2>
-                <p class="text-[15px] text-brand-text mt-1.5 mb-6">Sube 3-5 fotos. La primera será la principal.</p>
+                <p class="text-[15px] text-brand-text mt-1.5 mb-6">
+                    @if ($isEditing && $existingPhotos->isNotEmpty())
+                        Tienes {{ $existingPhotos->count() }} foto{{ $existingPhotos->count() === 1 ? '' : 's' }}. Puedes añadir hasta {{ $remainingPhotoSlots }} más.
+                    @else
+                        Sube 3-5 fotos. La primera será la principal.
+                    @endif
+                </p>
 
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6" data-photo-slots>
-                    @foreach (['Principal', 'Añadir', 'Añadir', 'Añadir'] as $index => $slot)
-                        <label class="aspect-square rounded-2xl bg-[#E9E6DD] hover:bg-[#E3E0D5] flex flex-col items-center justify-center gap-2 text-brand-muted transition cursor-pointer overflow-hidden relative" data-photo-slot>
-                            <input type="file" name="photos[]" accept="image/jpeg,image/jpg,image/png,image/webp" class="sr-only" data-photo-input>
-                            <span data-photo-placeholder class="flex flex-col items-center justify-center gap-2">
-                                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25z" /></svg>
-                                <span class="text-[12px]">{{ $slot }}</span>
-                            </span>
-                            <img data-photo-preview class="absolute inset-0 w-full h-full object-cover hidden" alt="">
-                        </label>
-                    @endforeach
-                </div>
+                @if ($isEditing && $existingPhotos->isNotEmpty())
+                    <div class="mb-6">
+                        <p class="text-[14px] font-medium mb-3">Fotos actuales</p>
+                        <div class="flex flex-wrap gap-3">
+                            @foreach ($existingPhotos as $photo)
+                                <div class="w-24 h-24 rounded-xl overflow-hidden bg-brand-sage-soft">
+                                    <img src="{{ $photo->url }}" alt="Foto del anuncio" class="w-full h-full object-cover">
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+
+                @if ($remainingPhotoSlots > 0)
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6" data-photo-slots>
+                        @foreach (range(1, min($remainingPhotoSlots, 4)) as $index => $slotNum)
+                            <label class="aspect-square rounded-2xl bg-[#E9E6DD] hover:bg-[#E3E0D5] flex flex-col items-center justify-center gap-2 text-brand-muted transition cursor-pointer overflow-hidden relative" data-photo-slot>
+                                <input type="file" name="photos[]" accept="image/jpeg,image/jpg,image/png,image/webp" class="sr-only" data-photo-input>
+                                <span data-photo-placeholder class="flex flex-col items-center justify-center gap-2">
+                                    <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25z" /></svg>
+                                    <span class="text-[12px]">{{ $index === 0 && ! $isEditing ? 'Principal' : 'Añadir' }}</span>
+                                </span>
+                                <img data-photo-preview class="absolute inset-0 w-full h-full object-cover hidden" alt="">
+                            </label>
+                        @endforeach
+                    </div>
+                @endif
                 @error('photos')
                     <p class="text-[13px] text-red-600 mb-4">{{ $message }}</p>
                 @enderror
@@ -281,10 +321,16 @@
                 @enderror
 
                 <div class="px-5 py-5 rounded-xl bg-[#E9E6DD]/70">
-                    <h3 class="font-serif text-[18px] tracking-tight mb-1.5">Casi listo</h3>
-                    <p class="text-[14px] text-brand-text leading-relaxed">Tu anuncio se publicará y aparecerá en el listado en menos de 1 minuto. Podrás editarlo o pausarlo cuando quieras desde tu panel.</p>
+                    <h3 class="font-serif text-[18px] tracking-tight mb-1.5">{{ $isEditing ? 'Guardar cambios' : 'Casi listo' }}</h3>
+                    <p class="text-[14px] text-brand-text leading-relaxed">
+                        @if ($isEditing)
+                            Los cambios se aplicarán al guardar. Si publicas, el anuncio volverá a aparecer en el listado.
+                        @else
+                            Tu anuncio se publicará y aparecerá en el listado en menos de 1 minuto. Podrás editarlo o pausarlo cuando quieras desde tu panel.
+                        @endif
+                    </p>
                     <label class="flex items-center gap-2 mt-4 text-[14px] text-brand-text cursor-pointer">
-                        <input type="checkbox" name="terms" value="1" @checked(old('terms')) class="w-4 h-4 rounded accent-brand-dark @error('terms') border-red-300 @enderror">
+                        <input type="checkbox" name="terms" value="1" @checked(old('terms', $ad?->terms_accepted)) class="w-4 h-4 rounded accent-brand-dark @error('terms') border-red-300 @enderror">
                         Acepto las <a href="#" class="underline hover:text-brand-dark">condiciones de publicación</a>.
                     </label>
                     @error('terms')
@@ -307,7 +353,7 @@
                     </button>
                     <button type="submit" name="action" value="publish" data-publish class="hidden items-center gap-2 px-6 py-3 bg-brand-sage text-brand-dark rounded-full text-[14px] font-medium hover:opacity-90 transition">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                        Publicar anuncio
+                        {{ $isEditing ? 'Guardar y publicar' : 'Publicar anuncio' }}
                     </button>
                 </div>
             </div>
