@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 Route::get('search', [AdController::class, 'search'])->name('search');
 Route::get('listing/{ad}', [AdController::class, 'show'])->name('listing');
+Route::post('listing/{ad}/message', [MessageController::class, 'store'])->name('messages.store');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('my-ads', [AdController::class, 'index'])->name('my-ads');
@@ -16,7 +18,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('my-ads/{ad}', [AdController::class, 'destroy'])->name('ads.destroy');
     Route::get('favorites', [FavoriteController::class, 'index'])->name('favorites');
     Route::post('favorites/{ad}/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
-    Route::view('messages', 'messages')->name('messages');
+    Route::get('messages/{conversation?}', [MessageController::class, 'index'])->name('messages');
+    Route::post('messages/{conversation}/reply', [MessageController::class, 'reply'])->name('messages.reply');
     Route::get('edit-profile', [ProfileController::class, 'edit'])->name('edit-profile');
     Route::put('edit-profile', [ProfileController::class, 'update'])->name('edit-profile.update');
     Route::view('post-ad', 'post-ad')->name('post-ad');

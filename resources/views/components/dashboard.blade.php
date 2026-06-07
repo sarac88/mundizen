@@ -174,7 +174,10 @@
                                 </svg>
                                 Mensajes
                             </span>
-                            <span class="w-5 h-5 rounded-full bg-brand-sage text-brand-dark text-[11px] font-semibold flex items-center justify-center">3</span>
+                            @php $unreadMessages = auth()->user()->unreadMessagesCount(); @endphp
+                            @if ($unreadMessages > 0)
+                                <span class="w-5 h-5 rounded-full bg-brand-sage text-brand-dark text-[11px] font-semibold flex items-center justify-center">{{ $unreadMessages }}</span>
+                            @endif
                         </a>
                         {{-- Editar perfil --}}
                         <a href="{{ route('edit-profile') }}" @class([

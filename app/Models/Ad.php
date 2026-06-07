@@ -64,6 +64,11 @@ class Ad extends Model
         return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
     }
 
+    public function conversations(): HasMany
+    {
+        return $this->hasMany(Conversation::class);
+    }
+
     public function isFavoritedBy(?User $user): bool
     {
         return $user !== null && $this->favoritedBy()->whereKey($user->id)->exists();

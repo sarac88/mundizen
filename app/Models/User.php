@@ -76,4 +76,31 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Ad::class, 'favorites')->withTimestamps();
     }
+
+    public function receivedConversations(): HasMany
+    {
+        return $this->hasMany(Conversation::class, 'owner_id');
+    }
+
+    public function sentConversations(): HasMany
+    {
+        return $this->hasMany(Conversation::class, 'sender_id');
+    }
+
+    public function unreadMessagesCount(): int
+    {
+        $asOwner = Message::query()
+            ->whereHas('conversation', fn ($query) => $query->where('owner_id', $this->id))
+            ->where('direction', Conversation::DIRECTION_CLIENT)
+            ->whereNull('read_at')
+            ->count();
+
+        $asSender = Message::query()
+            ->whereHas('conversation', fn ($query) => $query->where('sender_id', $this->id))
+            ->where('direction', Conversation::DIRECTION_OWNER)
+            ->whereNull('read_at')
+            ->count();
+
+        return $asOwner + $asSender;
+    }
 }

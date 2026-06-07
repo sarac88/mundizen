@@ -264,34 +264,63 @@
                 @php
                     $field = 'w-full px-4 py-3 rounded-xl border border-brand-dark/10 bg-white text-[14px] text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-dark/25';
                     $flabel = 'block text-[13px] font-medium mb-2';
+                    $isOwner = auth()->check() && auth()->id() === $ad->user_id;
                 @endphp
-                <form class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6 sm:p-8">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                            <label class="{{ $flabel }}">Nombre <span class="text-red-400">*</span></label>
-                            <input type="text" placeholder="Tu nombre" class="{{ $field }}">
-                        </div>
-                        <div>
-                            <label class="{{ $flabel }}">Email <span class="text-red-400">*</span></label>
-                            <input type="email" placeholder="tu@email.com" class="{{ $field }}">
-                        </div>
-                        <div class="sm:col-span-2">
-                            <label class="{{ $flabel }}">Asunto <span class="text-red-400">*</span></label>
-                            <input type="text" value="Me interesa: {{ $ad->title }}" class="{{ $field }}">
-                        </div>
-                        <div class="sm:col-span-2">
-                            <label class="{{ $flabel }}">Mensaje <span class="text-red-400">*</span></label>
-                            <textarea rows="4" placeholder="Hola, me interesa esta oferta..." class="{{ $field }} resize-none"></textarea>
-                        </div>
+
+                @if (session('status'))
+                    <div class="mb-5 rounded-2xl border border-brand-sage/30 bg-brand-sage-soft/40 px-5 py-4 text-[14px] text-brand-sage-dark">
+                        {{ session('status') }}
                     </div>
-                    <div class="flex items-center justify-between mt-6">
-                        <p class="text-[12px] text-brand-muted"><span class="text-red-400">*</span> campos obligatorios</p>
-                        <button type="submit" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-dark text-brand-cream rounded-full text-[14px] font-medium hover:opacity-90 transition">
-                            Enviar mensaje
-                            <svg class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
-                        </button>
+                @endif
+
+                @if ($isOwner)
+                    <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6 sm:p-8 text-[14px] text-brand-text">
+                        Este es tu anuncio. Los mensajes de clientes interesados aparecerán en tu <a href="{{ route('messages') }}" class="text-brand-sage-dark underline hover:text-brand-dark">panel de mensajes</a>.
                     </div>
-                </form>
+                @else
+                    <form method="POST" action="{{ route('messages.store', $ad) }}" class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6 sm:p-8">
+                        @csrf
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            @guest
+                                <div>
+                                    <label class="{{ $flabel }}" for="guest_name">Nombre <span class="text-red-400">*</span></label>
+                                    <input type="text" id="guest_name" name="guest_name" value="{{ old('guest_name') }}" placeholder="Tu nombre" class="{{ $field }} @error('guest_name') border-red-300 @enderror">
+                                    @error('guest_name')
+                                        <p class="text-[13px] text-red-600 mt-2">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div>
+                                    <label class="{{ $flabel }}" for="guest_email">Email <span class="text-red-400">*</span></label>
+                                    <input type="email" id="guest_email" name="guest_email" value="{{ old('guest_email') }}" placeholder="tu@email.com" class="{{ $field }} @error('guest_email') border-red-300 @enderror">
+                                    @error('guest_email')
+                                        <p class="text-[13px] text-red-600 mt-2">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            @endguest
+                            <div @class(['sm:col-span-2' => auth()->guest()])>
+                                <label class="{{ $flabel }}" for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" value="{{ old('subject', 'Me interesa: '.$ad->title) }}" class="{{ $field }} @error('subject') border-red-300 @enderror">
+                                @error('subject')
+                                    <p class="text-[13px] text-red-600 mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="{{ $flabel }}" for="body">Mensaje <span class="text-red-400">*</span></label>
+                                <textarea id="body" name="body" rows="4" placeholder="Hola, me interesa esta oferta..." class="{{ $field }} resize-none @error('body') border-red-300 @enderror">{{ old('body') }}</textarea>
+                                @error('body')
+                                    <p class="text-[13px] text-red-600 mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mt-6">
+                            <p class="text-[12px] text-brand-muted"><span class="text-red-400">*</span> campos obligatorios</p>
+                            <button type="submit" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-dark text-brand-cream rounded-full text-[14px] font-medium hover:opacity-90 transition">
+                                Enviar mensaje
+                                <svg class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+                            </button>
+                        </div>
+                    </form>
+                @endif
 
                 {{-- Más en categoría --}}
                 @if ($related->isNotEmpty())
