@@ -15,6 +15,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ $title ? $title.' · ' : '' }}{{ config('app.name', 'Mundizen') }}</title>
 
@@ -149,7 +150,7 @@
                                 'w-5 h-5 rounded-full text-[11px] font-semibold flex items-center justify-center',
                                 'bg-brand-sage text-brand-dark' => $active === 'favoritos',
                                 'bg-brand-dark/5 text-brand-text' => $active !== 'favoritos',
-                            ])>4</span>
+                            ])>{{ auth()->user()->favorites()->count() }}</span>
                         </a>
                         {{-- Mensajes --}}
                         <a href="{{ route('messages') }}" @class([

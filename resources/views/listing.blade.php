@@ -82,9 +82,7 @@
                             </span>
                         @endif
                     </div>
-                    <button class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center text-brand-text hover:text-brand-dark transition" aria-label="Guardar">
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-                    </button>
+                    <x-favorite-button :ad="$ad" :favorited="$isFavorited" class="absolute top-4 right-4 z-10" />
                     @unless ($mainPhoto)
                         <span class="text-[12px] text-brand-dark/35 z-10">[ sin foto ]</span>
                     @endunless
@@ -336,9 +334,7 @@
                                 <p class="text-[16px] font-medium leading-tight">{{ $ad->user->name }}</p>
                             </div>
                         </div>
-                        <button class="w-9 h-9 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-text hover:text-brand-dark transition" aria-label="Guardar">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-                        </button>
+                        <x-favorite-button :ad="$ad" :favorited="$isFavorited" variant="sidebar" />
                     </div>
 
                     <div class="grid grid-cols-2 gap-2 text-center border-t border-b border-brand-dark/5 my-5 py-4">
@@ -409,4 +405,6 @@
             });
         </script>
     @endif
+
+    <x-favorite-toggle-script />
 </x-public>

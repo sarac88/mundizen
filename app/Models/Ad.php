@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
@@ -56,6 +57,16 @@ class Ad extends Model
     public function mainPhoto(): HasOne
     {
         return $this->hasOne(AdPhoto::class)->orderBy('sort_order');
+    }
+
+    public function favoritedBy(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
+    }
+
+    public function isFavoritedBy(?User $user): bool
+    {
+        return $user !== null && $this->favoritedBy()->whereKey($user->id)->exists();
     }
 
     public function isPublished(): bool

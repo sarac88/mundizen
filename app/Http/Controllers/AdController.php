@@ -73,11 +73,16 @@ class AdController extends Controller
 
         $cities = ['Valencia', 'Barcelona', 'Madrid', 'Sevilla'];
 
+        $favoriteIds = auth()->check()
+            ? auth()->user()->favorites()->pluck('ads.id')->map(fn ($id) => (int) $id)->all()
+            : [];
+
         return view('search', [
             'ads' => $ads,
             'cities' => $cities,
             'categoryMap' => self::CATEGORY_MAP,
             'modeMap' => self::MODE_MAP,
+            'favoriteIds' => $favoriteIds,
         ]);
     }
 
@@ -96,7 +101,9 @@ class AdController extends Controller
             ->take(3)
             ->get();
 
-        return view('listing', compact('ad', 'related'));
+        $isFavorited = auth()->check() && $ad->isFavoritedBy(auth()->user());
+
+        return view('listing', compact('ad', 'related', 'isFavorited'));
     }
 
     public function index(): View

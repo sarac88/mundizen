@@ -253,7 +253,7 @@
                             {{-- Foto --}}
                             <div class="relative min-h-[300px] lg:min-h-[360px] bg-brand-cream flex items-center justify-center overflow-hidden" style="{{ $stripes }}">
                                 @if ($ad->mainPhoto)
-                                    <img src="{{ $ad->mainPhoto->url }}" alt="{{ $ad->title }}" class="absolute inset-0 w-full h-full object-cover">
+                                    <img src="{{ $ad->mainPhoto->url }}" alt="{{ $ad->title }}" class="absolute inset-0 z-0 w-full h-full object-cover">
                                 @endif
 
                                 <div class="absolute top-4 left-4 flex items-center gap-2 z-10">
@@ -271,11 +271,7 @@
                                         </span>
                                     @endif
                                 </div>
-                                <button class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center text-brand-text hover:text-brand-dark transition" aria-label="Guardar">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                    </svg>
-                                </button>
+                                <x-favorite-button :ad="$ad" :favorited="in_array($ad->id, $favoriteIds, true)" class="absolute top-4 right-4 z-20" />
                                 @unless ($ad->mainPhoto)
                                     <span class="text-[12px] text-brand-dark/35 z-10">[ sin foto ]</span>
                                 @endunless
@@ -333,4 +329,6 @@
             @endif
         </div>
     </div>
+
+    <x-favorite-toggle-script />
 </x-public>
