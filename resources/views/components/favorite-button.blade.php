@@ -8,9 +8,9 @@
     $isFavorited = $favorited ?? (auth()->check() && $ad->isFavoritedBy(auth()->user()));
 
     $classes = match ($variant) {
-        'filled' => 'w-8 h-8 rounded-full flex items-center justify-center hover:opacity-90 transition',
-        'sidebar' => 'w-9 h-9 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-text hover:text-brand-dark transition',
-        default => 'w-9 h-9 rounded-full flex items-center justify-center transition shadow-sm',
+        'filled' => 'shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:opacity-90 transition',
+        'sidebar' => 'shrink-0 w-9 h-9 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-text hover:text-brand-dark transition',
+        default => 'shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition shadow-sm',
     };
 
     $filledClasses = match ($variant) {

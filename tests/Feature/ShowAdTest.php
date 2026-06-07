@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use App\Models\Ad;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class ShowAdTest extends TestCase
@@ -85,5 +87,32 @@ class ShowAdTest extends TestCase
         $response->assertOk();
         $response->assertSee('Reflexología relacionada');
         $response->assertDontSee('Reiki no relacionado');
+    }
+
+    public function test_listing_shows_advertiser_avatar_and_bio_when_present(): void
+    {
+        Storage::fake('public');
+
+        $user = User::factory()->create([
+            'name' => 'Marta Llorente',
+            'bio' => 'Terapeuta certificada en masaje sueco y aromaterapia.',
+            'city' => 'Valencia',
+        ]);
+
+        $user->avatar_path = UploadedFile::fake()->image('avatar.jpg')->store("avatars/{$user->id}", 'public');
+        $user->save();
+
+        $ad = Ad::query()->create([
+            'user_id' => $user->id,
+            'title' => 'Masaje relajante',
+            'status' => Ad::STATUS_PUBLISHED,
+        ]);
+
+        $response = $this->get(route('listing', $ad));
+
+        $response->assertOk();
+        $response->assertSee($user->avatarUrl(), false);
+        $response->assertSee('Terapeuta certificada en masaje sueco y aromaterapia.', false);
+        $response->assertSee('Sobre Marta Llorente', false);
     }
 }

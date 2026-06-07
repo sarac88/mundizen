@@ -174,7 +174,11 @@
                     <div class="flex-1 h-px bg-brand-dark/10"></div>
                 </div>
                 <div class="flex items-start gap-4">
-                    <div class="shrink-0 w-16 h-16 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[16px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
+                    @if ($ad->user->avatarUrl())
+                        <img src="{{ $ad->user->avatarUrl() }}" alt="{{ $ad->user->name }}" class="shrink-0 w-16 h-16 aspect-square rounded-full object-cover">
+                    @else
+                        <div class="shrink-0 w-16 h-16 aspect-square rounded-full bg-brand-sage-soft text-brand-sage-dark text-[16px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
+                    @endif
                     <div class="flex-1">
                         <div class="flex items-center gap-2">
                             <p class="text-[17px] font-medium">{{ $ad->user->name }}</p>
@@ -185,8 +189,11 @@
                                 </span>
                             @endif
                         </div>
-                        @if ($ad->city)
-                            <p class="text-[13px] text-brand-muted mt-1">{{ $ad->city }}</p>
+                        @if ($ad->user->city ?? $ad->city)
+                            <p class="text-[13px] text-brand-muted mt-1">{{ $ad->user->city ?? $ad->city }}</p>
+                        @endif
+                        @if ($ad->user->bio)
+                            <p class="text-[14px] text-brand-text leading-relaxed mt-3">{{ $ad->user->bio }}</p>
                         @endif
                         @if (count($certs) > 0)
                             <div class="flex flex-wrap gap-2 mt-4">
@@ -327,11 +334,18 @@
 
                 {{-- Tarjeta del profesional --}}
                 <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.05)] p-6">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[14px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
-                            <div>
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-start gap-3 min-w-0 flex-1">
+                            @if ($ad->user->avatarUrl())
+                                <img src="{{ $ad->user->avatarUrl() }}" alt="{{ $ad->user->name }}" class="shrink-0 w-12 h-12 aspect-square rounded-full object-cover">
+                            @else
+                                <div class="shrink-0 w-12 h-12 aspect-square rounded-full bg-brand-sage-soft text-brand-sage-dark text-[14px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
+                            @endif
+                            <div class="min-w-0">
                                 <p class="text-[16px] font-medium leading-tight">{{ $ad->user->name }}</p>
+                                @if ($ad->user->bio)
+                                    <p class="text-[12px] text-brand-muted leading-snug mt-1 line-clamp-2">{{ $ad->user->bio }}</p>
+                                @endif
                             </div>
                         </div>
                         <x-favorite-button :ad="$ad" :favorited="$isFavorited" variant="sidebar" />

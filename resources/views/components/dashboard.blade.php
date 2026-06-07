@@ -80,7 +80,11 @@
                     </svg>
                     <span class="absolute top-1.5 right-2 w-2 h-2 rounded-full bg-brand-sage ring-2 ring-brand-cream"></span>
                 </button>
-                <div class="w-9 h-9 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[12px] font-semibold flex items-center justify-center">ML</div>
+                @if (auth()->user()->avatarUrl())
+                    <img src="{{ auth()->user()->avatarUrl() }}" alt="{{ auth()->user()->name }}" class="w-9 h-9 rounded-full object-cover">
+                @else
+                    <div class="w-9 h-9 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[12px] font-semibold flex items-center justify-center">{{ auth()->user()->initials() }}</div>
+                @endif
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="text-[14px] text-brand-text hover:text-brand-dark transition">Salir</button>
@@ -102,16 +106,22 @@
                 {{-- Tarjeta de perfil --}}
                 <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.05)] p-5">
                     <div class="flex items-center gap-3 pb-4 border-b border-brand-dark/5">
-                        <div class="w-11 h-11 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[14px] font-semibold flex items-center justify-center">ML</div>
+                        @if (auth()->user()->avatarUrl())
+                            <img src="{{ auth()->user()->avatarUrl() }}" alt="{{ auth()->user()->name }}" class="w-11 h-11 rounded-full object-cover">
+                        @else
+                            <div class="w-11 h-11 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[14px] font-semibold flex items-center justify-center">{{ auth()->user()->initials() }}</div>
+                        @endif
                         <div>
-                            <p class="text-[15px] font-medium leading-tight">Marta Llorente</p>
-                            <p class="text-[12px] text-brand-muted flex items-center gap-1 mt-0.5">
-                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                                </svg>
-                                Valencia
-                            </p>
+                            <p class="text-[15px] font-medium leading-tight">{{ auth()->user()->name }}</p>
+                            @if (auth()->user()->city)
+                                <p class="text-[12px] text-brand-muted flex items-center gap-1 mt-0.5">
+                                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                    </svg>
+                                    {{ auth()->user()->city }}
+                                </p>
+                            @endif
                         </div>
                     </div>
 
