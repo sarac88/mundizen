@@ -75,6 +75,35 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+
+    /* Cursor "mano" en elementos clicables (Tailwind v4 lo quitó por defecto) */
+    button:not(:disabled),
+    [role="button"]:not([aria-disabled="true"]),
+    summary,
+    select,
+    label:has(> input:is([type="checkbox"], [type="radio"])) {
+        cursor: pointer;
+    }
+
+    button:disabled,
+    [aria-disabled="true"] {
+        cursor: not-allowed;
+    }
+
+    /* Hover/active suave y moderno en todos los elementos interactivos */
+    a,
+    button,
+    summary,
+    [role="button"] {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+    }
+
+    button:not(:disabled):active,
+    [role="button"]:not([aria-disabled="true"]):active {
+        transform: scale(0.98);
+    }
 }
 
 [data-flux-field]:not(ui-radio, ui-checkbox) {

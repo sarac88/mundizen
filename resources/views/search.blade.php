@@ -297,7 +297,11 @@
 
                                 <div class="border-t border-brand-dark/5 pt-4 mt-auto flex items-center justify-between">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-9 h-9 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[11px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
+                                        @if ($ad->user->avatarUrl())
+                                            <img src="{{ $ad->user->avatarUrl() }}" alt="{{ $ad->user->name }}" class="w-9 h-9 rounded-full object-cover">
+                                        @else
+                                            <div class="w-9 h-9 rounded-full bg-brand-sage-soft text-brand-sage-dark text-[11px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
+                                        @endif
                                         <div>
                                             <p class="text-[14px] font-medium leading-tight">{{ $ad->user->name }}</p>
                                         </div>
