@@ -6,6 +6,7 @@ use App\Http\Requests\StoreMessageRequest;
 use App\Models\Ad;
 use App\Models\Conversation;
 use App\Models\User;
+use App\Services\NotificationService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -14,6 +15,7 @@ use Illuminate\View\View;
 
 class MessageController extends Controller
 {
+    public function __construct(private NotificationService $notifications) {}
     public function index(?Conversation $conversation = null): View
     {
         $user = auth()->user();
@@ -65,6 +67,12 @@ class MessageController extends Controller
         });
 
         if ($request->user()) {
+            $this->notifications->notifyNewMessage($conversation, $request->user());
+        } else {
+            $this->notifications->notifyMessageFromGuest($conversation, $validated['guest_name']);
+        }
+
+        if ($request->user()) {
             return redirect()
                 ->route('messages', $conversation)
                 ->with('status', '¡Mensaje enviado! Puedes seguir la conversación aquí.');
@@ -102,6 +110,8 @@ class MessageController extends Controller
 
             $conversation->update(['last_message_at' => now()]);
         });
+
+        $this->notifications->notifyNewMessage($conversation, $user);
 
         return redirect()->route('messages', $conversation);
     }

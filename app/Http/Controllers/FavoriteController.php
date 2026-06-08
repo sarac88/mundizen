@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ad;
+use App\Services\NotificationService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\View\View;
 
 class FavoriteController extends Controller
 {
+    public function __construct(private NotificationService $notifications) {}
     public function index(): View
     {
         $ads = auth()->user()
@@ -24,8 +26,13 @@ class FavoriteController extends Controller
     {
         abort_unless($ad->isPublished(), 404);
 
-        $result = auth()->user()->favorites()->toggle($ad->id);
+        $user = auth()->user();
+        $result = $user->favorites()->toggle($ad->id);
         $favorited = count($result['attached']) > 0;
+
+        if ($favorited) {
+            $this->notifications->notifyFavorite($ad, $user);
+        }
 
         return response()->json([
             'favorited' => $favorited,

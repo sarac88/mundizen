@@ -87,6 +87,16 @@ class User extends Authenticatable
         return $this->hasMany(Conversation::class, 'sender_id');
     }
 
+    public function appNotifications(): HasMany
+    {
+        return $this->hasMany(AppNotification::class);
+    }
+
+    public function unreadNotificationsCount(): int
+    {
+        return $this->appNotifications()->whereNull('read_at')->count();
+    }
+
     public function unreadMessagesCount(): int
     {
         $asOwner = Message::query()

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('favorites/{ad}/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
     Route::get('messages/{conversation?}', [MessageController::class, 'index'])->name('messages');
     Route::post('messages/{conversation}/reply', [MessageController::class, 'reply'])->name('messages.reply');
+    Route::post('notifications/{notification}/read', [NotificationController::class, 'read'])->name('notifications.read');
+    Route::post('notifications/read-all', [NotificationController::class, 'readAll'])->name('notifications.read-all');
+    Route::delete('notifications/{notification}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
     Route::get('edit-profile', [ProfileController::class, 'edit'])->name('edit-profile');
     Route::put('edit-profile', [ProfileController::class, 'update'])->name('edit-profile.update');
     Route::view('post-ad', 'post-ad')->name('post-ad');
