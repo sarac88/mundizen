@@ -36,17 +36,17 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         @php
             $stats = [
-                ['value' => (string) $activeCount, 'label' => 'ANUNCIOS ACTIVOS', 'note' => $activeCount > 0 ? 'Publicados' : 'Sin activos', 'noteColor' => 'text-brand-sage-dark'],
-                ['value' => (string) $ads->count(), 'label' => 'TOTAL ANUNCIOS', 'note' => $draftCount.' borradores', 'noteColor' => 'text-brand-muted'],
-                ['value' => '0', 'label' => 'VISITAS (30 DÍAS)', 'note' => 'Próximamente', 'noteColor' => 'text-brand-muted'],
-                ['value' => '0', 'label' => 'MENSAJES', 'note' => 'Próximamente', 'noteColor' => 'text-brand-muted'],
+                ['key' => 'active', 'value' => (string) $activeCount, 'label' => 'ANUNCIOS ACTIVOS', 'note' => $activeCount > 0 ? 'Publicados' : 'Sin activos', 'noteColor' => 'text-brand-sage-dark'],
+                ['key' => 'total', 'value' => (string) $ads->count(), 'label' => 'TOTAL ANUNCIOS', 'note' => $draftCount.' borradores', 'noteColor' => 'text-brand-muted'],
+                ['key' => null, 'value' => '0', 'label' => 'VISITAS (30 DÍAS)', 'note' => 'Próximamente', 'noteColor' => 'text-brand-muted'],
+                ['key' => null, 'value' => '0', 'label' => 'MENSAJES', 'note' => 'Próximamente', 'noteColor' => 'text-brand-muted'],
             ];
         @endphp
         @foreach ($stats as $stat)
             <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-5">
-                <p class="font-serif text-[34px] leading-none font-medium">{{ $stat['value'] }}</p>
+                <p class="font-serif text-[34px] leading-none font-medium" @if ($stat['key']) data-stat-value="{{ $stat['key'] }}" @endif>{{ $stat['value'] }}</p>
                 <p class="text-[11px] text-brand-muted tracking-wide mt-3">{{ $stat['label'] }}</p>
-                <p class="text-[12px] {{ $stat['noteColor'] }} font-medium mt-1.5">{{ $stat['note'] }}</p>
+                <p class="text-[12px] {{ $stat['noteColor'] }} font-medium mt-1.5" @if ($stat['key']) data-stat-note="{{ $stat['key'] }}" @endif>{{ $stat['note'] }}</p>
             </div>
         @endforeach
     </div>
@@ -93,9 +93,9 @@
                     {{-- Centro --}}
                     <div class="flex-1 min-w-0">
                         <div class="flex items-center gap-2 text-[12px] text-brand-muted mb-2 flex-wrap">
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full {{ $status['pill'] }} font-medium">
-                                <span class="w-1.5 h-1.5 rounded-full {{ $status['dot'] }}"></span>
-                                {{ $status['label'] }}
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full {{ $status['pill'] }} font-medium" data-status-pill>
+                                <span class="w-1.5 h-1.5 rounded-full {{ $status['dot'] }}" data-status-dot></span>
+                                <span data-status-label>{{ $status['label'] }}</span>
                             </span>
                             <span>{{ $ad->created_at->diffForHumans() }}</span>
                             @if ($ad->mode)
@@ -135,7 +135,12 @@
 
                     {{-- Acciones --}}
                     <div class="shrink-0 flex sm:flex-col items-end justify-between gap-3 sm:text-right">
-                        <button class="px-4 py-2 rounded-full border border-brand-dark/15 text-[13px] font-medium text-brand-dark hover:bg-brand-sage-soft/50 transition" disabled>
+                        <button
+                            type="button"
+                            data-toggle-status
+                            data-url="{{ route('ads.status', $ad) }}"
+                            class="px-4 py-2 rounded-full border border-brand-dark/15 text-[13px] font-medium text-brand-dark hover:bg-brand-sage-soft/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
                             {{ $ad->isPublished() ? 'Pausar' : 'Publicar' }}
                         </button>
 
@@ -183,7 +188,47 @@
             const countEl = document.querySelector('[data-ads-count]');
             const filterEmpty = document.querySelector('[data-ads-filter-empty]');
 
+            const badges = {
+                published: { pill: 'bg-brand-sage/15 text-brand-sage-dark', dot: 'bg-brand-sage', label: 'Activo', action: 'Pausar' },
+                draft: { pill: 'bg-neutral-200 text-neutral-600', dot: 'bg-neutral-400', label: 'Borrador', action: 'Publicar' },
+            };
+
             let currentFilter = 'all';
+
+            function refreshStats() {
+                if (!list) return;
+
+                const cards = [...list.querySelectorAll('[data-ad-card]')];
+                const total = cards.length;
+                const active = cards.filter(card => card.dataset.status === 'published').length;
+                const drafts = total - active;
+
+                const activeValue = document.querySelector('[data-stat-value="active"]');
+                const activeNote = document.querySelector('[data-stat-note="active"]');
+                const totalValue = document.querySelector('[data-stat-value="total"]');
+                const totalNote = document.querySelector('[data-stat-note="total"]');
+
+                if (activeValue) activeValue.textContent = String(active);
+                if (activeNote) activeNote.textContent = active > 0 ? 'Publicados' : 'Sin activos';
+                if (totalValue) totalValue.textContent = String(total);
+                if (totalNote) totalNote.textContent = drafts + ' borradores';
+            }
+
+            function applyCardStatus(card, status) {
+                const config = badges[status] ?? badges.draft;
+
+                card.dataset.status = status;
+
+                const pill = card.querySelector('[data-status-pill]');
+                const dot = card.querySelector('[data-status-dot]');
+                const label = card.querySelector('[data-status-label]');
+                const toggleBtn = card.querySelector('[data-toggle-status]');
+
+                if (pill) pill.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ' + config.pill + ' font-medium';
+                if (dot) dot.className = 'w-1.5 h-1.5 rounded-full ' + config.dot;
+                if (label) label.textContent = config.label;
+                if (toggleBtn) toggleBtn.textContent = config.action;
+            }
 
             function applyFilter(status) {
                 if (!list) return;
@@ -217,6 +262,39 @@
             }
 
             document.addEventListener('click', async (event) => {
+                const toggleBtn = event.target.closest('[data-toggle-status]');
+                if (toggleBtn && !toggleBtn.disabled) {
+                    toggleBtn.disabled = true;
+
+                    try {
+                        const response = await fetch(toggleBtn.dataset.url, {
+                            method: 'PATCH',
+                            headers: {
+                                'X-CSRF-TOKEN': csrf,
+                                'Accept': 'application/json',
+                                'X-Requested-With': 'XMLHttpRequest',
+                            },
+                        });
+
+                        if (!response.ok) throw new Error('toggle failed');
+
+                        const data = await response.json();
+                        const card = toggleBtn.closest('[data-ad-card]');
+
+                        if (card) {
+                            applyCardStatus(card, data.status);
+                            refreshStats();
+                            applyFilter(currentFilter);
+                        }
+                    } catch (error) {
+                        console.error(error);
+                    } finally {
+                        toggleBtn.disabled = false;
+                    }
+
+                    return;
+                }
+
                 const btn = event.target.closest('[data-delete-ad]');
                 if (!btn || btn.disabled) return;
 
@@ -253,6 +331,7 @@
                             return;
                         }
 
+                        refreshStats();
                         applyFilter(currentFilter);
                     }, 200);
                 } catch (error) {

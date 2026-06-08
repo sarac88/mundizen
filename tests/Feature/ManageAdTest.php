@@ -87,6 +87,69 @@ class ManageAdTest extends TestCase
         $this->assertCount(1, $ad->fresh()->photos);
     }
 
+    public function test_user_can_pause_published_ad_to_draft(): void
+    {
+        $user = User::factory()->create();
+        $ad = Ad::query()->create([
+            'user_id' => $user->id,
+            'title' => 'Anuncio activo',
+            'status' => Ad::STATUS_PUBLISHED,
+        ]);
+
+        $response = $this->actingAs($user)
+            ->patchJson(route('ads.status', $ad));
+
+        $response->assertOk()->assertJson([
+            'ok' => true,
+            'status' => Ad::STATUS_DRAFT,
+        ]);
+        $this->assertDatabaseHas('ads', [
+            'id' => $ad->id,
+            'status' => Ad::STATUS_DRAFT,
+        ]);
+    }
+
+    public function test_user_can_publish_draft_ad(): void
+    {
+        $user = User::factory()->create();
+        $ad = Ad::query()->create([
+            'user_id' => $user->id,
+            'title' => 'Borrador',
+            'status' => Ad::STATUS_DRAFT,
+        ]);
+
+        $response = $this->actingAs($user)
+            ->patchJson(route('ads.status', $ad));
+
+        $response->assertOk()->assertJson([
+            'ok' => true,
+            'status' => Ad::STATUS_PUBLISHED,
+        ]);
+        $this->assertDatabaseHas('ads', [
+            'id' => $ad->id,
+            'status' => Ad::STATUS_PUBLISHED,
+        ]);
+    }
+
+    public function test_user_cannot_toggle_status_of_another_users_ad(): void
+    {
+        $owner = User::factory()->create();
+        $other = User::factory()->create();
+        $ad = Ad::query()->create([
+            'user_id' => $owner->id,
+            'title' => 'Anuncio ajeno',
+            'status' => Ad::STATUS_PUBLISHED,
+        ]);
+
+        $response = $this->actingAs($other)->patch(route('ads.status', $ad));
+
+        $response->assertForbidden();
+        $this->assertDatabaseHas('ads', [
+            'id' => $ad->id,
+            'status' => Ad::STATUS_PUBLISHED,
+        ]);
+    }
+
     public function test_user_can_delete_own_ad(): void
     {
         Storage::fake('public');

@@ -200,6 +200,32 @@ class AdController extends Controller
             ->with('status', $message);
     }
 
+    public function toggleStatus(Request $request, Ad $ad): JsonResponse|RedirectResponse
+    {
+        $this->authorizeOwner($ad);
+
+        $ad->update([
+            'status' => $ad->isPublished() ? Ad::STATUS_DRAFT : Ad::STATUS_PUBLISHED,
+        ]);
+
+        $message = $ad->isPublished()
+            ? '¡Anuncio publicado! Ya está visible para todos.'
+            : 'Anuncio pausado. Ahora está guardado como borrador.';
+
+        if ($request->expectsJson() || $request->ajax()) {
+            return response()->json([
+                'ok' => true,
+                'status' => $ad->status,
+                'label' => $ad->statusLabel(),
+                'message' => $message,
+            ]);
+        }
+
+        return redirect()
+            ->route('my-ads')
+            ->with('status', $message);
+    }
+
     public function destroy(Request $request, Ad $ad): JsonResponse|RedirectResponse
     {
         $this->authorizeOwner($ad);
