@@ -18,7 +18,7 @@
         <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
             {{-- Manuales --}}
-            <a href="#" class="group p-7 px-5 bg-brand-sage-soft rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
+            <a href="{{ route('search', ['category' => 'manuales']) }}" class="group p-7 px-5 bg-brand-sage-soft rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
                 <svg class="absolute -top-5 -right-5 w-20 h-20 opacity-40" viewBox="0 0 100 100" aria-hidden="true">
                     <circle cx="50" cy="50" r="40" fill="none" stroke="#7BA888" stroke-width="1"/>
                     <circle cx="50" cy="50" r="25" fill="none" stroke="#7BA888" stroke-width="1"/>
@@ -32,7 +32,7 @@
             </a>
 
             {{-- Energéticas --}}
-            <a href="#" class="group p-7 px-5 bg-brand-sand rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
+            <a href="{{ route('search', ['category' => 'energeticas']) }}" class="group p-7 px-5 bg-brand-sand rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
                 <svg class="absolute -top-5 -right-5 w-20 h-20 opacity-40" viewBox="0 0 100 100" aria-hidden="true">
                     <path d="M50 10 Q 80 30 70 60 Q 50 90 30 60 Q 20 30 50 10 Z" fill="none" stroke="#C9A876" stroke-width="1"/>
                 </svg>
@@ -45,7 +45,7 @@
             </a>
 
             {{-- Cursos --}}
-            <a href="#" class="group p-7 px-5 bg-brand-sky rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
+            <a href="{{ route('search', ['category' => 'cursos']) }}" class="group p-7 px-5 bg-brand-sky rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
                 <svg class="absolute -top-5 -right-5 w-20 h-20 opacity-40" viewBox="0 0 100 100" aria-hidden="true">
                     <rect x="20" y="20" width="60" height="60" rx="20" fill="none" stroke="#7A9499" stroke-width="1" transform="rotate(15 50 50)"/>
                 </svg>
@@ -58,7 +58,7 @@
             </a>
 
             {{-- Productos --}}
-            <a href="#" class="group p-7 px-5 bg-brand-coral rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
+            <a href="{{ route('search', ['category' => 'productos']) }}" class="group p-7 px-5 bg-brand-coral rounded-[28px] relative overflow-hidden transition-transform hover:scale-[1.02]">
                 <svg class="absolute -top-5 -right-5 w-20 h-20 opacity-40" viewBox="0 0 100 100" aria-hidden="true">
                     <path d="M30 50 Q 50 20 70 50 Q 50 80 30 50 Z" fill="none" stroke="#B88478" stroke-width="1"/>
                 </svg>

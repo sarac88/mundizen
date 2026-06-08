@@ -20,6 +20,7 @@
         $tags = $ad->certifications ?? [];
         $certs = $ad->certifications ?? [];
         $mainPhoto = $ad->photos->first();
+        $advertiserAvatarUrl = $ad->user->avatarUrl() ?? $mainPhoto?->url;
         $publishedAdsCount = $ad->user->ads()->where('status', 'published')->count();
 
         $weekdayMap = [
@@ -174,8 +175,8 @@
                     <div class="flex-1 h-px bg-brand-dark/10"></div>
                 </div>
                 <div class="flex items-start gap-4">
-                    @if ($ad->user->avatarUrl())
-                        <img src="{{ $ad->user->avatarUrl() }}" alt="{{ $ad->user->name }}" class="shrink-0 w-16 h-16 aspect-square rounded-full object-cover">
+                    @if ($advertiserAvatarUrl)
+                        <img src="{{ $advertiserAvatarUrl }}" alt="{{ $ad->user->name }}" class="shrink-0 w-16 h-16 aspect-square rounded-full object-cover">
                     @else
                         <div class="shrink-0 w-16 h-16 aspect-square rounded-full bg-brand-sage-soft text-brand-sage-dark text-[16px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
                     @endif
@@ -365,8 +366,8 @@
                 <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.05)] p-6">
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex items-start gap-3 min-w-0 flex-1">
-                            @if ($ad->user->avatarUrl())
-                                <img src="{{ $ad->user->avatarUrl() }}" alt="{{ $ad->user->name }}" class="shrink-0 w-12 h-12 aspect-square rounded-full object-cover">
+                            @if ($advertiserAvatarUrl)
+                                <img src="{{ $advertiserAvatarUrl }}" alt="{{ $ad->user->name }}" class="shrink-0 w-12 h-12 aspect-square rounded-full object-cover">
                             @else
                                 <div class="shrink-0 w-12 h-12 aspect-square rounded-full bg-brand-sage-soft text-brand-sage-dark text-[14px] font-semibold flex items-center justify-center">{{ $ad->user->initials() }}</div>
                             @endif

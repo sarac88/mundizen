@@ -38,7 +38,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row flex-wrap gap-3">
-                    <a href="{{ route('register') }}"
+                    <a href="{{ route('post-ad') }}"
                        class="bg-brand-cream text-brand-dark px-6 py-3.5 rounded-full text-[13px] font-medium hover:opacity-90 transition">
                         Publicar anuncio
                     </a>

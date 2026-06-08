@@ -27,7 +27,12 @@
                 <span class="absolute -bottom-[22px] left-0 right-0 h-0.5 bg-brand-sage rounded-full"></span>
             @endif
         </a>
-        <a href="#" class="hover:text-brand-dark transition">Pon tu anuncio</a>
+        <a href="{{ route('post-ad') }}" class="{{ $navLink('post-ad') }}">
+            Pon tu anuncio
+            @if (request()->routeIs('post-ad'))
+                <span class="absolute -bottom-[22px] left-0 right-0 h-0.5 bg-brand-sage rounded-full"></span>
+            @endif
+        </a>
         <a href="{{ route('favorites') }}" class="{{ $navLink('favorites') }}">
             Favoritos
             @if (request()->routeIs('favorites'))

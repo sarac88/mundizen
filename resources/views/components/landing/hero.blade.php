@@ -37,20 +37,21 @@
             </p>
 
             {{-- Buscador --}}
-            <div class="bg-white p-2.5 rounded-full flex items-center gap-1.5 shadow-[0_8px_32px_rgba(42,61,54,0.08)] w-full max-w-md mx-auto lg:mx-0">
+            <form action="{{ route('search') }}" method="GET" class="bg-white p-2.5 rounded-full flex items-center gap-1.5 shadow-[0_8px_32px_rgba(42,61,54,0.08)] w-full max-w-md mx-auto lg:mx-0">
                 <div class="flex items-center gap-2 flex-1 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
                     </svg>
-                    <span class="text-[13px] text-brand-muted">Masaje, reiki, aromaterapia...</span>
+                    <input type="text" name="q" placeholder="Masaje, reiki, aromaterapia..."
+                           class="w-full bg-transparent text-[13px] text-brand-text placeholder:text-brand-muted focus:outline-none" />
                 </div>
-                <button class="bg-brand-dark text-brand-cream px-6 py-3 rounded-full text-[13px] font-medium hover:opacity-90 transition flex items-center gap-1.5">
+                <button type="submit" class="bg-brand-dark text-brand-cream px-6 py-3 rounded-full text-[13px] font-medium hover:opacity-90 transition flex items-center gap-1.5">
                     Buscar
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </button>
-            </div>
+            </form>
 
             {{-- Stats --}}
             <div class="flex flex-wrap justify-center lg:justify-start items-center gap-x-5 gap-y-3 sm:gap-x-6 mt-7 sm:mt-10">
