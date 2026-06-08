@@ -31,5 +31,31 @@
         @case('heart')
             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
             @break
+
+        @case('pencil')
+            <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+            <path d="m15 5 4 4" />
+            @break
+
+        @case('message-circle')
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+            @break
+
+        @case('calendar')
+            <path d="M8 2v4" />
+            <path d="M16 2v4" />
+            <rect width="18" height="18" x="3" y="4" rx="2" />
+            <path d="M3 10h18" />
+            @break
+
+        @case('wallet')
+            <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2" />
+            <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+            @break
+
+        @case('x')
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+            @break
     @endswitch
 </svg>

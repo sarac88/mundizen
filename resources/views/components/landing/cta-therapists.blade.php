@@ -42,10 +42,10 @@
                        class="bg-brand-cream text-brand-dark px-6 py-3.5 rounded-full text-[13px] font-medium hover:opacity-90 transition">
                         Publicar anuncio
                     </a>
-                    <a href="#"
+                    <button type="button" data-howto-open
                        class="bg-transparent text-brand-cream border border-white/25 px-6 py-3.5 rounded-full text-[13px] font-medium hover:bg-white/5 transition">
                         Ver cómo funciona
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -58,4 +58,90 @@
 
         </div>
     </div>
+
+    {{-- ===== Modal: cómo funciona ===== --}}
+    @php
+        $howtoSteps = [
+            ['icon' => 'pencil',         'title' => 'Crea tu anuncio',        'desc' => 'Publica tu práctica gratis en unos minutos. Tú eliges qué mostrar.'],
+            ['icon' => 'message-circle', 'title' => 'Conecta con clientes',    'desc' => 'Recibe mensajes de personas interesadas directamente en tu bandeja.'],
+            ['icon' => 'calendar',       'title' => 'Gestiona tu agenda',      'desc' => 'Acuerda sesiones y horarios a tu ritmo, sin intermediarios.'],
+            ['icon' => 'wallet',         'title' => 'Cobra sin comisiones',    'desc' => 'Tú gestionas el pago con tu cliente. Mundizen no se queda nada.'],
+        ];
+    @endphp
+    <div data-howto-modal
+         class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-brand-dark/50 backdrop-blur-sm opacity-0 transition-opacity duration-200"
+         role="dialog" aria-modal="true" aria-labelledby="howto-title">
+        <div data-howto-panel
+             class="relative bg-brand-cream w-full max-w-lg rounded-3xl shadow-[0_24px_80px_rgba(42,61,54,0.25)] p-6 sm:p-8 max-h-[90vh] overflow-y-auto scale-95 opacity-0 transition-all duration-200">
+
+            {{-- Cerrar --}}
+            <button type="button" data-howto-close aria-label="Cerrar"
+                    class="absolute top-5 right-5 w-9 h-9 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-text hover:text-brand-dark hover:bg-brand-dark/5 transition">
+                <x-lucide name="x" class="w-4 h-4" />
+            </button>
+
+            {{-- Cabecera --}}
+            <p class="text-[11px] text-brand-sage font-medium tracking-[2px] mb-2">CÓMO FUNCIONA —</p>
+            <h3 id="howto-title" class="font-serif font-normal text-[28px] tracking-tight">Publicar es así de simple.</h3>
+            <p class="text-[14px] text-brand-text leading-relaxed mt-2 mb-6">Cuatro pasos para empezar a recibir clientes. Sin cuotas ni letra pequeña.</p>
+
+            {{-- Pasos --}}
+            <div class="flex flex-col gap-5">
+                @foreach ($howtoSteps as $i => $step)
+                    <div class="flex items-start gap-4">
+                        <div class="relative shrink-0">
+                            <div class="w-11 h-11 rounded-full bg-brand-sage-soft text-brand-sage-dark flex items-center justify-center">
+                                <x-lucide :name="$step['icon']" class="w-5 h-5" />
+                            </div>
+                            <span class="absolute -top-1.5 -left-1.5 w-5 h-5 rounded-full bg-brand-dark text-brand-cream text-[11px] font-semibold flex items-center justify-center">{{ $i + 1 }}</span>
+                        </div>
+                        <div class="pt-1">
+                            <p class="text-[15px] font-medium leading-tight">{{ $step['title'] }}</p>
+                            <p class="text-[13px] text-brand-text leading-relaxed mt-1">{{ $step['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- CTA --}}
+            <a href="{{ route('post-ad') }}"
+               class="mt-7 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-dark text-brand-cream rounded-full text-[14px] font-medium hover:opacity-90 transition">
+                Empezar ahora
+                <x-lucide name="heart" class="w-4 h-4" />
+            </a>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const modal = document.querySelector('[data-howto-modal]');
+            if (!modal) return;
+            const panel = modal.querySelector('[data-howto-panel]');
+            const openers = document.querySelectorAll('[data-howto-open]');
+
+            function open() {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(() => {
+                    modal.classList.remove('opacity-0');
+                    panel.classList.remove('scale-95', 'opacity-0');
+                });
+            }
+            function close() {
+                modal.classList.add('opacity-0');
+                panel.classList.add('scale-95', 'opacity-0');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }, 200);
+            }
+
+            openers.forEach(b => b.addEventListener('click', open));
+            modal.querySelectorAll('[data-howto-close]').forEach(b => b.addEventListener('click', close));
+            modal.addEventListener('click', e => { if (e.target === modal) close(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) close(); });
+        })();
+    </script>
 </section>
