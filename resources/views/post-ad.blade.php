@@ -287,20 +287,27 @@
                 </p>
 
                 @if ($isEditing && $existingPhotos->isNotEmpty())
-                    <div class="mb-6">
+                    <div class="mb-6" id="existing-photos-section">
                         <p class="text-[14px] font-medium mb-3">Fotos actuales</p>
-                        <div class="flex flex-wrap gap-3">
+                        <div class="flex flex-wrap gap-3" id="existing-photos-list">
                             @foreach ($existingPhotos as $photo)
-                                <div class="w-24 h-24 rounded-xl overflow-hidden bg-brand-sage-soft">
+                                <div class="w-24 h-24 rounded-xl overflow-hidden bg-brand-sage-soft relative group" data-existing-photo="{{ $photo->id }}">
                                     <img src="{{ $photo->url }}" alt="Foto del anuncio" class="w-full h-full object-cover">
+                                    <button type="button"
+                                        class="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition hover:bg-red-600"
+                                        data-delete-photo
+                                        data-url="{{ route('ads.photos.destroy', [$ad, $photo]) }}"
+                                        title="Eliminar foto">
+                                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    </button>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                 @endif
 
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6" data-photo-slots id="new-photo-slots">
                 @if ($remainingPhotoSlots > 0)
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6" data-photo-slots>
                         @foreach (range(1, min($remainingPhotoSlots, 4)) as $index => $slotNum)
                             <label class="aspect-square rounded-2xl bg-[#E9E6DD] hover:bg-[#E3E0D5] flex flex-col items-center justify-center gap-2 text-brand-muted transition cursor-pointer overflow-hidden relative" data-photo-slot>
                                 <input type="file" name="photos[]" accept="image/jpeg,image/jpg,image/png,image/webp" class="sr-only" data-photo-input>
@@ -311,8 +318,8 @@
                                 <img data-photo-preview class="absolute inset-0 w-full h-full object-cover hidden" alt="">
                             </label>
                         @endforeach
-                    </div>
                 @endif
+                </div>
                 @error('photos')
                     <p class="text-[13px] text-red-600 mb-4">{{ $message }}</p>
                 @enderror
@@ -449,15 +456,13 @@
             toggleable('[data-cert]', certInputs);
             toggleable('[data-day]', dayInputs);
 
-            root.querySelectorAll('[data-photo-slot]').forEach(slot => {
+            function bindPhotoSlot(slot) {
                 const input = slot.querySelector('[data-photo-input]');
                 const placeholder = slot.querySelector('[data-photo-placeholder]');
                 const preview = slot.querySelector('[data-photo-preview]');
-
                 input.addEventListener('change', () => {
                     const file = input.files?.[0];
                     if (!file) return;
-
                     const reader = new FileReader();
                     reader.onload = e => {
                         preview.src = e.target.result;
@@ -465,6 +470,55 @@
                         placeholder.classList.add('hidden');
                     };
                     reader.readAsDataURL(file);
+                });
+            }
+
+            root.querySelectorAll('[data-photo-slot]').forEach(bindPhotoSlot);
+
+            const addSlotTemplate = `<label class="aspect-square rounded-2xl bg-[#E9E6DD] hover:bg-[#E3E0D5] flex flex-col items-center justify-center gap-2 text-brand-muted transition cursor-pointer overflow-hidden relative" data-photo-slot>
+                <input type="file" name="photos[]" accept="image/jpeg,image/jpg,image/png,image/webp" class="sr-only" data-photo-input>
+                <span data-photo-placeholder class="flex flex-col items-center justify-center gap-2">
+                    <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25z" /></svg>
+                    <span class="text-[12px]">Añadir</span>
+                </span>
+                <img data-photo-preview class="absolute inset-0 w-full h-full object-cover hidden" alt="">
+            </label>`;
+
+            root.querySelectorAll('[data-delete-photo]').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const photoCard = btn.closest('[data-existing-photo]');
+                    const url = btn.dataset.url;
+                    btn.disabled = true;
+
+                    try {
+                        const res = await fetch(url, {
+                            method: 'DELETE',
+                            headers: {
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ?? '',
+                                'Accept': 'application/json',
+                            },
+                        });
+                        if (!res.ok) throw new Error();
+                        const data = await res.json();
+
+                        photoCard.remove();
+
+                        const existingList = root.querySelector('#existing-photos-list');
+                        if (existingList && existingList.children.length === 0) {
+                            root.querySelector('#existing-photos-section')?.remove();
+                        }
+
+                        const slotsContainer = root.querySelector('#new-photo-slots');
+                        if (slotsContainer && data.remaining_slots > 0 && slotsContainer.querySelectorAll('[data-photo-slot]').length < 4) {
+                            const tmp = document.createElement('div');
+                            tmp.innerHTML = addSlotTemplate.trim();
+                            const newSlot = tmp.firstChild;
+                            slotsContainer.appendChild(newSlot);
+                            bindPhotoSlot(newSlot);
+                        }
+                    } catch {
+                        btn.disabled = false;
+                    }
                 });
             });
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAdRequest;
 use App\Models\Ad;
+use App\Models\AdPhoto;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -248,6 +249,19 @@ class AdController extends Controller
         return redirect()
             ->route('my-ads')
             ->with('status', 'Anuncio eliminado.');
+    }
+
+    public function destroyPhoto(Ad $ad, AdPhoto $photo): JsonResponse
+    {
+        $this->authorizeOwner($ad);
+        abort_unless($photo->ad_id === $ad->id, 404);
+
+        Storage::disk('public')->delete($photo->path);
+        $photo->delete();
+
+        $remaining = 5 - $ad->photos()->count();
+
+        return response()->json(['ok' => true, 'remaining_slots' => $remaining]);
     }
 
     private function authorizeOwner(Ad $ad): void

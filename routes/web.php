@@ -18,6 +18,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('my-ads/{ad}', [AdController::class, 'update'])->name('ads.update');
     Route::patch('my-ads/{ad}/status', [AdController::class, 'toggleStatus'])->name('ads.status');
     Route::delete('my-ads/{ad}', [AdController::class, 'destroy'])->name('ads.destroy');
+    Route::delete('my-ads/{ad}/photos/{photo}', [AdController::class, 'destroyPhoto'])->name('ads.photos.destroy');
     Route::get('favorites', [FavoriteController::class, 'index'])->name('favorites');
     Route::post('favorites/{ad}/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
     Route::get('messages/{conversation?}', [MessageController::class, 'index'])->name('messages');
