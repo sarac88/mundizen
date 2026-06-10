@@ -108,7 +108,9 @@
                             @endif
                         </div>
 
-                        <h3 class="font-serif text-[20px] tracking-tight mb-3">{{ $ad->title }}</h3>
+                        <h3 class="font-serif text-[20px] tracking-tight mb-3">
+                            <a href="{{ route('listing', $ad) }}" class="hover:underline decoration-brand-dark/30 underline-offset-2 transition">{{ $ad->title }}</a>
+                        </h3>
 
                         <div class="flex items-center gap-5 text-[13px] text-brand-muted">
                             <span class="flex items-center gap-1.5">

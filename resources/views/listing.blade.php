@@ -154,7 +154,9 @@
                         <div class="flex-1 h-px bg-brand-dark/10"></div>
                     </div>
                     <div class="space-y-4 text-[15px] text-brand-text leading-relaxed">
-                        {!! nl2br(e($ad->description)) !!}
+                        @foreach (array_filter(array_map('trim', preg_split('/\n{2,}/', $ad->description))) as $paragraph)
+                            <p>{!! nl2br(e($paragraph)) !!}</p>
+                        @endforeach
                     </div>
                 @endif
 
