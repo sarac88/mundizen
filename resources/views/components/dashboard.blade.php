@@ -99,7 +99,7 @@
             <aside class="flex flex-col gap-5">
 
                 {{-- Tarjeta de perfil --}}
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.05)] p-5">
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-5">
                     <div class="flex items-center gap-3 pb-4 border-b border-brand-dark/5">
                         @if (auth()->user()->avatarUrl())
                             <img src="{{ auth()->user()->avatarUrl() }}" alt="{{ auth()->user()->name }}" class="w-11 h-11 rounded-full object-cover">

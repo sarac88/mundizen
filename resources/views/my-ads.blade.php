@@ -43,7 +43,7 @@
             ];
         @endphp
         @foreach ($stats as $stat)
-            <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-5">
+            <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-5">
                 <p class="font-serif text-[34px] leading-none font-medium" @if ($stat['key']) data-stat-value="{{ $stat['key'] }}" @endif>{{ $stat['value'] }}</p>
                 <p class="text-[11px] text-brand-muted tracking-wide mt-3">{{ $stat['label'] }}</p>
                 <p class="text-[12px] {{ $stat['noteColor'] }} font-medium mt-1.5" @if ($stat['key']) data-stat-note="{{ $stat['key'] }}" @endif>{{ $stat['note'] }}</p>
@@ -65,7 +65,7 @@
 
     {{-- Lista de anuncios --}}
     @if ($ads->isEmpty())
-        <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-10 text-center">
+        <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-10 text-center">
             <p class="font-serif text-[24px] tracking-tight mb-2">Aún no tienes anuncios</p>
             <p class="text-[14px] text-brand-text mb-6">Publica tu primera oferta y empieza a recibir contactos.</p>
             <a href="{{ route('post-ad') }}" class="inline-flex items-center gap-2 px-5 py-3 bg-brand-dark text-brand-cream rounded-full text-[14px] font-medium hover:opacity-90 transition">
@@ -79,7 +79,7 @@
                     $status = $badge[$ad->status] ?? $badge['draft'];
                     $photo = $ad->mainPhoto;
                 @endphp
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-4 flex flex-col sm:flex-row gap-4" data-ad-card data-status="{{ $ad->status }}">
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-4 flex flex-col sm:flex-row gap-4" data-ad-card data-status="{{ $ad->status }}">
 
                     {{-- Foto --}}
                     <div class="shrink-0 w-full sm:w-28 h-28 rounded-xl overflow-hidden bg-brand-sage-soft flex items-center justify-center text-[11px] text-brand-dark/40 text-center leading-tight">
@@ -173,7 +173,7 @@
             @endforeach
         </div>
 
-        <div class="hidden bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-10 text-center" data-ads-filter-empty>
+        <div class="hidden bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-10 text-center" data-ads-filter-empty>
             <p class="font-serif text-[22px] tracking-tight mb-2">Ningún anuncio en este filtro</p>
             <p class="text-[14px] text-brand-text">Prueba con otro estado o crea un anuncio nuevo.</p>
         </div>

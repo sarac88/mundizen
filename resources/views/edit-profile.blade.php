@@ -50,7 +50,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 items-start">
 
             {{-- ===== Formulario ===== --}}
-            <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6 sm:p-8">
+            <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6 sm:p-8">
                 <h2 class="font-serif text-[22px] tracking-tight mb-6">Información personal</h2>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5">
@@ -144,7 +144,7 @@
             <div class="flex flex-col gap-6">
 
                 {{-- Tarjeta de vista previa --}}
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6 flex flex-col items-center text-center">
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6 flex flex-col items-center text-center">
                     <div class="relative w-28 h-28 rounded-full overflow-hidden bg-brand-cream flex items-center justify-center" style="{{ $stripes }}" data-avatar-preview-wrap>
                         @if ($user->avatarUrl())
                             <img src="{{ $user->avatarUrl() }}" alt="{{ $user->name }}" class="absolute inset-0 w-full h-full object-cover" data-avatar-preview>
@@ -181,7 +181,7 @@
                 </div>
 
                 {{-- Tarjeta de certificaciones (visual) --}}
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6">
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="font-serif text-[18px] tracking-tight">Certificaciones</h2>
                         <button type="button" class="inline-flex items-center gap-1.5 text-[13px] text-brand-text hover:text-brand-dark transition">

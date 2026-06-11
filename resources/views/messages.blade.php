@@ -19,7 +19,7 @@
     @endif
 
     {{-- Card unificado: lista + chat --}}
-    <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-[340px_1fr] lg:h-[680px]">
+    <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] overflow-hidden grid grid-cols-1 lg:grid-cols-[340px_1fr] lg:h-[680px]">
 
         {{-- ===== Lista de conversaciones ===== --}}
         <div class="flex flex-col overflow-hidden border-b lg:border-b-0 lg:border-r border-brand-dark/5">

@@ -28,7 +28,7 @@
     </div>
 
     @if ($ads->isEmpty())
-        <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-12 text-center">
+        <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-12 text-center">
             <p class="font-serif text-[26px] tracking-tight mb-2">Aún no tienes favoritos</p>
             <p class="text-[14px] text-brand-text mb-6">Guarda anuncios desde la búsqueda para encontrarlos aquí.</p>
             <a href="{{ route('search') }}" class="inline-flex items-center gap-2 px-5 py-3 bg-brand-dark text-brand-cream rounded-full text-[14px] font-medium hover:opacity-90 transition">
@@ -39,7 +39,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" data-favorites-grid>
             @foreach ($ads as $ad)
                 @php $categoryName = $ad->categoryLabel(); @endphp
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] overflow-hidden flex flex-col" data-favorite-card>
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] overflow-hidden flex flex-col" data-favorite-card>
 
                     {{-- Foto --}}
                     <div class="relative h-44 bg-brand-cream flex items-center justify-center overflow-hidden" style="{{ $stripes }}">
@@ -53,11 +53,11 @@
                             </span>
                         @endif
 
-                        <x-favorite-button :ad="$ad" :favorited="true" variant="filled" class="absolute top-3 right-3 z-10" />
                     </div>
 
                     {{-- Cuerpo --}}
-                    <div class="p-5 flex flex-col flex-1">
+                    <div class="p-5 flex flex-col flex-1 relative">
+                        <x-favorite-button :ad="$ad" :favorited="true" variant="filled" class="absolute top-3 right-4 z-10" />
                         @if ($ad->locationLabel())
                             <p class="text-[12px] text-brand-muted flex items-center gap-1 mb-2">
                                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">

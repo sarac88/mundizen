@@ -13,10 +13,10 @@
     ];
 
     $cats = [
-        ['icon' => 'hand',           'name' => 'Manuales',    'value' => 'manuales',    'desc' => 'masaje sueco · quiromasaje · reflexología podal'],
-        ['icon' => 'sparkles',       'name' => 'Energéticas', 'value' => 'energeticas', 'desc' => 'reiki · biomagnetismo · sanación cuántica'],
-        ['icon' => 'graduation-cap', 'name' => 'Cursos',      'value' => 'cursos',      'desc' => 'mindfulness · yoga · aromaterapia'],
-        ['icon' => 'droplet',        'name' => 'Productos',   'value' => 'productos',   'desc' => 'aceites esenciales · cosmética natural · cristales'],
+        ['icon' => 'hand',           'name' => 'Manuales',    'value' => 'manuales',    'desc' => 'masaje sueco · quiromasaje · reflexología podal', 'color' => 'hover:border-brand-sage hover:bg-brand-sage-soft/40 data-[state=on]:border-brand-sage-dark data-[state=on]:bg-brand-sage-soft data-[state=on]:ring-brand-sage', 'dot' => 'bg-brand-sage-dark', 'ring' => 'group-data-[state=on]:border-brand-sage-dark', 'icon_color' => 'text-brand-sage-dark'],
+        ['icon' => 'sparkles',       'name' => 'Energéticas', 'value' => 'energeticas', 'desc' => 'reiki · biomagnetismo · sanación cuántica',         'color' => 'hover:border-brand-sky-dark hover:bg-brand-sky/40 data-[state=on]:border-brand-sky-dark data-[state=on]:bg-brand-sky data-[state=on]:ring-brand-sky-dark', 'dot' => 'bg-brand-sky-dark', 'ring' => 'group-data-[state=on]:border-brand-sky-dark', 'icon_color' => 'text-brand-sky-dark'],
+        ['icon' => 'graduation-cap', 'name' => 'Cursos',      'value' => 'cursos',      'desc' => 'mindfulness · yoga · aromaterapia',                'color' => 'hover:border-brand-sand-dark hover:bg-brand-sand/40 data-[state=on]:border-brand-sand-dark data-[state=on]:bg-brand-sand data-[state=on]:ring-brand-sand-dark', 'dot' => 'bg-brand-sand-dark', 'ring' => 'group-data-[state=on]:border-brand-sand-dark', 'icon_color' => 'text-brand-sand-dark'],
+        ['icon' => 'droplet',        'name' => 'Productos',   'value' => 'productos',   'desc' => 'aceites esenciales · cosmética natural · cristales', 'color' => 'hover:border-brand-coral-dark hover:bg-brand-coral/40 data-[state=on]:border-brand-coral-dark data-[state=on]:bg-brand-coral data-[state=on]:ring-brand-coral-dark', 'dot' => 'bg-brand-coral-dark', 'ring' => 'group-data-[state=on]:border-brand-coral-dark', 'icon_color' => 'text-brand-coral-dark'],
     ];
 
     $certs = ['Quiromasaje (CGS)', 'Reiki nivel II', 'Aromaterapia clínica', 'Mindfulness MBSR'];
@@ -40,7 +40,7 @@
     $oldCerts = old('certifications', $ad?->certifications ?? []);
     $oldAvailability = old('availability', $ad?->availability ?? ['L', 'M', 'X', 'J', 'V']);
 
-    $field = 'w-full px-4 py-3 rounded-xl border border-brand-dark/10 bg-white text-[14px] text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-dark/25';
+    $field = 'w-full px-4 py-3 rounded-xl border-2 border-brand-dark/15 bg-white text-[14px] text-brand-dark placeholder:text-brand-muted focus:outline-none hover:border-brand-sage focus:border-brand-sage-dark transition-colors duration-200';
     $flabel = 'block text-[14px] font-medium mb-2';
 @endphp
 
@@ -93,7 +93,7 @@
         <input type="hidden" name="price_unit" id="price-unit-input" value="{{ $oldPriceUnit }}">
 
         {{-- Tarjeta del wizard --}}
-        <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.05)] p-6 sm:p-8 max-w-4xl mx-auto" data-wizard>
+        <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6 sm:p-8 max-w-4xl mx-auto" data-wizard>
 
             {{-- Stepper --}}
             <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-8">
@@ -115,16 +115,16 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     @foreach ($cats as $cat)
-                        <button type="button" data-cat data-value="{{ $cat['value'] }}" data-state="{{ $oldCategory === $cat['value'] ? 'on' : 'off' }}" class="group text-left rounded-2xl border border-brand-dark/10 p-6 flex items-center justify-between gap-4 transition hover:border-brand-dark/25 data-[state=on]:ring-2 data-[state=on]:ring-brand-dark data-[state=on]:border-brand-dark">
+                        <button type="button" data-cat data-value="{{ $cat['value'] }}" data-state="{{ $oldCategory === $cat['value'] ? 'on' : 'off' }}" class="group text-left rounded-2xl border border-brand-dark/10 p-6 flex items-center justify-between gap-4 transition-all duration-200 data-[state=on]:ring-2 {{ $cat['color'] }}">
                             <div class="flex items-start gap-4">
-                                <x-lucide :name="$cat['icon']" class="w-6 h-6 shrink-0 text-brand-sage-dark" />
+                                <x-lucide :name="$cat['icon']" class="w-6 h-6 shrink-0 {{ $cat['icon_color'] }}" />
                                 <div>
                                     <p class="font-serif text-[20px] tracking-tight">{{ $cat['name'] }}</p>
                                     <p class="text-[13px] text-brand-muted mt-1 leading-snug">{{ $cat['desc'] }}</p>
                                 </div>
                             </div>
-                            <span class="shrink-0 w-5 h-5 rounded-full border border-brand-dark/25 flex items-center justify-center transition group-data-[state=on]:border-brand-dark">
-                                <span class="w-2.5 h-2.5 rounded-full bg-brand-dark scale-0 transition group-data-[state=on]:scale-100"></span>
+                            <span class="shrink-0 w-5 h-5 rounded-full border border-brand-dark/25 flex items-center justify-center transition {{ $cat['ring'] }}">
+                                <span class="w-2.5 h-2.5 rounded-full {{ $cat['dot'] }} scale-0 transition group-data-[state=on]:scale-100"></span>
                             </span>
                         </button>
                     @endforeach
@@ -158,7 +158,7 @@
                     <label class="{{ $flabel }}">Certificaciones a mostrar</label>
                     <div class="flex flex-wrap gap-2" data-cert-group>
                         @foreach ($certs as $cert)
-                            <button type="button" data-cert data-value="{{ $cert }}" data-state="{{ in_array($cert, $oldCerts, true) ? 'on' : 'off' }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-brand-dark/15 text-[13px] text-brand-text transition data-[state=on]:bg-brand-sage-soft data-[state=on]:border-brand-sage data-[state=on]:text-brand-sage-dark">
+                            <button type="button" data-cert data-value="{{ $cert }}" data-state="{{ in_array($cert, $oldCerts, true) ? 'on' : 'off' }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border-2 border-brand-dark/20 text-[13px] text-brand-text transition data-[state=on]:bg-brand-sage-soft data-[state=on]:border-brand-sage data-[state=on]:text-brand-sage-dark">
                                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="5" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 13.4L7.5 21l4.5-2.6 4.5 2.6-1.5-7.6" /></svg>
                                 {{ $cert }}
                             </button>
@@ -180,7 +180,7 @@
                 <label class="{{ $flabel }}">Modalidad</label>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                     @foreach ($modes as $mode)
-                        <button type="button" data-mode data-value="{{ $mode['value'] }}" data-state="{{ $oldMode === $mode['value'] ? 'on' : 'off' }}" class="rounded-2xl border border-brand-dark/10 p-5 text-left text-brand-dark transition data-[state=on]:bg-brand-dark data-[state=on]:text-brand-cream data-[state=on]:border-brand-dark">
+                        <button type="button" data-mode data-value="{{ $mode['value'] }}" data-state="{{ $oldMode === $mode['value'] ? 'on' : 'off' }}" class="rounded-2xl border-2 border-brand-dark/15 p-5 text-left text-brand-dark transition data-[state=on]:bg-brand-dark data-[state=on]:text-brand-cream data-[state=on]:border-brand-dark">
                             @if ($mode['value'] === 'presencial')
                                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
                             @elseif ($mode['value'] === 'online')
@@ -220,7 +220,7 @@
                     <label class="{{ $flabel }}">Disponibilidad semanal</label>
                     <div class="flex flex-wrap gap-2.5" data-day-group>
                         @foreach ($weekdays as [$day, $on])
-                            <button type="button" data-day data-value="{{ $day }}" data-state="{{ in_array($day, $oldAvailability, true) ? 'on' : 'off' }}" class="w-11 h-11 rounded-full border border-brand-dark/15 text-[14px] font-medium text-brand-text transition data-[state=on]:bg-brand-sage-soft data-[state=on]:border-brand-sage data-[state=on]:text-brand-sage-dark">{{ $day }}</button>
+                            <button type="button" data-day data-value="{{ $day }}" data-state="{{ in_array($day, $oldAvailability, true) ? 'on' : 'off' }}" class="w-11 h-11 rounded-full border-2 border-brand-dark/20 text-[14px] font-medium text-brand-text transition data-[state=on]:bg-brand-sage-soft data-[state=on]:border-brand-sage data-[state=on]:text-brand-sage-dark">{{ $day }}</button>
                         @endforeach
                     </div>
                     <div data-day-inputs>
@@ -240,7 +240,7 @@
                 <label class="{{ $flabel }}">Unidad de precio</label>
                 <div class="flex flex-wrap gap-2 mb-6">
                     @foreach ($units as $unit)
-                        <button type="button" data-unit data-value="{{ $unit['value'] }}" data-state="{{ $oldPriceUnit === $unit['value'] ? 'on' : 'off' }}" class="px-4 py-2 rounded-full text-[13px] border border-brand-dark/15 text-brand-text transition data-[state=on]:bg-brand-dark data-[state=on]:text-brand-cream data-[state=on]:border-brand-dark">{{ $unit['label'] }}</button>
+                        <button type="button" data-unit data-value="{{ $unit['value'] }}" data-state="{{ $oldPriceUnit === $unit['value'] ? 'on' : 'off' }}" class="px-4 py-2 rounded-full text-[13px] border-2 border-brand-dark/20 text-brand-text transition data-[state=on]:bg-brand-dark data-[state=on]:text-brand-cream data-[state=on]:border-brand-dark">{{ $unit['label'] }}</button>
                     @endforeach
                 </div>
                 @error('price_unit')

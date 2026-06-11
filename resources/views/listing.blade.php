@@ -277,11 +277,11 @@
                 @endif
 
                 @if ($isOwner)
-                    <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6 sm:p-8 text-[14px] text-brand-text">
+                    <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6 sm:p-8 text-[14px] text-brand-text">
                         Este es tu anuncio. Los mensajes de clientes interesados aparecerán en tu <a href="{{ route('messages') }}" class="text-brand-sage-dark underline hover:text-brand-dark">panel de mensajes</a>.
                     </div>
                 @else
-                    <form method="POST" action="{{ route('messages.store', $ad) }}" class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6 sm:p-8">
+                    <form method="POST" action="{{ route('messages.store', $ad) }}" class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6 sm:p-8">
                         @csrf
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             @guest
@@ -333,7 +333,7 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         @foreach ($related as $rel)
-                            <a href="{{ route('listing', $rel) }}" class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] overflow-hidden block hover:shadow-[0_12px_40px_rgba(42,61,54,0.08)] transition">
+                            <a href="{{ route('listing', $rel) }}" class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] overflow-hidden block hover:shadow-[0_12px_40px_rgba(42,61,54,0.08)] transition">
                                 <div class="h-32 bg-brand-sage-soft flex items-center justify-center overflow-hidden" style="{{ $stripes }}">
                                     @if ($rel->mainPhoto)
                                         <img src="{{ $rel->mainPhoto->url }}" alt="{{ $rel->title }}" class="w-full h-full object-cover">
@@ -365,7 +365,7 @@
             <aside class="flex flex-col gap-5 lg:sticky lg:top-24">
 
                 {{-- Tarjeta del profesional --}}
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.05)] p-6">
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6">
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex items-start gap-3 min-w-0 flex-1">
                             @if ($advertiserAvatarUrl)
@@ -408,7 +408,7 @@
                 </div>
 
                 {{-- Compártelo --}}
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-6">
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-6">
                     <p class="text-[11px] text-brand-muted font-medium tracking-[1.5px] mb-4">COMPÁRTELO</p>
                     <div class="flex items-center gap-2.5">
                         <button class="flex-1 h-10 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-text hover:text-brand-dark hover:bg-brand-sage-soft/30 transition" aria-label="Copiar enlace">

@@ -56,7 +56,7 @@
                 </h1>
             </div>
 
-            <form method="GET" action="{{ route('search') }}" class="bg-white p-2 rounded-full flex items-center gap-1.5 shadow-[0_8px_32px_rgba(42,61,54,0.08)] w-full lg:w-[440px]">
+            <form method="GET" action="{{ route('search') }}" class="bg-white p-2 rounded-full flex items-center gap-1.5 border-2 border-[#c8d5d0] hover:border-brand-sage hover:shadow-[0_0_0_4px_rgba(42,61,54,0.08)] transition-all duration-300 w-full lg:w-[440px]">
                 @if ($activeCategory)
                     <input type="hidden" name="category" value="{{ $activeCategory }}">
                 @endif
@@ -93,7 +93,7 @@
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-9 pb-16 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 items-start">
 
         {{-- ===== Filtros ===== --}}
-        <aside class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-5 lg:sticky lg:top-24">
+        <aside id="filter-sidebar" class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-5 lg:sticky lg:top-24">
             <div class="flex items-center justify-between mb-5">
                 <h2 class="font-serif text-[20px] tracking-tight">Filtros</h2>
                 <a href="{{ route('search') }}" class="text-[13px] text-brand-text hover:text-brand-dark transition">Limpiar</a>
@@ -110,10 +110,8 @@
                             'bg-brand-dark text-brand-cream font-medium' => $isActive,
                             'text-brand-text hover:bg-brand-sage-soft/50' => ! $isActive,
                         ])>
-                            @if ($isActive)
-                                <span class="w-2 h-2 rounded-full bg-brand-sage"></span>
-                            @elseif ($cat['icon'])
-                                <x-lucide :name="$cat['icon']" class="w-[18px] h-[18px]" />
+                            @if ($cat['icon'])
+                                <x-lucide :name="$cat['icon']" class="w-[18px] h-[18px] {{ $isActive ? 'text-brand-sage' : '' }}" />
                             @endif
                             {{ $cat['name'] }}
                         </a>
@@ -139,7 +137,7 @@
                 <div>
                     <p class="text-[11px] text-brand-muted font-medium tracking-[1.5px] mb-3">CIUDAD</p>
                     <div class="relative">
-                        <select name="city" onchange="this.form.submit()" class="w-full appearance-none px-4 py-3 pr-10 rounded-xl border border-brand-dark/10 bg-transparent text-[14px] text-brand-dark focus:outline-none focus:border-brand-dark/25">
+                        <select name="city" onchange="this.form.requestSubmit()" class="w-full appearance-none px-4 py-3 pr-10 rounded-xl border border-brand-dark/10 bg-transparent text-[14px] text-brand-dark focus:outline-none focus:border-brand-dark/25">
                             <option value="">Todas las ciudades</option>
                             @foreach ($cities as $city)
                                 <option value="{{ $city }}" @selected(request('city') === $city)>{{ $city }}</option>
@@ -173,7 +171,7 @@
                         <span>0 €</span>
                         <span id="max-price-label">{{ $maxPrice }} €</span>
                     </div>
-                    <input type="range" name="max_price" min="0" max="300" value="{{ $maxPrice }}" class="w-full accent-brand-dark" oninput="document.getElementById('max-price-label').textContent = this.value + ' €'" onchange="this.form.submit()">
+                    <input type="range" name="max_price" min="0" max="300" value="{{ $maxPrice }}" class="w-full accent-brand-dark" oninput="document.getElementById('max-price-label').textContent = this.value + ' €'" onchange="this.form.requestSubmit()">
                 </div>
             </form>
 
@@ -201,7 +199,7 @@
         </aside>
 
         {{-- ===== Resultados ===== --}}
-        <div>
+        <div id="search-results">
             <div class="flex items-center justify-between mb-5">
                 <p class="text-[14px] text-brand-text">
                     <span class="font-serif text-[18px] font-medium">{{ $ads->total() }}</span> resultados
@@ -234,7 +232,7 @@
             </div>
 
             @if ($ads->isEmpty())
-                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] p-12 text-center">
+                <div class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] p-12 text-center">
                     <p class="font-serif text-[26px] tracking-tight mb-2">No hay anuncios que coincidan</p>
                     <p class="text-[14px] text-brand-text mb-6">Prueba a ampliar los filtros o buscar con otros términos.</p>
                     <a href="{{ route('search') }}" class="inline-flex items-center gap-2 px-5 py-3 bg-brand-dark text-brand-cream rounded-full text-[14px] font-medium hover:opacity-90 transition">
@@ -248,7 +246,7 @@
                             $categoryName = $ad->categoryLabel();
                             $tags = $ad->displayTags();
                         @endphp
-                        <article class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_8px_32px_rgba(42,61,54,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+                        <article class="bg-white rounded-2xl border border-brand-dark/5 shadow-[0_1px_4px_rgba(42,61,54,0.07)] overflow-hidden grid grid-cols-1 lg:grid-cols-2">
 
                             {{-- Foto --}}
                             <div class="relative min-h-[300px] lg:min-h-[360px] bg-brand-cream flex items-center justify-center overflow-hidden" style="{{ $stripes }}">
@@ -271,7 +269,6 @@
                                         </span>
                                     @endif
                                 </div>
-                                <x-favorite-button :ad="$ad" :favorited="in_array($ad->id, $favoriteIds, true)" class="absolute top-4 right-4 z-20" />
                                 @unless ($ad->mainPhoto)
                                     <span class="text-[12px] text-brand-dark/35 z-10">[ sin foto ]</span>
                                 @endunless
@@ -279,10 +276,13 @@
 
                             {{-- Info --}}
                             <div class="p-6 lg:p-8 flex flex-col">
-                                @if ($ad->locationLabel())
-                                    <p class="text-[11px] text-brand-sage font-medium tracking-[1.5px] mb-2">{{ strtoupper($ad->locationLabel()) }} —</p>
-                                @endif
-                                <h3 class="font-serif text-[26px] leading-tight tracking-tight mb-3">{{ $ad->title }}</h3>
+                                <div class="flex items-start justify-between gap-2 mb-2">
+                                    <p class="text-[11px] text-brand-sage font-medium tracking-[1.5px]">{{ $ad->locationLabel() ? strtoupper($ad->locationLabel()) . ' —' : '' }}</p>
+                                    <x-favorite-button :ad="$ad" :favorited="in_array($ad->id, $favoriteIds, true)" class="shrink-0 -mt-1 -mr-1" />
+                                </div>
+                                <a href="{{ route('listing', $ad) }}" class="hover:text-brand-sage transition-colors">
+                                    <h3 class="font-serif text-[26px] leading-tight tracking-tight mb-3">{{ $ad->title }}</h3>
+                                </a>
                                 @if ($ad->description)
                                     <p class="text-[14px] text-brand-text leading-relaxed mb-4 line-clamp-4">{{ $ad->description }}</p>
                                 @endif
@@ -335,4 +335,54 @@
     </div>
 
     <x-favorite-toggle-script />
+
+    <script>
+    (function () {
+        function fetchPage(url) {
+            const sidebar = document.getElementById('filter-sidebar');
+            const results = document.getElementById('search-results');
+            results.style.opacity = '0.5';
+            results.style.transition = 'opacity 0.2s';
+
+            fetch(url)
+                .then(function (r) { return r.text(); })
+                .then(function (html) {
+                    var doc = new DOMParser().parseFromString(html, 'text/html');
+                    var newSidebar = doc.getElementById('filter-sidebar');
+                    var newResults = doc.getElementById('search-results');
+                    if (newSidebar) sidebar.innerHTML = newSidebar.innerHTML;
+                    if (newResults) results.innerHTML = newResults.innerHTML;
+                    results.style.opacity = '1';
+                    history.pushState({}, '', url);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                })
+                .catch(function () { window.location.href = url; });
+        }
+
+        // Links inside sidebar (category, mode) and results (sort, pagination)
+        document.addEventListener('click', function (e) {
+            var link = e.target.closest('#filter-sidebar a, #search-results a');
+            if (!link) return;
+            var url;
+            try { url = new URL(link.href); } catch (err) { return; }
+            if (url.pathname !== window.location.pathname) return;
+            e.preventDefault();
+            fetchPage(link.href);
+        });
+
+        // Sidebar form submit (city select, price range)
+        document.addEventListener('submit', function (e) {
+            var form = e.target.closest('#filter-sidebar form');
+            if (!form) return;
+            e.preventDefault();
+            var params = new URLSearchParams(new FormData(form));
+            fetchPage(form.action + '?' + params.toString());
+        });
+
+        // Browser back / forward
+        window.addEventListener('popstate', function () {
+            fetchPage(window.location.href);
+        });
+    })();
+    </script>
 </x-public>
