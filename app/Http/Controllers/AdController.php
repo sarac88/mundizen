@@ -93,6 +93,7 @@ class AdController extends Controller
     {
         abort_unless($ad->isPublished(), 404);
 
+        $ad->incrementViews();
         $ad->load(['user', 'photos']);
 
         $related = Ad::query()
@@ -114,6 +115,7 @@ class AdController extends Controller
         $ads = auth()->user()
             ->ads()
             ->with('mainPhoto')
+            ->withCount(['favoritedBy', 'conversations'])
             ->latest()
             ->get();
 

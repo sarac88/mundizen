@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
     'price',
     'duration',
     'status',
+    'views_count',
     'terms_accepted',
 ])]
 class Ad extends Model
@@ -145,6 +146,11 @@ class Ad extends Model
         ]);
 
         return implode(' · ', $parts);
+    }
+
+    public function incrementViews(): void
+    {
+        $this->increment('views_count');
     }
 
     public function isVerified(): bool
