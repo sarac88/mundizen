@@ -1,3 +1,12 @@
+@php
+    use App\Models\Ad;
+    $counts = Ad::query()
+        ->where('status', Ad::STATUS_PUBLISHED)
+        ->whereNotNull('category')
+        ->selectRaw('category, count(*) as total')
+        ->groupBy('category')
+        ->pluck('total', 'category');
+@endphp
 <section class="relative px-4 py-8 md:px-6 md:py-10 lg:px-9 lg:py-14">
 
     {{-- Formas flotantes decorativas (todas dentro de los bordes) --}}
@@ -28,7 +37,7 @@
                 </div>
                 <p class="text-[15px] font-medium mb-1.5 relative">Manuales</p>
                 <p class="text-xs text-brand-text leading-relaxed relative">Masaje, quiromasaje, reflexología</p>
-                <p class="text-[11px] text-brand-sage-dark font-medium mt-3 relative">682 terapeutas →</p>
+                <p class="text-[11px] text-brand-sage-dark font-medium mt-3 relative">{{ $counts['manuales'] ?? 0 }} anuncios →</p>
             </a>
 
             {{-- Energéticas --}}
@@ -41,7 +50,7 @@
                 </div>
                 <p class="text-[15px] font-medium mb-1.5 relative">Energéticas</p>
                 <p class="text-xs text-brand-text leading-relaxed relative">Reiki, chakras, biomagnetismo</p>
-                <p class="text-[11px] text-brand-sand-dark font-medium mt-3 relative">438 terapeutas →</p>
+                <p class="text-[11px] text-brand-sand-dark font-medium mt-3 relative">{{ $counts['energeticas'] ?? 0 }} anuncios →</p>
             </a>
 
             {{-- Cursos --}}
@@ -54,7 +63,7 @@
                 </div>
                 <p class="text-[15px] font-medium mb-1.5 relative">Cursos</p>
                 <p class="text-xs text-brand-text leading-relaxed relative">Talleres y formación online</p>
-                <p class="text-[11px] text-brand-sky-dark font-medium mt-3 relative">126 disponibles →</p>
+                <p class="text-[11px] text-brand-sky-dark font-medium mt-3 relative">{{ $counts['cursos'] ?? 0 }} disponibles →</p>
             </a>
 
             {{-- Productos --}}
@@ -67,7 +76,7 @@
                 </div>
                 <p class="text-[15px] font-medium mb-1.5 relative">Productos</p>
                 <p class="text-xs text-brand-text leading-relaxed relative">Aceites, cosmética natural</p>
-                <p class="text-[11px] text-brand-coral-dark font-medium mt-3 relative">+800 productos →</p>
+                <p class="text-[11px] text-brand-coral-dark font-medium mt-3 relative">{{ $counts['productos'] ?? 0 }} productos →</p>
             </a>
 
         </div>
