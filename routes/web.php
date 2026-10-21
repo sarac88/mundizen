@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\DemoLoginController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NotificationController;
@@ -11,6 +12,7 @@ Route::view('/', 'welcome')->name('home');
 Route::get('search', [AdController::class, 'search'])->name('search');
 Route::get('listing/{ad}', [AdController::class, 'show'])->name('listing');
 Route::post('listing/{ad}/message', [MessageController::class, 'store'])->name('messages.store');
+Route::post('demo-login', [DemoLoginController::class, 'store'])->middleware('guest')->name('demo-login');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('my-ads', [AdController::class, 'index'])->name('my-ads');
