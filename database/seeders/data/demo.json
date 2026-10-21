@@ -1,0 +1,734 @@
+{
+    "users": [
+        {
+            "name": "Sara García",
+            "email": "test@example.com",
+            "city": "Madrid",
+            "phone": null,
+            "website": null,
+            "bio": "Terapeuta holística con más de 10 años de experiencia. Apasionada del bienestar y la medicina natural.",
+            "languages": null,
+            "avatar": "avatars/01.jpg",
+            "ads": [
+                {
+                    "category": "energeticas",
+                    "title": "Terapia Tuina masaje chino medicinal",
+                    "description": "Terapeuta holística certificada en Reiki Usui nivel maestro y terapia energética. Ofrezco sesiones de equilibrio energético que combinan diferentes técnicas para restablecer el flujo natural de energía del cuerpo.\n\nCada sesión incluye diagnóstico energético inicial, trabajo con los 7 chakras principales y armonización del campo áurico. Ambiente tranquilo y reconfortante.\n\nTambién ofrezco sesiones online y talleres grupales mensuales.",
+                    "certifications": [
+                        "Titulado",
+                        "Atención a domicilio",
+                        "Formación continua"
+                    ],
+                    "mode": "presencial",
+                    "city": "Las Palmas",
+                    "address": "58127 Anderson Center",
+                    "availability": [
+                        "lunes",
+                        "miercoles",
+                        "jueves",
+                        "domingo"
+                    ],
+                    "price_unit": "por_sesion",
+                    "price": "60.00",
+                    "duration": 60,
+                    "status": "published",
+                    "views_count": 1,
+                    "photos": [
+                        "ads/manuales/03.jpg",
+                        "ads/energeticas/05.jpg",
+                        "ads/productos/02.jpg"
+                    ]
+                },
+                {
+                    "category": "cursos",
+                    "title": "Formación masaje deportivo nivel básico",
+                    "description": "Formación completa y certificada en masaje deportivo. Aprenderás todo lo necesario para trabajar con deportistas: desde la teoría de la fisiología del ejercicio hasta las técnicas más avanzadas de recuperación.\n\nEl curso consta de 40 horas presenciales divididas en 5 fines de semana. Al finalizar obtendrás un certificado reconocido. Prácticas incluidas con deportistas reales.",
+                    "certifications": [
+                        "Colegiado",
+                        "Atención a domicilio"
+                    ],
+                    "mode": "online",
+                    "city": "Palma",
+                    "address": "205 Lorena Cliff",
+                    "availability": [
+                        "lunes",
+                        "domingo",
+                        "martes",
+                        "sabado"
+                    ],
+                    "price_unit": "por_curso",
+                    "price": "40.00",
+                    "duration": 75,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/manuales/04.jpg",
+                        "ads/productos/01.jpg",
+                        "ads/manuales/07.jpg",
+                        "ads/cursos/10.jpg"
+                    ]
+                },
+                {
+                    "category": "productos",
+                    "title": "Rodillo de jade facial y corporal",
+                    "description": "Pack completo de aceites esenciales 100% naturales y orgánicos para masaje profesional. Incluye: aceite base de almendra dulce, jojoba, y 5 aceites esenciales (lavanda, eucalipto, menta, romero y naranja dulce).\n\nTodos los productos son certificados ecológicos, sin parabenos ni siliconas. Envasados en vidrio ámbar para preservar sus propiedades. Incluye guía de mezclas y usos recomendados.",
+                    "certifications": [
+                        "Experiencia +5 años",
+                        "Titulado",
+                        "Colegiado"
+                    ],
+                    "mode": "domicilio",
+                    "city": "Zaragoza",
+                    "address": "8351 Bart Walk Suite 122",
+                    "availability": [
+                        "miercoles",
+                        "martes",
+                        "jueves",
+                        "sabado",
+                        "viernes",
+                        "lunes"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "70.00",
+                    "duration": 30,
+                    "status": "published",
+                    "views_count": 1,
+                    "photos": [
+                        "ads/productos/02.jpg",
+                        "ads/productos/03.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Laura Martínez",
+            "email": "laura@example.com",
+            "city": "Barcelona",
+            "phone": null,
+            "website": null,
+            "bio": "Fisioterapeuta colegiada y masajista deportiva. Me encanta acompañar a las personas en su proceso de recuperación.",
+            "languages": null,
+            "avatar": "avatars/02.jpg",
+            "ads": [
+                {
+                    "category": "productos",
+                    "title": "Bolas de masaje de bambú y piedras",
+                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "certifications": [
+                        "Experiencia +5 años"
+                    ],
+                    "mode": "domicilio",
+                    "city": "Barcelona",
+                    "address": "60480 Toy Road Suite 246",
+                    "availability": [
+                        "viernes",
+                        "miercoles",
+                        "jueves",
+                        "martes",
+                        "lunes"
+                    ],
+                    "price_unit": "por_hora",
+                    "price": "150.00",
+                    "duration": 90,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/05.jpg",
+                        "ads/productos/06.jpg",
+                        "ads/productos/07.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Carmen Ruiz",
+            "email": "carmen@example.com",
+            "city": "Valencia",
+            "phone": null,
+            "website": null,
+            "bio": "Terapeuta ayurvédica formada en India. Creo en el poder del equilibrio cuerpo-mente para una vida plena.",
+            "languages": null,
+            "avatar": "avatars/03.jpg",
+            "ads": [
+                {
+                    "category": "energeticas",
+                    "title": "Masaje tailandés tradicional",
+                    "description": "Practicante de Shiatsu con 10 años de experiencia y formación en Japón. El Shiatsu trabaja los meridianos de energía del cuerpo mediante presión con los pulgares, palmas y codos.\n\nIdeal para: estrés y ansiedad, insomnio, dolores musculares, problemas digestivos y desequilibrios emocionales. Las sesiones se realizan sobre una colchoneta en el suelo, con ropa cómoda.\n\nPrimer consulta gratuita de 20 minutos.",
+                    "certifications": [
+                        "Titulado",
+                        "Experiencia +5 años"
+                    ],
+                    "mode": "presencial",
+                    "city": "Murcia",
+                    "address": "573 Brakus Mount Suite 610",
+                    "availability": [
+                        "sabado",
+                        "martes",
+                        "miercoles",
+                        "lunes",
+                        "domingo"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "55.00",
+                    "duration": 30,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/02.jpg",
+                        "ads/energeticas/02.jpg",
+                        "ads/energeticas/03.jpg",
+                        "ads/manuales/03.jpg"
+                    ]
+                },
+                {
+                    "category": "productos",
+                    "title": "Set camilla profesional plegable completo",
+                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "certifications": [
+                        "Colegiado",
+                        "Formación continua",
+                        "Atención a domicilio"
+                    ],
+                    "mode": "domicilio",
+                    "city": "Málaga",
+                    "address": "251 Hickle Gateway",
+                    "availability": [
+                        "miercoles",
+                        "martes",
+                        "domingo",
+                        "viernes",
+                        "lunes"
+                    ],
+                    "price_unit": "por_sesion",
+                    "price": "150.00",
+                    "duration": 90,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/03.jpg",
+                        "ads/productos/04.jpg"
+                    ]
+                },
+                {
+                    "category": "productos",
+                    "title": "Bolas de masaje de bambú y piedras",
+                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "certifications": [
+                        "Titulado"
+                    ],
+                    "mode": "online",
+                    "city": "Madrid",
+                    "address": "879 Lorenzo Coves Suite 538",
+                    "availability": [
+                        "miercoles",
+                        "jueves",
+                        "lunes",
+                        "martes",
+                        "domingo"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "40.00",
+                    "duration": 90,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/06.jpg",
+                        "ads/productos/07.jpg",
+                        "ads/productos/08.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Ana Torres",
+            "email": "ana@example.com",
+            "city": "Sevilla",
+            "phone": null,
+            "website": null,
+            "bio": "Masajista profesional especializada en bienestar femenino. Más de 8 años cuidando a mis clientas con mimo y dedicación.",
+            "languages": null,
+            "avatar": "avatars/04.jpg",
+            "ads": [
+                {
+                    "category": "productos",
+                    "title": "Bolas de masaje de bambú y piedras",
+                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "certifications": [
+                        "Certificado"
+                    ],
+                    "mode": "presencial",
+                    "city": "Palma",
+                    "address": "351 Beier Fords",
+                    "availability": [
+                        "domingo",
+                        "jueves",
+                        "viernes"
+                    ],
+                    "price_unit": "por_hora",
+                    "price": "40.00",
+                    "duration": 30,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/01.jpg",
+                        "ads/productos/02.jpg",
+                        "ads/productos/03.jpg",
+                        "ads/productos/04.jpg"
+                    ]
+                },
+                {
+                    "category": "cursos",
+                    "title": "Curso de masaje relajante para parejas",
+                    "description": "Formación completa y certificada en masaje deportivo. Aprenderás todo lo necesario para trabajar con deportistas: desde la teoría de la fisiología del ejercicio hasta las técnicas más avanzadas de recuperación.\n\nEl curso consta de 40 horas presenciales divididas en 5 fines de semana. Al finalizar obtendrás un certificado reconocido. Prácticas incluidas con deportistas reales.",
+                    "certifications": [
+                        "Formación continua"
+                    ],
+                    "mode": "online",
+                    "city": "Palma",
+                    "address": "47940 Brekke Squares",
+                    "availability": [
+                        "viernes",
+                        "domingo",
+                        "martes",
+                        "sabado",
+                        "jueves",
+                        "lunes"
+                    ],
+                    "price_unit": "por_curso",
+                    "price": "90.00",
+                    "duration": 90,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/cursos/10.jpg",
+                        "ads/manuales/10.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Marta López",
+            "email": "marta@example.com",
+            "city": "Bilbao",
+            "phone": null,
+            "website": null,
+            "bio": "Instructora de masaje y terapeuta corporal. Me apasiona enseñar y compartir el poder sanador del tacto.",
+            "languages": null,
+            "avatar": "avatars/05.jpg",
+            "ads": [
+                {
+                    "category": "manuales",
+                    "title": "Masaje descontracturante para espalda y cervicales",
+                    "description": "Masajista profesional con formación en diversas escuelas europeas. Cada sesión es un viaje hacia la relajación total del cuerpo y la mente.\n\nMe adapto completamente a tus necesidades: desde un masaje suave y relajante hasta uno más intenso para trabajar contracturas profundas. Uso productos ecológicos y libres de parabenos.\n\nHorarios flexibles, incluyendo fines de semana y festivos.",
+                    "certifications": [
+                        "Experiencia +5 años"
+                    ],
+                    "mode": "presencial",
+                    "city": "Las Palmas",
+                    "address": "8514 Walsh Vista",
+                    "availability": [
+                        "viernes",
+                        "miercoles",
+                        "lunes",
+                        "martes"
+                    ],
+                    "price_unit": "por_sesion",
+                    "price": "50.00",
+                    "duration": 90,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/manuales/09.jpg",
+                        "ads/manuales/10.jpg",
+                        "ads/manuales/11.jpg"
+                    ]
+                },
+                {
+                    "category": "manuales",
+                    "title": "Reflexología podal y masaje de pies",
+                    "description": "Fisioterapeuta colegiada especializada en masaje deportivo y terapéutico. Trabajo con deportistas amateur y profesionales para optimizar la recuperación muscular y prevenir lesiones.\n\nTécnicas utilizadas: masaje deportivo pre y post competición, cyriax, stretching activo y pasivo, y liberación miofascial.\n\nCentro ubicado en zona bien comunicada con parking gratuito. Sesiones individuales y bonos.",
+                    "certifications": [
+                        "Colegiado",
+                        "Certificado"
+                    ],
+                    "mode": "online",
+                    "city": "Murcia",
+                    "address": "9581 Schamberger Green Apt. 037",
+                    "availability": [
+                        "sabado",
+                        "lunes",
+                        "jueves",
+                        "domingo",
+                        "viernes"
+                    ],
+                    "price_unit": "por_hora",
+                    "price": "45.00",
+                    "duration": 75,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/04.jpg",
+                        "ads/manuales/02.jpg",
+                        "ads/manuales/03.jpg",
+                        "ads/manuales/04.jpg"
+                    ]
+                },
+                {
+                    "category": "energeticas",
+                    "title": "Masaje con piedras volcánicas calientes",
+                    "description": "Practicante de Shiatsu con 10 años de experiencia y formación en Japón. El Shiatsu trabaja los meridianos de energía del cuerpo mediante presión con los pulgares, palmas y codos.\n\nIdeal para: estrés y ansiedad, insomnio, dolores musculares, problemas digestivos y desequilibrios emocionales. Las sesiones se realizan sobre una colchoneta en el suelo, con ropa cómoda.\n\nPrimer consulta gratuita de 20 minutos.",
+                    "certifications": [
+                        "Colegiado",
+                        "Experiencia +5 años"
+                    ],
+                    "mode": "online",
+                    "city": "Bilbao",
+                    "address": "7243 Humberto Haven Suite 221",
+                    "availability": [
+                        "viernes",
+                        "domingo",
+                        "lunes",
+                        "sabado",
+                        "miercoles"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "70.00",
+                    "duration": 30,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/energeticas/02.jpg",
+                        "ads/energeticas/03.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Isabel Sánchez",
+            "email": "isabel@example.com",
+            "city": "Málaga",
+            "phone": null,
+            "website": null,
+            "bio": "Especialista en rituales de bienestar con aromaterapia y piedras volcánicas. Cada sesión es un momento para ti.",
+            "languages": null,
+            "avatar": "avatars/06.jpg",
+            "ads": [
+                {
+                    "category": "manuales",
+                    "title": "Masaje californiano relajante profundo",
+                    "description": "Soy terapeuta titulada con más de 8 años de experiencia en masajes terapéuticos y relajantes. Me especializo en el tratamiento de contracturas, tensión cervical y estrés acumulado.\n\nUtilizo aceites naturales de primera calidad y adapto cada sesión a las necesidades específicas de cada persona. Trabajo con técnicas de masaje sueco, californiano y tejido profundo.\n\nDisponible en mi centro en el centro de la ciudad, también puedo desplazarme a tu domicilio. Primera sesión con descuento del 20%.",
+                    "certifications": [
+                        "Titulado",
+                        "Certificado",
+                        "Atención a domicilio"
+                    ],
+                    "mode": "online",
+                    "city": "Madrid",
+                    "address": "584 Dibbert Corner Apt. 909",
+                    "availability": [
+                        "jueves",
+                        "sabado",
+                        "miercoles",
+                        "lunes"
+                    ],
+                    "price_unit": "por_hora",
+                    "price": "55.00",
+                    "duration": 60,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/manuales/07.jpg",
+                        "ads/manuales/08.jpg",
+                        "ads/manuales/09.jpg"
+                    ]
+                },
+                {
+                    "category": "manuales",
+                    "title": "Masaje de tejido profundo para dolores crónicos",
+                    "description": "Masajista profesional con formación en diversas escuelas europeas. Cada sesión es un viaje hacia la relajación total del cuerpo y la mente.\n\nMe adapto completamente a tus necesidades: desde un masaje suave y relajante hasta uno más intenso para trabajar contracturas profundas. Uso productos ecológicos y libres de parabenos.\n\nHorarios flexibles, incluyendo fines de semana y festivos.",
+                    "certifications": [
+                        "Titulado",
+                        "Experiencia +5 años"
+                    ],
+                    "mode": "online",
+                    "city": "Málaga",
+                    "address": "897 Beatty Rapid",
+                    "availability": [
+                        "lunes",
+                        "domingo",
+                        "jueves",
+                        "miercoles",
+                        "viernes"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "45.00",
+                    "duration": 45,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/manuales/10.jpg",
+                        "ads/manuales/11.jpg",
+                        "ads/productos/04.jpg",
+                        "ads/manuales/02.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Juston Langworth",
+            "email": "madelynn.veum@example.org",
+            "city": "Madrid",
+            "phone": null,
+            "website": null,
+            "bio": null,
+            "languages": null,
+            "avatar": "avatars/07.jpg",
+            "ads": [
+                {
+                    "category": "energeticas",
+                    "title": "Masaje con piedras volcánicas calientes",
+                    "description": "Terapeuta holística certificada en Reiki Usui nivel maestro y terapia energética. Ofrezco sesiones de equilibrio energético que combinan diferentes técnicas para restablecer el flujo natural de energía del cuerpo.\n\nCada sesión incluye diagnóstico energético inicial, trabajo con los 7 chakras principales y armonización del campo áurico. Ambiente tranquilo y reconfortante.\n\nTambién ofrezco sesiones online y talleres grupales mensuales.",
+                    "certifications": [
+                        "Atención a domicilio",
+                        "Colegiado"
+                    ],
+                    "mode": "domicilio",
+                    "city": "Palma",
+                    "address": "5786 Gorczany Street",
+                    "availability": [
+                        "martes",
+                        "sabado",
+                        "miercoles",
+                        "jueves",
+                        "domingo"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "45.00",
+                    "duration": 75,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/02.jpg",
+                        "ads/energeticas/02.jpg"
+                    ]
+                },
+                {
+                    "category": "productos",
+                    "title": "Aceite de argán y rosa mosqueta para masajes",
+                    "description": "Pack completo de aceites esenciales 100% naturales y orgánicos para masaje profesional. Incluye: aceite base de almendra dulce, jojoba, y 5 aceites esenciales (lavanda, eucalipto, menta, romero y naranja dulce).\n\nTodos los productos son certificados ecológicos, sin parabenos ni siliconas. Envasados en vidrio ámbar para preservar sus propiedades. Incluye guía de mezclas y usos recomendados.",
+                    "certifications": [
+                        "Formación continua"
+                    ],
+                    "mode": "presencial",
+                    "city": "Bilbao",
+                    "address": "926 Brown Lodge",
+                    "availability": [
+                        "domingo",
+                        "martes",
+                        "jueves",
+                        "miercoles"
+                    ],
+                    "price_unit": "por_hora",
+                    "price": "150.00",
+                    "duration": 30,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/01.jpg",
+                        "ads/productos/02.jpg",
+                        "ads/productos/03.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Kira Wolff PhD",
+            "email": "ischimmel@example.net",
+            "city": "Madrid",
+            "phone": null,
+            "website": null,
+            "bio": null,
+            "languages": null,
+            "avatar": "avatars/08.jpg",
+            "ads": [
+                {
+                    "category": "cursos",
+                    "title": "Curso online de reflexología podal",
+                    "description": "Aprende las técnicas básicas y avanzadas del masaje relajante en este curso práctico de fin de semana. Ideal para parejas, cuidadores y cualquier persona que quiera aprender a dar un buen masaje.\n\nContenido: anatomía básica, técnicas de effleurage y petrissage, trabajo en espalda, piernas y pies, uso de aceites y cremas. Incluye material didáctico y aceites de práctica.\n\nGrupos reducidos (máximo 8 personas) para garantizar atención personalizada.",
+                    "certifications": [
+                        "Colegiado",
+                        "Experiencia +5 años",
+                        "Certificado"
+                    ],
+                    "mode": "online",
+                    "city": "Murcia",
+                    "address": "854 Kris Junction Suite 526",
+                    "availability": [
+                        "viernes",
+                        "domingo",
+                        "sabado",
+                        "miercoles"
+                    ],
+                    "price_unit": "por_curso",
+                    "price": "150.00",
+                    "duration": 60,
+                    "status": "published",
+                    "views_count": 1,
+                    "photos": [
+                        "ads/productos/02.jpg",
+                        "ads/cursos/17.jpg",
+                        "ads/cursos/18.jpg",
+                        "ads/productos/06.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Brooklyn Medhurst V",
+            "email": "emanuel19@example.org",
+            "city": "Madrid",
+            "phone": null,
+            "website": null,
+            "bio": null,
+            "languages": null,
+            "avatar": "avatars/09.jpg",
+            "ads": [
+                {
+                    "category": "manuales",
+                    "title": "Masaje descontracturante para espalda y cervicales",
+                    "description": "Masajista profesional con formación en diversas escuelas europeas. Cada sesión es un viaje hacia la relajación total del cuerpo y la mente.\n\nMe adapto completamente a tus necesidades: desde un masaje suave y relajante hasta uno más intenso para trabajar contracturas profundas. Uso productos ecológicos y libres de parabenos.\n\nHorarios flexibles, incluyendo fines de semana y festivos.",
+                    "certifications": [
+                        "Atención a domicilio",
+                        "Certificado"
+                    ],
+                    "mode": "online",
+                    "city": "Murcia",
+                    "address": "3818 Schmitt Circles Apt. 306",
+                    "availability": [
+                        "viernes",
+                        "lunes",
+                        "martes",
+                        "sabado",
+                        "miercoles",
+                        "domingo"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "45.00",
+                    "duration": 30,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/manuales/11.jpg",
+                        "ads/productos/04.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Leonie Leffler",
+            "email": "laverna.nicolas@example.com",
+            "city": "Madrid",
+            "phone": null,
+            "website": null,
+            "bio": null,
+            "languages": null,
+            "avatar": "avatars/10.jpg",
+            "ads": [
+                {
+                    "category": "productos",
+                    "title": "Pack aceites esenciales para masaje premium",
+                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "certifications": [
+                        "Certificado"
+                    ],
+                    "mode": "presencial",
+                    "city": "Sevilla",
+                    "address": "1762 Leila Cove Apt. 221",
+                    "availability": [
+                        "domingo",
+                        "viernes",
+                        "jueves"
+                    ],
+                    "price_unit": "por_paquete",
+                    "price": "90.00",
+                    "duration": 45,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/02.jpg",
+                        "ads/productos/03.jpg",
+                        "ads/productos/04.jpg"
+                    ]
+                },
+                {
+                    "category": "productos",
+                    "title": "Bolas de masaje de bambú y piedras",
+                    "description": "Pack completo de aceites esenciales 100% naturales y orgánicos para masaje profesional. Incluye: aceite base de almendra dulce, jojoba, y 5 aceites esenciales (lavanda, eucalipto, menta, romero y naranja dulce).\n\nTodos los productos son certificados ecológicos, sin parabenos ni siliconas. Envasados en vidrio ámbar para preservar sus propiedades. Incluye guía de mezclas y usos recomendados.",
+                    "certifications": [
+                        "Colegiado",
+                        "Formación continua"
+                    ],
+                    "mode": "presencial",
+                    "city": "Las Palmas",
+                    "address": "89792 Shana Views Suite 307",
+                    "availability": [
+                        "viernes",
+                        "lunes",
+                        "domingo",
+                        "jueves",
+                        "martes"
+                    ],
+                    "price_unit": "por_sesion",
+                    "price": "80.00",
+                    "duration": 60,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/productos/05.jpg",
+                        "ads/productos/06.jpg",
+                        "ads/productos/07.jpg",
+                        "ads/productos/08.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Terrell Mayer",
+            "email": "bbergstrom@example.net",
+            "city": "Madrid",
+            "phone": null,
+            "website": null,
+            "bio": null,
+            "languages": null,
+            "avatar": "avatars/11.jpg",
+            "ads": [
+                {
+                    "category": "manuales",
+                    "title": "Masaje de tejido profundo para dolores crónicos",
+                    "description": "Soy terapeuta titulada con más de 8 años de experiencia en masajes terapéuticos y relajantes. Me especializo en el tratamiento de contracturas, tensión cervical y estrés acumulado.\n\nUtilizo aceites naturales de primera calidad y adapto cada sesión a las necesidades específicas de cada persona. Trabajo con técnicas de masaje sueco, californiano y tejido profundo.\n\nDisponible en mi centro en el centro de la ciudad, también puedo desplazarme a tu domicilio. Primera sesión con descuento del 20%.",
+                    "certifications": [
+                        "Formación continua"
+                    ],
+                    "mode": "online",
+                    "city": "Sevilla",
+                    "address": "461 Einar Forest Suite 372",
+                    "availability": [
+                        "sabado",
+                        "viernes",
+                        "miercoles",
+                        "lunes"
+                    ],
+                    "price_unit": "por_hora",
+                    "price": "200.00",
+                    "duration": 60,
+                    "status": "published",
+                    "views_count": 0,
+                    "photos": [
+                        "ads/manuales/09.jpg",
+                        "ads/manuales/10.jpg"
+                    ]
+                }
+            ]
+        }
+    ]
+}
