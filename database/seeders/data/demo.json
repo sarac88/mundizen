@@ -13,14 +13,14 @@
                 {
                     "category": "energeticas",
                     "title": "Reiki Usui y equilibrio energético",
-                    "description": "Terapeuta holística certificada en Reiki Usui nivel maestro. Trabajo el equilibrio energético combinando imposición de manos, respiración guiada y armonización de chakras.\n\nCada sesión empieza con una lectura energética para ver dónde hay bloqueo, y a partir de ahí adapto el trabajo. La mayoría de personas llegan por estrés, insomnio o una etapa de cambio que les está pesando.\n\nSala tranquila, luz cálida y música suave. También hago talleres grupales una vez al mes.",
+                    "description": "Terapeuta holística certificada en Reiki Usui nivel maestro. Trabajo el equilibrio energético combinando imposición de manos, respiración guiada y armonización de chakras.\r\n\r\nCada sesión empieza con una lectura energética para ver dónde hay bloqueo, y a partir de ahí adapto el trabajo. La mayoría de personas llegan por estrés, insomnio o una etapa de cambio que les está pesando.\r\n\r\nSala tranquila, luz cálida y música suave. También hago talleres grupales una vez al mes.",
                     "certifications": [
                         "Titulado",
                         "Atención a domicilio",
                         "Formación continua"
                     ],
                     "mode": "presencial",
-                    "city": "Las Palmas",
+                    "city": null,
                     "address": "58127 Anderson Center",
                     "availability": [
                         "L",
@@ -32,23 +32,23 @@
                     "price": "60.00",
                     "duration": 60,
                     "status": "published",
-                    "views_count": 1,
+                    "views_count": 3,
                     "photos": [
-                        "ads/manuales/03.jpg",
-                        "ads/energeticas/05.jpg",
-                        "ads/productos/02.jpg"
+                        "ads/energeticas/06.jpg",
+                        "ads/energeticas/07.jpg",
+                        "ads/energeticas/08.jpg"
                     ]
                 },
                 {
                     "category": "cursos",
                     "title": "Iniciación al masaje deportivo (online)",
-                    "description": "Curso introductorio en formato online para quien quiere entender cómo se trabaja el cuerpo de un deportista antes y después del esfuerzo.\n\nSon 8 módulos grabados más dos sesiones en directo para dudas: fisiología básica del músculo, maniobras de calentamiento, descarga post-competición y señales de alarma que nunca debes tratar tú.\n\nAcceso durante un año y material descargable. No sustituye una titulación, es la base para empezar.",
+                    "description": "Curso introductorio en formato online para quien quiere entender cómo se trabaja el cuerpo de un deportista antes y después del esfuerzo.\r\n\r\nSon 8 módulos grabados más dos sesiones en directo para dudas: fisiología básica del músculo, maniobras de calentamiento, descarga post-competición y señales de alarma que nunca debes tratar tú.\r\n\r\nAcceso durante un año y material descargable. No sustituye una titulación, es la base para empezar.",
                     "certifications": [
                         "Colegiado",
                         "Atención a domicilio"
                     ],
                     "mode": "online",
-                    "city": "Palma",
+                    "city": null,
                     "address": "205 Lorena Cliff",
                     "availability": [
                         "L",
@@ -57,28 +57,27 @@
                         "S"
                     ],
                     "price_unit": "por_curso",
-                    "price": "40.00",
+                    "price": "150.00",
                     "duration": 75,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 2,
                     "photos": [
-                        "ads/manuales/04.jpg",
-                        "ads/productos/01.jpg",
-                        "ads/manuales/07.jpg",
-                        "ads/cursos/10.jpg"
+                        "ads/cursos/19.jpg",
+                        "ads/cursos/20.jpg",
+                        "ads/cursos/21.jpg"
                     ]
                 },
                 {
                     "category": "productos",
                     "title": "Rodillo de jade facial y corporal",
-                    "description": "Rodillo de jade natural con doble cabezal, uno fino para contorno de ojos y otro ancho para pómulos, cuello y zonas corporales.\n\nEl jade se mantiene frío al tacto, así que ayuda a descongestionar por la mañana y a bajar la hinchazón. Viene con un gua sha a juego y una funda de tela.\n\nLo entrego a domicilio en Las Palmas con una hoja de instrucciones de uso.",
+                    "description": "Rodillo de jade natural con doble cabezal, uno fino para contorno de ojos y otro ancho para pómulos, cuello y zonas corporales.\r\n\r\nEl jade se mantiene frío al tacto, así que ayuda a descongestionar por la mañana y a bajar la hinchazón. Viene con un gua sha a juego y una funda de tela.\r\n\r\nLo entrego a domicilio en Las Palmas con una hoja de instrucciones de uso.",
                     "certifications": [
                         "Experiencia +5 años",
                         "Titulado",
                         "Colegiado"
                     ],
                     "mode": "domicilio",
-                    "city": "Zaragoza",
+                    "city": null,
                     "address": "8351 Bart Walk Suite 122",
                     "availability": [
                         "X",
@@ -92,10 +91,11 @@
                     "price": "70.00",
                     "duration": 30,
                     "status": "published",
-                    "views_count": 1,
+                    "views_count": 2,
                     "photos": [
-                        "ads/productos/02.jpg",
-                        "ads/productos/03.jpg"
+                        "ads/productos/09.jpg",
+                        "ads/productos/10.jpg",
+                        "ads/productos/11.jpg"
                     ]
                 }
             ]
@@ -113,7 +113,7 @@
                 {
                     "category": "productos",
                     "title": "Juego de bambúes y piedras para masaje",
-                    "description": "Set de cinco cañas de bambú de distintos calibres y ocho piedras de basalto, pensado para terapeutas que quieren incorporar bambuterapia y piedras calientes a su consulta.\n\nLas cañas están lijadas y tratadas, no astillan, y las piedras aguantan bien el calentador sin agrietarse. Incluye bolsa de transporte de lona.",
+                    "description": "Set de cinco cañas de bambú de distintos calibres y ocho piedras de basalto, pensado para terapeutas que quieren incorporar bambuterapia y piedras calientes a su consulta.\r\n\r\nLas cañas están lijadas y tratadas, no astillan, y las piedras aguantan bien el calentador sin agrietarse. Incluye bolsa de transporte de lona.",
                     "certifications": [
                         "Experiencia +5 años"
                     ],
@@ -127,15 +127,15 @@
                         "M",
                         "L"
                     ],
-                    "price_unit": "por_hora",
+                    "price_unit": "por_paquete",
                     "price": "150.00",
                     "duration": 90,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/productos/05.jpg",
-                        "ads/productos/06.jpg",
-                        "ads/productos/07.jpg"
+                        "ads/productos/12.jpg",
+                        "ads/productos/13.jpg",
+                        "ads/productos/14.jpg"
                     ]
                 }
             ]
@@ -153,13 +153,13 @@
                 {
                     "category": "energeticas",
                     "title": "Shiatsu tradicional japonés",
-                    "description": "Practicante de Shiatsu con diez años de consulta y formación en Japón. El Shiatsu trabaja los meridianos mediante presión sostenida con pulgares, palmas y codos, siempre con ropa cómoda y sin aceites.\n\nVa especialmente bien para ansiedad, insomnio, digestiones pesadas y esa tensión de hombros que no se va con nada.\n\nBono de cuatro sesiones. Lo habitual es notar cambio real a partir de la segunda.",
+                    "description": "Practicante de Shiatsu con diez años de consulta y formación en Japón. El Shiatsu trabaja los meridianos mediante presión sostenida con pulgares, palmas y codos, siempre con ropa cómoda y sin aceites.\r\n\r\nVa especialmente bien para ansiedad, insomnio, digestiones pesadas y esa tensión de hombros que no se va con nada.\r\n\r\nBono de cuatro sesiones. Lo habitual es notar cambio real a partir de la segunda.",
                     "certifications": [
                         "Titulado",
                         "Experiencia +5 años"
                     ],
                     "mode": "presencial",
-                    "city": "Murcia",
+                    "city": null,
                     "address": "573 Brakus Mount Suite 610",
                     "availability": [
                         "S",
@@ -168,29 +168,29 @@
                         "L",
                         "D"
                     ],
-                    "price_unit": "por_paquete",
+                    "price_unit": "por_sesion",
                     "price": "55.00",
                     "duration": 30,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 6,
                     "photos": [
-                        "ads/productos/02.jpg",
                         "ads/energeticas/02.jpg",
                         "ads/energeticas/03.jpg",
-                        "ads/manuales/03.jpg"
+                        "ads/energeticas/09.jpg",
+                        "ads/energeticas/10.jpg"
                     ]
                 },
                 {
                     "category": "productos",
                     "title": "Camilla profesional plegable con accesorios",
-                    "description": "Camilla plegable de aluminio de 12 kg, estable y con altura regulable. Incluye funda acolchada extraíble y lavable, reposacabezas anatómico, reposabrazos y bolsa de transporte con ruedas.\n\nMontaje en menos de un minuto, aguanta hasta 250 kg y cabe en el maletero de un coche pequeño. Es la que uso yo a domicilio desde hace cuatro años.\n\nEntrega en Las Palmas o envío a península.",
+                    "description": "Camilla plegable de aluminio de 12 kg, estable y con altura regulable. Incluye funda acolchada extraíble y lavable, reposacabezas anatómico, reposabrazos y bolsa de transporte con ruedas.\r\n\r\nMontaje en menos de un minuto, aguanta hasta 250 kg y cabe en el maletero de un coche pequeño. Es la que uso yo a domicilio desde hace cuatro años.\r\n\r\nEntrega en Las Palmas o envío a península.",
                     "certifications": [
                         "Colegiado",
                         "Formación continua",
                         "Atención a domicilio"
                     ],
                     "mode": "domicilio",
-                    "city": "Málaga",
+                    "city": null,
                     "address": "251 Hickle Gateway",
                     "availability": [
                         "X",
@@ -199,20 +199,21 @@
                         "V",
                         "L"
                     ],
-                    "price_unit": "por_sesion",
+                    "price_unit": "por_paquete",
                     "price": "150.00",
                     "duration": 90,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 3,
                     "photos": [
-                        "ads/productos/03.jpg",
-                        "ads/productos/04.jpg"
+                        "ads/productos/15.jpg",
+                        "ads/productos/16.jpg",
+                        "ads/productos/17.jpg"
                     ]
                 },
                 {
                     "category": "productos",
                     "title": "Bolas de madera para automasaje",
-                    "description": "Pack de tres bolas de madera de haya de distintos tamaños para trabajar en casa planta del pie, glúteo y zona dorsal contra la pared.\n\nEs lo que recomiendo a mis clientes para mantener entre sesiones. La más pequeña es la que más duele y la que más alivia.\n\nEnvío a toda España con guía de ejercicios en PDF.",
+                    "description": "Pack de tres bolas de madera de haya de distintos tamaños para trabajar en casa planta del pie, glúteo y zona dorsal contra la pared.\r\n\r\nEs lo que recomiendo a mis clientes para mantener entre sesiones. La más pequeña es la que más duele y la que más alivia.\r\n\r\nEnvío a toda España con guía de ejercicios en PDF.",
                     "certifications": [
                         "Titulado"
                     ],
@@ -230,11 +231,11 @@
                     "price": "40.00",
                     "duration": 90,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 3,
                     "photos": [
-                        "ads/productos/06.jpg",
-                        "ads/productos/07.jpg",
-                        "ads/productos/08.jpg"
+                        "ads/productos/18.jpg",
+                        "ads/productos/19.jpg",
+                        "ads/productos/20.jpg"
                     ]
                 }
             ]
@@ -252,28 +253,27 @@
                 {
                     "category": "productos",
                     "title": "Rodillo de bambú para drenaje",
-                    "description": "Rodillo de bambú macizo de 40 cm, el utensilio básico para bambuterapia y trabajo de drenaje en piernas y abdomen.\n\nPieza única sin tratar con barnices, solo lijado y aceitado con aceite vegetal. Se limpia con un paño húmedo.\n\nRecogida en consulta, te enseño cómo usarlo en el momento de la entrega.",
+                    "description": "Rodillo de bambú macizo de 40 cm, el utensilio básico para bambuterapia y trabajo de drenaje en piernas y abdomen.\r\n\r\nPieza única sin tratar con barnices, solo lijado y aceitado con aceite vegetal. Se limpia con un paño húmedo.\r\n\r\nRecogida en consulta, te enseño cómo usarlo en el momento de la entrega.",
                     "certifications": [
                         "Certificado"
                     ],
                     "mode": "presencial",
-                    "city": "Palma",
+                    "city": null,
                     "address": "351 Beier Fords",
                     "availability": [
                         "D",
                         "J",
                         "V"
                     ],
-                    "price_unit": "por_hora",
+                    "price_unit": "por_paquete",
                     "price": "40.00",
                     "duration": 30,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 3,
                     "photos": [
-                        "ads/productos/01.jpg",
-                        "ads/productos/02.jpg",
-                        "ads/productos/03.jpg",
-                        "ads/productos/04.jpg"
+                        "ads/productos/21.jpg",
+                        "ads/productos/22.jpg",
+                        "ads/productos/23.jpg"
                     ]
                 },
                 {
@@ -298,7 +298,7 @@
                     "price": "90.00",
                     "duration": 90,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 2,
                     "photos": [
                         "ads/cursos/10.jpg",
                         "ads/manuales/10.jpg"
@@ -319,12 +319,12 @@
                 {
                     "category": "manuales",
                     "title": "Masaje descontracturante de espalda y cervicales",
-                    "description": "Sesión centrada en la zona alta de la espalda, trapecios y cuello. Trabajo contractura por contractura, con presión firme pero avisando siempre antes de ir más profundo.\n\nViene mucha gente de oficina con dolor de cabeza tensional y rigidez al girar el cuello. En 90 minutos hay tiempo de trabajar la zona sin prisa y terminar con estiramientos pasivos.\n\nTe doy dos o tres pautas concretas para casa, porque la postura es la mitad del problema.",
+                    "description": "Sesión centrada en la zona alta de la espalda, trapecios y cuello. Trabajo contractura por contractura, con presión firme pero avisando siempre antes de ir más profundo.\r\n\r\nViene mucha gente de oficina con dolor de cabeza tensional y rigidez al girar el cuello. En 90 minutos hay tiempo de trabajar la zona sin prisa y terminar con estiramientos pasivos.\r\n\r\nTe doy dos o tres pautas concretas para casa, porque la postura es la mitad del problema.",
                     "certifications": [
                         "Experiencia +5 años"
                     ],
                     "mode": "presencial",
-                    "city": "Las Palmas",
+                    "city": "Barcelona",
                     "address": "8514 Walsh Vista",
                     "availability": [
                         "V",
@@ -336,23 +336,23 @@
                     "price": "50.00",
                     "duration": 90,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/manuales/09.jpg",
-                        "ads/manuales/10.jpg",
-                        "ads/manuales/11.jpg"
+                        "ads/manuales/12.jpg",
+                        "ads/manuales/13.jpg",
+                        "ads/manuales/14.jpg"
                     ]
                 },
                 {
                     "category": "manuales",
                     "title": "Reflexología podal terapéutica",
-                    "description": "Fisioterapeuta colegiada con formación en reflexología. Trabajo los puntos reflejos del pie para aliviar tensión general, mejorar el descanso y ayudar con digestiones y retención de líquidos.\n\nLa sesión es de pies y manos, sin necesidad de desvestirse. Empiezo con un mapeo de las zonas sensibles y de ahí sale el plan de trabajo.\n\nSesiones de seguimiento online para pautas de automasaje entre visitas.",
+                    "description": "Fisioterapeuta colegiada con formación en reflexología. Trabajo los puntos reflejos del pie para aliviar tensión general, mejorar el descanso y ayudar con digestiones y retención de líquidos.\r\n\r\nLa sesión es de pies y manos, sin necesidad de desvestirse. Empiezo con un mapeo de las zonas sensibles y de ahí sale el plan de trabajo.\r\n\r\nSesiones de seguimiento online para pautas de automasaje entre visitas.",
                     "certifications": [
                         "Colegiado",
                         "Certificado"
                     ],
                     "mode": "online",
-                    "city": "Murcia",
+                    "city": null,
                     "address": "9581 Schamberger Green Apt. 037",
                     "availability": [
                         "S",
@@ -365,24 +365,23 @@
                     "price": "45.00",
                     "duration": 75,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 2,
                     "photos": [
-                        "ads/productos/04.jpg",
-                        "ads/manuales/02.jpg",
-                        "ads/manuales/03.jpg",
-                        "ads/manuales/04.jpg"
+                        "ads/manuales/15.jpg",
+                        "ads/manuales/16.jpg",
+                        "ads/manuales/17.jpg"
                     ]
                 },
                 {
                     "category": "energeticas",
                     "title": "Piedras calientes y armonización de chakras",
-                    "description": "Sesión que combina piedras de basalto calentadas a 50 °C colocadas en los puntos de los chakras con trabajo energético manual.\n\nEl calor relaja el músculo profundo sin presión, así que es buena opción si no toleras bien un masaje intenso. La sensación es de peso agradable y sueño.\n\nBono de tres sesiones. Lo recomiendo en otoño e invierno sobre todo.",
+                    "description": "Sesión que combina piedras de basalto calentadas a 50 °C colocadas en los puntos de los chakras con trabajo energético manual.\r\n\r\nEl calor relaja el músculo profundo sin presión, así que es buena opción si no toleras bien un masaje intenso. La sensación es de peso agradable y sueño.\r\n\r\nBono de tres sesiones. Lo recomiendo en otoño e invierno sobre todo.",
                     "certifications": [
                         "Colegiado",
                         "Experiencia +5 años"
                     ],
                     "mode": "online",
-                    "city": "Bilbao",
+                    "city": null,
                     "address": "7243 Humberto Haven Suite 221",
                     "availability": [
                         "V",
@@ -395,9 +394,8 @@
                     "price": "70.00",
                     "duration": 30,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 3,
                     "photos": [
-                        "ads/energeticas/02.jpg",
                         "ads/energeticas/03.jpg"
                     ]
                 }
@@ -416,14 +414,14 @@
                 {
                     "category": "manuales",
                     "title": "Masaje californiano relajante",
-                    "description": "Terapeuta titulada con más de ocho años de experiencia. El californiano son maniobras largas, envolventes y lentas, pensadas para que el sistema nervioso baje de revoluciones.\n\nNo es un masaje de descarga: aquí no se busca romper contracturas sino soltar el cuerpo entero. Si llegas muy acelerada o duermes mal, este es el tuyo.\n\nAceite de almendra templado y música en directo de fondo.",
+                    "description": "Terapeuta titulada con más de ocho años de experiencia. El californiano son maniobras largas, envolventes y lentas, pensadas para que el sistema nervioso baje de revoluciones.\r\n\r\nNo es un masaje de descarga: aquí no se busca romper contracturas sino soltar el cuerpo entero. Si llegas muy acelerada o duermes mal, este es el tuyo.\r\n\r\nAceite de almendra templado y música en directo de fondo.",
                     "certifications": [
                         "Titulado",
                         "Certificado",
                         "Atención a domicilio"
                     ],
-                    "mode": "online",
-                    "city": "Madrid",
+                    "mode": "presencial",
+                    "city": "Valencia",
                     "address": "584 Dibbert Corner Apt. 909",
                     "availability": [
                         "J",
@@ -431,27 +429,27 @@
                         "X",
                         "L"
                     ],
-                    "price_unit": "por_hora",
+                    "price_unit": "por_sesion",
                     "price": "55.00",
                     "duration": 60,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/manuales/07.jpg",
-                        "ads/manuales/08.jpg",
-                        "ads/manuales/09.jpg"
+                        "ads/manuales/18.jpg",
+                        "ads/manuales/19.jpg",
+                        "ads/manuales/20.jpg"
                     ]
                 },
                 {
                     "category": "manuales",
                     "title": "Masaje de tejido profundo",
-                    "description": "Trabajo de presión profunda sobre una zona concreta: lumbares, cintilla iliotibial, antebrazos o glúteo, según lo que traigas.\n\nSon 45 minutos de trabajo lento y localizado. Avisa que puede molestar durante la sesión y dejar algo de agujetas al día siguiente; es normal y pasa en 48 horas.\n\nBono de cuatro sesiones, que es lo que suele hacer falta para un dolor instalado desde hace meses.",
+                    "description": "Trabajo de presión profunda sobre una zona concreta: lumbares, cintilla iliotibial, antebrazos o glúteo, según lo que traigas.\r\n\r\nSon 45 minutos de trabajo lento y localizado. Avisa que puede molestar durante la sesión y dejar algo de agujetas al día siguiente; es normal y pasa en 48 horas.\r\n\r\nBono de cuatro sesiones, que es lo que suele hacer falta para un dolor instalado desde hace meses.",
                     "certifications": [
                         "Titulado",
                         "Experiencia +5 años"
                     ],
-                    "mode": "online",
-                    "city": "Málaga",
+                    "mode": "domicilio",
+                    "city": "Valencia",
                     "address": "897 Beatty Rapid",
                     "availability": [
                         "L",
@@ -460,16 +458,15 @@
                         "X",
                         "V"
                     ],
-                    "price_unit": "por_paquete",
+                    "price_unit": "por_sesion",
                     "price": "45.00",
                     "duration": 45,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/manuales/10.jpg",
-                        "ads/manuales/11.jpg",
-                        "ads/productos/04.jpg",
-                        "ads/manuales/02.jpg"
+                        "ads/manuales/21.jpg",
+                        "ads/manuales/22.jpg",
+                        "ads/manuales/23.jpg"
                     ]
                 }
             ]
@@ -487,13 +484,13 @@
                 {
                     "category": "energeticas",
                     "title": "Masaje con piedras volcánicas calientes",
-                    "description": "Voy a tu casa con camilla, calentador y piedras de basalto. Monto en diez minutos y dejo la habitación recogida al salir.\n\nAlterno piedras calientes sobre espalda y piernas con maniobras manuales. El calor penetra donde los dedos no llegan sin hacer daño.\n\nBono de tres sesiones a domicilio dentro de la ciudad. Solo necesito un espacio de dos metros y un enchufe.",
+                    "description": "Voy a tu casa con camilla, calentador y piedras de basalto. Monto en diez minutos y dejo la habitación recogida al salir.\r\n\r\nAlterno piedras calientes sobre espalda y piernas con maniobras manuales. El calor penetra donde los dedos no llegan sin hacer daño.\r\n\r\nBono de tres sesiones a domicilio dentro de la ciudad. Solo necesito un espacio de dos metros y un enchufe.",
                     "certifications": [
                         "Atención a domicilio",
                         "Colegiado"
                     ],
                     "mode": "domicilio",
-                    "city": "Palma",
+                    "city": null,
                     "address": "5786 Gorczany Street",
                     "availability": [
                         "M",
@@ -502,25 +499,27 @@
                         "J",
                         "D"
                     ],
-                    "price_unit": "por_paquete",
+                    "price_unit": "por_sesion",
                     "price": "45.00",
                     "duration": 75,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 2,
                     "photos": [
-                        "ads/productos/02.jpg",
-                        "ads/energeticas/02.jpg"
+                        "ads/energeticas/11.jpg",
+                        "ads/energeticas/12.jpg",
+                        "ads/energeticas/13.jpg",
+                        "ads/energeticas/14.jpg"
                     ]
                 },
                 {
                     "category": "productos",
                     "title": "Aceite de argán y rosa mosqueta",
-                    "description": "Dos aceites prensados en frío, sin perfumes ni conservantes: argán marroquí de 100 ml y rosa mosqueta chilena de 50 ml.\n\nEl argán va bien para masaje corporal y cabello; la rosa mosqueta es más densa y la uso para cicatrices y estrías. Botella de cristal topacio con dosificador.",
+                    "description": "Dos aceites prensados en frío, sin perfumes ni conservantes: argán marroquí de 100 ml y rosa mosqueta chilena de 50 ml.\r\n\r\nEl argán va bien para masaje corporal y cabello; la rosa mosqueta es más densa y la uso para cicatrices y estrías. Botella de cristal topacio con dosificador.",
                     "certifications": [
                         "Formación continua"
                     ],
                     "mode": "presencial",
-                    "city": "Bilbao",
+                    "city": "Barcelona",
                     "address": "926 Brown Lodge",
                     "availability": [
                         "D",
@@ -532,11 +531,11 @@
                     "price": "150.00",
                     "duration": 30,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/productos/01.jpg",
-                        "ads/productos/02.jpg",
-                        "ads/productos/03.jpg"
+                        "ads/productos/24.jpg",
+                        "ads/productos/25.jpg",
+                        "ads/productos/26.jpg"
                     ]
                 }
             ]
@@ -554,14 +553,14 @@
                 {
                     "category": "cursos",
                     "title": "Reflexología podal: curso completo online",
-                    "description": "Formación online de reflexología podal en 12 módulos, desde el mapa reflejo del pie hasta protocolos para dolor de cabeza, insomnio y problemas digestivos.\n\nCada módulo trae vídeo de demostración, lámina anatómica descargable y un cuestionario. Dos tutorías en directo al mes para corregir la posición de las manos.\n\nCertificado de aprovechamiento al terminar. Nivel inicial, no hace falta formación sanitaria previa.",
+                    "description": "Formación online de reflexología podal en 12 módulos, desde el mapa reflejo del pie hasta protocolos para dolor de cabeza, insomnio y problemas digestivos.\r\n\r\nCada módulo trae vídeo de demostración, lámina anatómica descargable y un cuestionario. Dos tutorías en directo al mes para corregir la posición de las manos.\r\n\r\nCertificado de aprovechamiento al terminar. Nivel inicial, no hace falta formación sanitaria previa.",
                     "certifications": [
                         "Colegiado",
                         "Experiencia +5 años",
                         "Certificado"
                     ],
                     "mode": "online",
-                    "city": "Murcia",
+                    "city": null,
                     "address": "854 Kris Junction Suite 526",
                     "availability": [
                         "V",
@@ -573,12 +572,11 @@
                     "price": "150.00",
                     "duration": 60,
                     "status": "published",
-                    "views_count": 1,
+                    "views_count": 2,
                     "photos": [
-                        "ads/productos/02.jpg",
-                        "ads/cursos/17.jpg",
-                        "ads/cursos/18.jpg",
-                        "ads/productos/06.jpg"
+                        "ads/cursos/22.jpg",
+                        "ads/cursos/23.jpg",
+                        "ads/cursos/24.jpg"
                     ]
                 }
             ]
@@ -596,13 +594,13 @@
                 {
                     "category": "manuales",
                     "title": "Masaje exprés de cuello y hombros",
-                    "description": "Media hora concentrada en cuello, trapecios y base del cráneo, sin aceite y sin necesidad de desvestirse. Pensado para encajarlo en una pausa de trabajo.\n\nEs el formato que más piden quienes pasan el día en pantalla. No da tiempo a trabajar la espalda completa, pero sí a quitar la rigidez del cuello.\n\nBono de cinco sesiones, ideal una por semana.",
+                    "description": "Media hora concentrada en cuello, trapecios y base del cráneo, sin aceite y sin necesidad de desvestirse. Pensado para encajarlo en una pausa de trabajo.\r\n\r\nEs el formato que más piden quienes pasan el día en pantalla. No da tiempo a trabajar la espalda completa, pero sí a quitar la rigidez del cuello.\r\n\r\nBono de cinco sesiones, ideal una por semana.",
                     "certifications": [
                         "Atención a domicilio",
                         "Certificado"
                     ],
                     "mode": "online",
-                    "city": "Murcia",
+                    "city": null,
                     "address": "3818 Schmitt Circles Apt. 306",
                     "availability": [
                         "V",
@@ -612,14 +610,16 @@
                         "X",
                         "D"
                     ],
-                    "price_unit": "por_paquete",
+                    "price_unit": "por_hora",
                     "price": "45.00",
                     "duration": 30,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/manuales/11.jpg",
-                        "ads/productos/04.jpg"
+                        "ads/manuales/24.jpg",
+                        "ads/manuales/25.jpg",
+                        "ads/manuales/26.jpg",
+                        "ads/manuales/27.jpg"
                     ]
                 }
             ]
@@ -637,11 +637,11 @@
                 {
                     "category": "productos",
                     "title": "Pack de aceites esenciales premium",
-                    "description": "Pack profesional con dos aceites base, almendra dulce y jojoba de 250 ml cada uno, y cinco esenciales de 10 ml: lavanda, eucalipto, menta, romero y naranja dulce.\n\nTodos de certificación ecológica y aptos para uso en cabina. Incluye tabla de dilución para que no te pases con las proporciones.\n\nMaletín de madera con hueco para cada frasco. Recogida en consulta.",
+                    "description": "Pack profesional con dos aceites base, almendra dulce y jojoba de 250 ml cada uno, y cinco esenciales de 10 ml: lavanda, eucalipto, menta, romero y naranja dulce.\r\n\r\nTodos de certificación ecológica y aptos para uso en cabina. Incluye tabla de dilución para que no te pases con las proporciones.\r\n\r\nMaletín de madera con hueco para cada frasco. Recogida en consulta.",
                     "certifications": [
                         "Certificado"
                     ],
-                    "mode": "presencial",
+                    "mode": "domicilio",
                     "city": "Sevilla",
                     "address": "1762 Leila Cove Apt. 221",
                     "availability": [
@@ -653,23 +653,23 @@
                     "price": "90.00",
                     "duration": 45,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/productos/02.jpg",
-                        "ads/productos/03.jpg",
-                        "ads/productos/04.jpg"
+                        "ads/productos/27.jpg",
+                        "ads/productos/28.jpg",
+                        "ads/productos/29.jpg"
                     ]
                 },
                 {
                     "category": "productos",
                     "title": "Set de velas de masaje y aceite de coco",
-                    "description": "Tres velas de masaje de manteca de karité con mechas de algodón, en aroma de vainilla, coco y neroli, más un bote de 200 ml de aceite de coco virgen.\n\nLa vela se enciende, se deja cinco minutos y la cera fundida se vierte templada sobre la piel. Queda como un aceite corporal y no quema.",
+                    "description": "Tres velas de masaje de manteca de karité con mechas de algodón, en aroma de vainilla, coco y neroli, más un bote de 200 ml de aceite de coco virgen.\r\n\r\nLa vela se enciende, se deja cinco minutos y la cera fundida se vierte templada sobre la piel. Queda como un aceite corporal y no quema.",
                     "certifications": [
                         "Colegiado",
                         "Formación continua"
                     ],
                     "mode": "presencial",
-                    "city": "Las Palmas",
+                    "city": null,
                     "address": "89792 Shana Views Suite 307",
                     "availability": [
                         "V",
@@ -678,16 +678,15 @@
                         "J",
                         "M"
                     ],
-                    "price_unit": "por_sesion",
+                    "price_unit": "por_paquete",
                     "price": "80.00",
                     "duration": 60,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 1,
                     "photos": [
-                        "ads/productos/05.jpg",
-                        "ads/productos/06.jpg",
-                        "ads/productos/07.jpg",
-                        "ads/productos/08.jpg"
+                        "ads/productos/30.jpg",
+                        "ads/productos/31.jpg",
+                        "ads/productos/32.jpg"
                     ]
                 }
             ]
@@ -705,7 +704,7 @@
                 {
                     "category": "manuales",
                     "title": "Masaje deportivo y recuperación muscular",
-                    "description": "Masaje orientado a rendimiento, con trabajo pre y post competición, cyriax, estiramientos analíticos y vendaje neuromuscular si hace falta.\n\nTrabajo con corredores de fondo, ciclistas y gente de crossfit. Lo normal es una sesión de mantenimiento cada dos o tres semanas y una específica antes de competir.\n\nValoración funcional incluida en la primera visita para ver de dónde viene el problema, no solo dónde duele.",
+                    "description": "Masaje orientado a rendimiento, con trabajo pre y post competición, cyriax, estiramientos analíticos y vendaje neuromuscular si hace falta.\r\n\r\nTrabajo con corredores de fondo, ciclistas y gente de crossfit. Lo normal es una sesión de mantenimiento cada dos o tres semanas y una específica antes de competir.\r\n\r\nValoración funcional incluida en la primera visita para ver de dónde viene el problema, no solo dónde duele.",
                     "certifications": [
                         "Formación continua"
                     ],
@@ -719,13 +718,15 @@
                         "L"
                     ],
                     "price_unit": "por_hora",
-                    "price": "200.00",
+                    "price": "100.00",
                     "duration": 60,
                     "status": "published",
-                    "views_count": 0,
+                    "views_count": 3,
                     "photos": [
-                        "ads/manuales/09.jpg",
-                        "ads/manuales/10.jpg"
+                        "ads/manuales/28.jpg",
+                        "ads/manuales/29.jpg",
+                        "ads/manuales/30.jpg",
+                        "ads/manuales/31.jpg"
                     ]
                 }
             ]
