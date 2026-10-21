@@ -88,7 +88,7 @@ class AdFactory extends Factory
         $cities = ['Madrid', 'Barcelona', 'Valencia', 'Sevilla', 'Bilbao', 'Málaga', 'Zaragoza', 'Murcia', 'Palma', 'Las Palmas'];
         $priceUnits = ['por_sesion', 'por_hora', 'por_paquete'];
         $certOptions = ['Titulado', 'Certificado', 'Colegiado', 'Formación continua', 'Experiencia +5 años', 'Atención a domicilio'];
-        $days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+        $days = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
 
         return [
             'user_id' => User::factory(),

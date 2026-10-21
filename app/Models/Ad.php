@@ -36,6 +36,40 @@ class Ad extends Model
     public const STATUS_PUBLISHED = 'published';
 
     /**
+     * Días guardados antes de usar códigos de una letra.
+     *
+     * @var array<string, string>
+     */
+    private const LEGACY_DAYS = [
+        'lunes' => 'L',
+        'martes' => 'M',
+        'miercoles' => 'X',
+        'miércoles' => 'X',
+        'jueves' => 'J',
+        'viernes' => 'V',
+        'sabado' => 'S',
+        'sábado' => 'S',
+        'domingo' => 'D',
+    ];
+
+    /**
+     * @return array<int, string>|null
+     */
+    public function getAvailabilityAttribute(?string $value): ?array
+    {
+        $days = $value === null ? null : json_decode($value, true);
+
+        if (! is_array($days)) {
+            return null;
+        }
+
+        return array_values(array_map(
+            fn ($day) => self::LEGACY_DAYS[mb_strtolower((string) $day)] ?? $day,
+            $days,
+        ));
+    }
+
+    /**
      * @return array<string, string>
      */
     protected function casts(): array

@@ -12,8 +12,8 @@
             "ads": [
                 {
                     "category": "energeticas",
-                    "title": "Terapia Tuina masaje chino medicinal",
-                    "description": "Terapeuta holística certificada en Reiki Usui nivel maestro y terapia energética. Ofrezco sesiones de equilibrio energético que combinan diferentes técnicas para restablecer el flujo natural de energía del cuerpo.\n\nCada sesión incluye diagnóstico energético inicial, trabajo con los 7 chakras principales y armonización del campo áurico. Ambiente tranquilo y reconfortante.\n\nTambién ofrezco sesiones online y talleres grupales mensuales.",
+                    "title": "Reiki Usui y equilibrio energético",
+                    "description": "Terapeuta holística certificada en Reiki Usui nivel maestro. Trabajo el equilibrio energético combinando imposición de manos, respiración guiada y armonización de chakras.\n\nCada sesión empieza con una lectura energética para ver dónde hay bloqueo, y a partir de ahí adapto el trabajo. La mayoría de personas llegan por estrés, insomnio o una etapa de cambio que les está pesando.\n\nSala tranquila, luz cálida y música suave. También hago talleres grupales una vez al mes.",
                     "certifications": [
                         "Titulado",
                         "Atención a domicilio",
@@ -23,10 +23,10 @@
                     "city": "Las Palmas",
                     "address": "58127 Anderson Center",
                     "availability": [
-                        "lunes",
-                        "miercoles",
-                        "jueves",
-                        "domingo"
+                        "L",
+                        "X",
+                        "J",
+                        "D"
                     ],
                     "price_unit": "por_sesion",
                     "price": "60.00",
@@ -41,8 +41,8 @@
                 },
                 {
                     "category": "cursos",
-                    "title": "Formación masaje deportivo nivel básico",
-                    "description": "Formación completa y certificada en masaje deportivo. Aprenderás todo lo necesario para trabajar con deportistas: desde la teoría de la fisiología del ejercicio hasta las técnicas más avanzadas de recuperación.\n\nEl curso consta de 40 horas presenciales divididas en 5 fines de semana. Al finalizar obtendrás un certificado reconocido. Prácticas incluidas con deportistas reales.",
+                    "title": "Iniciación al masaje deportivo (online)",
+                    "description": "Curso introductorio en formato online para quien quiere entender cómo se trabaja el cuerpo de un deportista antes y después del esfuerzo.\n\nSon 8 módulos grabados más dos sesiones en directo para dudas: fisiología básica del músculo, maniobras de calentamiento, descarga post-competición y señales de alarma que nunca debes tratar tú.\n\nAcceso durante un año y material descargable. No sustituye una titulación, es la base para empezar.",
                     "certifications": [
                         "Colegiado",
                         "Atención a domicilio"
@@ -51,10 +51,10 @@
                     "city": "Palma",
                     "address": "205 Lorena Cliff",
                     "availability": [
-                        "lunes",
-                        "domingo",
-                        "martes",
-                        "sabado"
+                        "L",
+                        "D",
+                        "M",
+                        "S"
                     ],
                     "price_unit": "por_curso",
                     "price": "40.00",
@@ -71,7 +71,7 @@
                 {
                     "category": "productos",
                     "title": "Rodillo de jade facial y corporal",
-                    "description": "Pack completo de aceites esenciales 100% naturales y orgánicos para masaje profesional. Incluye: aceite base de almendra dulce, jojoba, y 5 aceites esenciales (lavanda, eucalipto, menta, romero y naranja dulce).\n\nTodos los productos son certificados ecológicos, sin parabenos ni siliconas. Envasados en vidrio ámbar para preservar sus propiedades. Incluye guía de mezclas y usos recomendados.",
+                    "description": "Rodillo de jade natural con doble cabezal, uno fino para contorno de ojos y otro ancho para pómulos, cuello y zonas corporales.\n\nEl jade se mantiene frío al tacto, así que ayuda a descongestionar por la mañana y a bajar la hinchazón. Viene con un gua sha a juego y una funda de tela.\n\nLo entrego a domicilio en Las Palmas con una hoja de instrucciones de uso.",
                     "certifications": [
                         "Experiencia +5 años",
                         "Titulado",
@@ -81,12 +81,12 @@
                     "city": "Zaragoza",
                     "address": "8351 Bart Walk Suite 122",
                     "availability": [
-                        "miercoles",
-                        "martes",
-                        "jueves",
-                        "sabado",
-                        "viernes",
-                        "lunes"
+                        "X",
+                        "M",
+                        "J",
+                        "S",
+                        "V",
+                        "L"
                     ],
                     "price_unit": "por_paquete",
                     "price": "70.00",
@@ -112,8 +112,8 @@
             "ads": [
                 {
                     "category": "productos",
-                    "title": "Bolas de masaje de bambú y piedras",
-                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "title": "Juego de bambúes y piedras para masaje",
+                    "description": "Set de cinco cañas de bambú de distintos calibres y ocho piedras de basalto, pensado para terapeutas que quieren incorporar bambuterapia y piedras calientes a su consulta.\n\nLas cañas están lijadas y tratadas, no astillan, y las piedras aguantan bien el calentador sin agrietarse. Incluye bolsa de transporte de lona.",
                     "certifications": [
                         "Experiencia +5 años"
                     ],
@@ -121,11 +121,11 @@
                     "city": "Barcelona",
                     "address": "60480 Toy Road Suite 246",
                     "availability": [
-                        "viernes",
-                        "miercoles",
-                        "jueves",
-                        "martes",
-                        "lunes"
+                        "V",
+                        "X",
+                        "J",
+                        "M",
+                        "L"
                     ],
                     "price_unit": "por_hora",
                     "price": "150.00",
@@ -152,8 +152,8 @@
             "ads": [
                 {
                     "category": "energeticas",
-                    "title": "Masaje tailandés tradicional",
-                    "description": "Practicante de Shiatsu con 10 años de experiencia y formación en Japón. El Shiatsu trabaja los meridianos de energía del cuerpo mediante presión con los pulgares, palmas y codos.\n\nIdeal para: estrés y ansiedad, insomnio, dolores musculares, problemas digestivos y desequilibrios emocionales. Las sesiones se realizan sobre una colchoneta en el suelo, con ropa cómoda.\n\nPrimer consulta gratuita de 20 minutos.",
+                    "title": "Shiatsu tradicional japonés",
+                    "description": "Practicante de Shiatsu con diez años de consulta y formación en Japón. El Shiatsu trabaja los meridianos mediante presión sostenida con pulgares, palmas y codos, siempre con ropa cómoda y sin aceites.\n\nVa especialmente bien para ansiedad, insomnio, digestiones pesadas y esa tensión de hombros que no se va con nada.\n\nBono de cuatro sesiones. Lo habitual es notar cambio real a partir de la segunda.",
                     "certifications": [
                         "Titulado",
                         "Experiencia +5 años"
@@ -162,11 +162,11 @@
                     "city": "Murcia",
                     "address": "573 Brakus Mount Suite 610",
                     "availability": [
-                        "sabado",
-                        "martes",
-                        "miercoles",
-                        "lunes",
-                        "domingo"
+                        "S",
+                        "M",
+                        "X",
+                        "L",
+                        "D"
                     ],
                     "price_unit": "por_paquete",
                     "price": "55.00",
@@ -182,8 +182,8 @@
                 },
                 {
                     "category": "productos",
-                    "title": "Set camilla profesional plegable completo",
-                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "title": "Camilla profesional plegable con accesorios",
+                    "description": "Camilla plegable de aluminio de 12 kg, estable y con altura regulable. Incluye funda acolchada extraíble y lavable, reposacabezas anatómico, reposabrazos y bolsa de transporte con ruedas.\n\nMontaje en menos de un minuto, aguanta hasta 250 kg y cabe en el maletero de un coche pequeño. Es la que uso yo a domicilio desde hace cuatro años.\n\nEntrega en Las Palmas o envío a península.",
                     "certifications": [
                         "Colegiado",
                         "Formación continua",
@@ -193,11 +193,11 @@
                     "city": "Málaga",
                     "address": "251 Hickle Gateway",
                     "availability": [
-                        "miercoles",
-                        "martes",
-                        "domingo",
-                        "viernes",
-                        "lunes"
+                        "X",
+                        "M",
+                        "D",
+                        "V",
+                        "L"
                     ],
                     "price_unit": "por_sesion",
                     "price": "150.00",
@@ -211,8 +211,8 @@
                 },
                 {
                     "category": "productos",
-                    "title": "Bolas de masaje de bambú y piedras",
-                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "title": "Bolas de madera para automasaje",
+                    "description": "Pack de tres bolas de madera de haya de distintos tamaños para trabajar en casa planta del pie, glúteo y zona dorsal contra la pared.\n\nEs lo que recomiendo a mis clientes para mantener entre sesiones. La más pequeña es la que más duele y la que más alivia.\n\nEnvío a toda España con guía de ejercicios en PDF.",
                     "certifications": [
                         "Titulado"
                     ],
@@ -220,11 +220,11 @@
                     "city": "Madrid",
                     "address": "879 Lorenzo Coves Suite 538",
                     "availability": [
-                        "miercoles",
-                        "jueves",
-                        "lunes",
-                        "martes",
-                        "domingo"
+                        "X",
+                        "J",
+                        "L",
+                        "M",
+                        "D"
                     ],
                     "price_unit": "por_paquete",
                     "price": "40.00",
@@ -251,8 +251,8 @@
             "ads": [
                 {
                     "category": "productos",
-                    "title": "Bolas de masaje de bambú y piedras",
-                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "title": "Rodillo de bambú para drenaje",
+                    "description": "Rodillo de bambú macizo de 40 cm, el utensilio básico para bambuterapia y trabajo de drenaje en piernas y abdomen.\n\nPieza única sin tratar con barnices, solo lijado y aceitado con aceite vegetal. Se limpia con un paño húmedo.\n\nRecogida en consulta, te enseño cómo usarlo en el momento de la entrega.",
                     "certifications": [
                         "Certificado"
                     ],
@@ -260,9 +260,9 @@
                     "city": "Palma",
                     "address": "351 Beier Fords",
                     "availability": [
-                        "domingo",
-                        "jueves",
-                        "viernes"
+                        "D",
+                        "J",
+                        "V"
                     ],
                     "price_unit": "por_hora",
                     "price": "40.00",
@@ -278,8 +278,8 @@
                 },
                 {
                     "category": "cursos",
-                    "title": "Curso de masaje relajante para parejas",
-                    "description": "Formación completa y certificada en masaje deportivo. Aprenderás todo lo necesario para trabajar con deportistas: desde la teoría de la fisiología del ejercicio hasta las técnicas más avanzadas de recuperación.\n\nEl curso consta de 40 horas presenciales divididas en 5 fines de semana. Al finalizar obtendrás un certificado reconocido. Prácticas incluidas con deportistas reales.",
+                    "title": "Masaje relajante para parejas (curso online)",
+                    "description": "Curso práctico para aprender a dar un buen masaje a tu pareja en casa, sin camilla y sin material especial.\n\nCuatro clases grabadas: cómo colocar las manos y el peso del cuerpo sin cansarte, espalda completa, cuello y cabeza, y pies. Cada clase son 20 minutos de vídeo que podéis seguir a la vez.\n\nIncluye lista de aceites recomendados y qué zonas no tocar nunca.",
                     "certifications": [
                         "Formación continua"
                     ],
@@ -287,12 +287,12 @@
                     "city": "Palma",
                     "address": "47940 Brekke Squares",
                     "availability": [
-                        "viernes",
-                        "domingo",
-                        "martes",
-                        "sabado",
-                        "jueves",
-                        "lunes"
+                        "V",
+                        "D",
+                        "M",
+                        "S",
+                        "J",
+                        "L"
                     ],
                     "price_unit": "por_curso",
                     "price": "90.00",
@@ -318,8 +318,8 @@
             "ads": [
                 {
                     "category": "manuales",
-                    "title": "Masaje descontracturante para espalda y cervicales",
-                    "description": "Masajista profesional con formación en diversas escuelas europeas. Cada sesión es un viaje hacia la relajación total del cuerpo y la mente.\n\nMe adapto completamente a tus necesidades: desde un masaje suave y relajante hasta uno más intenso para trabajar contracturas profundas. Uso productos ecológicos y libres de parabenos.\n\nHorarios flexibles, incluyendo fines de semana y festivos.",
+                    "title": "Masaje descontracturante de espalda y cervicales",
+                    "description": "Sesión centrada en la zona alta de la espalda, trapecios y cuello. Trabajo contractura por contractura, con presión firme pero avisando siempre antes de ir más profundo.\n\nViene mucha gente de oficina con dolor de cabeza tensional y rigidez al girar el cuello. En 90 minutos hay tiempo de trabajar la zona sin prisa y terminar con estiramientos pasivos.\n\nTe doy dos o tres pautas concretas para casa, porque la postura es la mitad del problema.",
                     "certifications": [
                         "Experiencia +5 años"
                     ],
@@ -327,10 +327,10 @@
                     "city": "Las Palmas",
                     "address": "8514 Walsh Vista",
                     "availability": [
-                        "viernes",
-                        "miercoles",
-                        "lunes",
-                        "martes"
+                        "V",
+                        "X",
+                        "L",
+                        "M"
                     ],
                     "price_unit": "por_sesion",
                     "price": "50.00",
@@ -345,8 +345,8 @@
                 },
                 {
                     "category": "manuales",
-                    "title": "Reflexología podal y masaje de pies",
-                    "description": "Fisioterapeuta colegiada especializada en masaje deportivo y terapéutico. Trabajo con deportistas amateur y profesionales para optimizar la recuperación muscular y prevenir lesiones.\n\nTécnicas utilizadas: masaje deportivo pre y post competición, cyriax, stretching activo y pasivo, y liberación miofascial.\n\nCentro ubicado en zona bien comunicada con parking gratuito. Sesiones individuales y bonos.",
+                    "title": "Reflexología podal terapéutica",
+                    "description": "Fisioterapeuta colegiada con formación en reflexología. Trabajo los puntos reflejos del pie para aliviar tensión general, mejorar el descanso y ayudar con digestiones y retención de líquidos.\n\nLa sesión es de pies y manos, sin necesidad de desvestirse. Empiezo con un mapeo de las zonas sensibles y de ahí sale el plan de trabajo.\n\nSesiones de seguimiento online para pautas de automasaje entre visitas.",
                     "certifications": [
                         "Colegiado",
                         "Certificado"
@@ -355,11 +355,11 @@
                     "city": "Murcia",
                     "address": "9581 Schamberger Green Apt. 037",
                     "availability": [
-                        "sabado",
-                        "lunes",
-                        "jueves",
-                        "domingo",
-                        "viernes"
+                        "S",
+                        "L",
+                        "J",
+                        "D",
+                        "V"
                     ],
                     "price_unit": "por_hora",
                     "price": "45.00",
@@ -375,8 +375,8 @@
                 },
                 {
                     "category": "energeticas",
-                    "title": "Masaje con piedras volcánicas calientes",
-                    "description": "Practicante de Shiatsu con 10 años de experiencia y formación en Japón. El Shiatsu trabaja los meridianos de energía del cuerpo mediante presión con los pulgares, palmas y codos.\n\nIdeal para: estrés y ansiedad, insomnio, dolores musculares, problemas digestivos y desequilibrios emocionales. Las sesiones se realizan sobre una colchoneta en el suelo, con ropa cómoda.\n\nPrimer consulta gratuita de 20 minutos.",
+                    "title": "Piedras calientes y armonización de chakras",
+                    "description": "Sesión que combina piedras de basalto calentadas a 50 °C colocadas en los puntos de los chakras con trabajo energético manual.\n\nEl calor relaja el músculo profundo sin presión, así que es buena opción si no toleras bien un masaje intenso. La sensación es de peso agradable y sueño.\n\nBono de tres sesiones. Lo recomiendo en otoño e invierno sobre todo.",
                     "certifications": [
                         "Colegiado",
                         "Experiencia +5 años"
@@ -385,11 +385,11 @@
                     "city": "Bilbao",
                     "address": "7243 Humberto Haven Suite 221",
                     "availability": [
-                        "viernes",
-                        "domingo",
-                        "lunes",
-                        "sabado",
-                        "miercoles"
+                        "V",
+                        "D",
+                        "L",
+                        "S",
+                        "X"
                     ],
                     "price_unit": "por_paquete",
                     "price": "70.00",
@@ -415,8 +415,8 @@
             "ads": [
                 {
                     "category": "manuales",
-                    "title": "Masaje californiano relajante profundo",
-                    "description": "Soy terapeuta titulada con más de 8 años de experiencia en masajes terapéuticos y relajantes. Me especializo en el tratamiento de contracturas, tensión cervical y estrés acumulado.\n\nUtilizo aceites naturales de primera calidad y adapto cada sesión a las necesidades específicas de cada persona. Trabajo con técnicas de masaje sueco, californiano y tejido profundo.\n\nDisponible en mi centro en el centro de la ciudad, también puedo desplazarme a tu domicilio. Primera sesión con descuento del 20%.",
+                    "title": "Masaje californiano relajante",
+                    "description": "Terapeuta titulada con más de ocho años de experiencia. El californiano son maniobras largas, envolventes y lentas, pensadas para que el sistema nervioso baje de revoluciones.\n\nNo es un masaje de descarga: aquí no se busca romper contracturas sino soltar el cuerpo entero. Si llegas muy acelerada o duermes mal, este es el tuyo.\n\nAceite de almendra templado y música en directo de fondo.",
                     "certifications": [
                         "Titulado",
                         "Certificado",
@@ -426,10 +426,10 @@
                     "city": "Madrid",
                     "address": "584 Dibbert Corner Apt. 909",
                     "availability": [
-                        "jueves",
-                        "sabado",
-                        "miercoles",
-                        "lunes"
+                        "J",
+                        "S",
+                        "X",
+                        "L"
                     ],
                     "price_unit": "por_hora",
                     "price": "55.00",
@@ -444,8 +444,8 @@
                 },
                 {
                     "category": "manuales",
-                    "title": "Masaje de tejido profundo para dolores crónicos",
-                    "description": "Masajista profesional con formación en diversas escuelas europeas. Cada sesión es un viaje hacia la relajación total del cuerpo y la mente.\n\nMe adapto completamente a tus necesidades: desde un masaje suave y relajante hasta uno más intenso para trabajar contracturas profundas. Uso productos ecológicos y libres de parabenos.\n\nHorarios flexibles, incluyendo fines de semana y festivos.",
+                    "title": "Masaje de tejido profundo",
+                    "description": "Trabajo de presión profunda sobre una zona concreta: lumbares, cintilla iliotibial, antebrazos o glúteo, según lo que traigas.\n\nSon 45 minutos de trabajo lento y localizado. Avisa que puede molestar durante la sesión y dejar algo de agujetas al día siguiente; es normal y pasa en 48 horas.\n\nBono de cuatro sesiones, que es lo que suele hacer falta para un dolor instalado desde hace meses.",
                     "certifications": [
                         "Titulado",
                         "Experiencia +5 años"
@@ -454,11 +454,11 @@
                     "city": "Málaga",
                     "address": "897 Beatty Rapid",
                     "availability": [
-                        "lunes",
-                        "domingo",
-                        "jueves",
-                        "miercoles",
-                        "viernes"
+                        "L",
+                        "D",
+                        "J",
+                        "X",
+                        "V"
                     ],
                     "price_unit": "por_paquete",
                     "price": "45.00",
@@ -487,7 +487,7 @@
                 {
                     "category": "energeticas",
                     "title": "Masaje con piedras volcánicas calientes",
-                    "description": "Terapeuta holística certificada en Reiki Usui nivel maestro y terapia energética. Ofrezco sesiones de equilibrio energético que combinan diferentes técnicas para restablecer el flujo natural de energía del cuerpo.\n\nCada sesión incluye diagnóstico energético inicial, trabajo con los 7 chakras principales y armonización del campo áurico. Ambiente tranquilo y reconfortante.\n\nTambién ofrezco sesiones online y talleres grupales mensuales.",
+                    "description": "Voy a tu casa con camilla, calentador y piedras de basalto. Monto en diez minutos y dejo la habitación recogida al salir.\n\nAlterno piedras calientes sobre espalda y piernas con maniobras manuales. El calor penetra donde los dedos no llegan sin hacer daño.\n\nBono de tres sesiones a domicilio dentro de la ciudad. Solo necesito un espacio de dos metros y un enchufe.",
                     "certifications": [
                         "Atención a domicilio",
                         "Colegiado"
@@ -496,11 +496,11 @@
                     "city": "Palma",
                     "address": "5786 Gorczany Street",
                     "availability": [
-                        "martes",
-                        "sabado",
-                        "miercoles",
-                        "jueves",
-                        "domingo"
+                        "M",
+                        "S",
+                        "X",
+                        "J",
+                        "D"
                     ],
                     "price_unit": "por_paquete",
                     "price": "45.00",
@@ -514,8 +514,8 @@
                 },
                 {
                     "category": "productos",
-                    "title": "Aceite de argán y rosa mosqueta para masajes",
-                    "description": "Pack completo de aceites esenciales 100% naturales y orgánicos para masaje profesional. Incluye: aceite base de almendra dulce, jojoba, y 5 aceites esenciales (lavanda, eucalipto, menta, romero y naranja dulce).\n\nTodos los productos son certificados ecológicos, sin parabenos ni siliconas. Envasados en vidrio ámbar para preservar sus propiedades. Incluye guía de mezclas y usos recomendados.",
+                    "title": "Aceite de argán y rosa mosqueta",
+                    "description": "Dos aceites prensados en frío, sin perfumes ni conservantes: argán marroquí de 100 ml y rosa mosqueta chilena de 50 ml.\n\nEl argán va bien para masaje corporal y cabello; la rosa mosqueta es más densa y la uso para cicatrices y estrías. Botella de cristal topacio con dosificador.",
                     "certifications": [
                         "Formación continua"
                     ],
@@ -523,10 +523,10 @@
                     "city": "Bilbao",
                     "address": "926 Brown Lodge",
                     "availability": [
-                        "domingo",
-                        "martes",
-                        "jueves",
-                        "miercoles"
+                        "D",
+                        "M",
+                        "J",
+                        "X"
                     ],
                     "price_unit": "por_hora",
                     "price": "150.00",
@@ -553,8 +553,8 @@
             "ads": [
                 {
                     "category": "cursos",
-                    "title": "Curso online de reflexología podal",
-                    "description": "Aprende las técnicas básicas y avanzadas del masaje relajante en este curso práctico de fin de semana. Ideal para parejas, cuidadores y cualquier persona que quiera aprender a dar un buen masaje.\n\nContenido: anatomía básica, técnicas de effleurage y petrissage, trabajo en espalda, piernas y pies, uso de aceites y cremas. Incluye material didáctico y aceites de práctica.\n\nGrupos reducidos (máximo 8 personas) para garantizar atención personalizada.",
+                    "title": "Reflexología podal: curso completo online",
+                    "description": "Formación online de reflexología podal en 12 módulos, desde el mapa reflejo del pie hasta protocolos para dolor de cabeza, insomnio y problemas digestivos.\n\nCada módulo trae vídeo de demostración, lámina anatómica descargable y un cuestionario. Dos tutorías en directo al mes para corregir la posición de las manos.\n\nCertificado de aprovechamiento al terminar. Nivel inicial, no hace falta formación sanitaria previa.",
                     "certifications": [
                         "Colegiado",
                         "Experiencia +5 años",
@@ -564,10 +564,10 @@
                     "city": "Murcia",
                     "address": "854 Kris Junction Suite 526",
                     "availability": [
-                        "viernes",
-                        "domingo",
-                        "sabado",
-                        "miercoles"
+                        "V",
+                        "D",
+                        "S",
+                        "X"
                     ],
                     "price_unit": "por_curso",
                     "price": "150.00",
@@ -595,8 +595,8 @@
             "ads": [
                 {
                     "category": "manuales",
-                    "title": "Masaje descontracturante para espalda y cervicales",
-                    "description": "Masajista profesional con formación en diversas escuelas europeas. Cada sesión es un viaje hacia la relajación total del cuerpo y la mente.\n\nMe adapto completamente a tus necesidades: desde un masaje suave y relajante hasta uno más intenso para trabajar contracturas profundas. Uso productos ecológicos y libres de parabenos.\n\nHorarios flexibles, incluyendo fines de semana y festivos.",
+                    "title": "Masaje exprés de cuello y hombros",
+                    "description": "Media hora concentrada en cuello, trapecios y base del cráneo, sin aceite y sin necesidad de desvestirse. Pensado para encajarlo en una pausa de trabajo.\n\nEs el formato que más piden quienes pasan el día en pantalla. No da tiempo a trabajar la espalda completa, pero sí a quitar la rigidez del cuello.\n\nBono de cinco sesiones, ideal una por semana.",
                     "certifications": [
                         "Atención a domicilio",
                         "Certificado"
@@ -605,12 +605,12 @@
                     "city": "Murcia",
                     "address": "3818 Schmitt Circles Apt. 306",
                     "availability": [
-                        "viernes",
-                        "lunes",
-                        "martes",
-                        "sabado",
-                        "miercoles",
-                        "domingo"
+                        "V",
+                        "L",
+                        "M",
+                        "S",
+                        "X",
+                        "D"
                     ],
                     "price_unit": "por_paquete",
                     "price": "45.00",
@@ -636,8 +636,8 @@
             "ads": [
                 {
                     "category": "productos",
-                    "title": "Pack aceites esenciales para masaje premium",
-                    "description": "Set completo de camilla profesional plegable de aluminio ligero (solo 12 kg). Incluye: camilla, funda acolchada extraíble y lavable, reposacabezas anatómico, bolsa de transporte y accesorios.\n\nPerfecta para terapeutas que trabajan a domicilio o en diferentes centros. Capacidad de carga hasta 200 kg. Altura regulable de 63 a 83 cm.",
+                    "title": "Pack de aceites esenciales premium",
+                    "description": "Pack profesional con dos aceites base, almendra dulce y jojoba de 250 ml cada uno, y cinco esenciales de 10 ml: lavanda, eucalipto, menta, romero y naranja dulce.\n\nTodos de certificación ecológica y aptos para uso en cabina. Incluye tabla de dilución para que no te pases con las proporciones.\n\nMaletín de madera con hueco para cada frasco. Recogida en consulta.",
                     "certifications": [
                         "Certificado"
                     ],
@@ -645,9 +645,9 @@
                     "city": "Sevilla",
                     "address": "1762 Leila Cove Apt. 221",
                     "availability": [
-                        "domingo",
-                        "viernes",
-                        "jueves"
+                        "D",
+                        "V",
+                        "J"
                     ],
                     "price_unit": "por_paquete",
                     "price": "90.00",
@@ -662,8 +662,8 @@
                 },
                 {
                     "category": "productos",
-                    "title": "Bolas de masaje de bambú y piedras",
-                    "description": "Pack completo de aceites esenciales 100% naturales y orgánicos para masaje profesional. Incluye: aceite base de almendra dulce, jojoba, y 5 aceites esenciales (lavanda, eucalipto, menta, romero y naranja dulce).\n\nTodos los productos son certificados ecológicos, sin parabenos ni siliconas. Envasados en vidrio ámbar para preservar sus propiedades. Incluye guía de mezclas y usos recomendados.",
+                    "title": "Set de velas de masaje y aceite de coco",
+                    "description": "Tres velas de masaje de manteca de karité con mechas de algodón, en aroma de vainilla, coco y neroli, más un bote de 200 ml de aceite de coco virgen.\n\nLa vela se enciende, se deja cinco minutos y la cera fundida se vierte templada sobre la piel. Queda como un aceite corporal y no quema.",
                     "certifications": [
                         "Colegiado",
                         "Formación continua"
@@ -672,11 +672,11 @@
                     "city": "Las Palmas",
                     "address": "89792 Shana Views Suite 307",
                     "availability": [
-                        "viernes",
-                        "lunes",
-                        "domingo",
-                        "jueves",
-                        "martes"
+                        "V",
+                        "L",
+                        "D",
+                        "J",
+                        "M"
                     ],
                     "price_unit": "por_sesion",
                     "price": "80.00",
@@ -704,8 +704,8 @@
             "ads": [
                 {
                     "category": "manuales",
-                    "title": "Masaje de tejido profundo para dolores crónicos",
-                    "description": "Soy terapeuta titulada con más de 8 años de experiencia en masajes terapéuticos y relajantes. Me especializo en el tratamiento de contracturas, tensión cervical y estrés acumulado.\n\nUtilizo aceites naturales de primera calidad y adapto cada sesión a las necesidades específicas de cada persona. Trabajo con técnicas de masaje sueco, californiano y tejido profundo.\n\nDisponible en mi centro en el centro de la ciudad, también puedo desplazarme a tu domicilio. Primera sesión con descuento del 20%.",
+                    "title": "Masaje deportivo y recuperación muscular",
+                    "description": "Masaje orientado a rendimiento, con trabajo pre y post competición, cyriax, estiramientos analíticos y vendaje neuromuscular si hace falta.\n\nTrabajo con corredores de fondo, ciclistas y gente de crossfit. Lo normal es una sesión de mantenimiento cada dos o tres semanas y una específica antes de competir.\n\nValoración funcional incluida en la primera visita para ver de dónde viene el problema, no solo dónde duele.",
                     "certifications": [
                         "Formación continua"
                     ],
@@ -713,10 +713,10 @@
                     "city": "Sevilla",
                     "address": "461 Einar Forest Suite 372",
                     "availability": [
-                        "sabado",
-                        "viernes",
-                        "miercoles",
-                        "lunes"
+                        "S",
+                        "V",
+                        "X",
+                        "L"
                     ],
                     "price_unit": "por_hora",
                     "price": "200.00",
