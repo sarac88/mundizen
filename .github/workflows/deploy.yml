@@ -36,6 +36,11 @@ jobs:
 
             php artisan migrate --force
 
+            # The demo is public, so each deploy restores the frozen content.
+            # Runs as www-data because it rewrites images under storage/app/public.
+            sudo -u www-data php artisan storage:link --force
+            sudo -u www-data php artisan demo:refresh --force
+
             # www-data serves the app, so it must own the caches it reads and writes
             sudo -u www-data php artisan optimize:clear
             sudo -u www-data php artisan optimize
